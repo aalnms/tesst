@@ -1,117 +1,44 @@
+:root {
+  --primary-color: #00ffae;
+  --secondary-color: #ffd700;
+  --accent-color: #ff6b6b; /* لون إضافي للتمييز أو التنبيهات */
+  --bg-dark: #0f0f1a;
+  --bg-medium: #18182a;
+  --bg-light-card: #1c1c2e;
+  --bg-interactive: #23233a;
+  --text-light: #ffffff;
+  --text-dark: #000000;
+  --text-muted: #adb5bd;
+  --border-color: #333333;
+  --shadow-color-primary: rgba(0, 255, 174, 0.2);
+  --shadow-color-secondary: rgba(255, 215, 0, 0.2);
+  --shadow-color-dark: rgba(0, 0, 0, 0.5);
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #0f0f1a;
-  color: #fff;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
-header {
-  background: linear-gradient(145deg, #1b1b2f, #111);
-  padding: 3rem;
-  text-align: center;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-}
-
-header h1 {
-  font-size: 3rem;
-  color: #00ffae;
-  margin-bottom: 1rem;
-}
-
-header p {
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-}
-
-.btn-group {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.btn {
-  background: #00ffae;
-  color: #000;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 50px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.btn:hover {
-  transform: scale(1.1);
-}
-
-.btn-group .btn {
-  outline: none;
-  box-shadow: 0 2px 8px #00ffae10;
-}
-
-.btn-group .btn:focus {
-  border: 2px solid #ffd700;
-  background: #23233a;
-  color: #ffd700;
-}
-
-section {
-  padding: 4rem 2rem;
-  border-bottom: 1px solid #333;
-}
-
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-  font-size: 1.5rem;
-}
-
-.feature-box, .step-box, .service-box, .dashboard, .gallery {
-  margin-top: 2rem;
-  display: grid;
-  gap: 2rem;
-}
-
-.feature-box div,
-.step-box div,
-.service-box div,
-.dashboard div,
-.gallery div {
-  background: #1c1c2e;
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0, 255, 174, 0.2);
-}
-
-h2 {
-  color: #00ffae;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-}
-
-canvas {
-  width: 100%;
-  height: 400px;
-  background: #000;
-  border-radius: 20px;
-}
-
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #18182a;
+  background-color: var(--bg-medium);
   border-radius: 18px;
-  box-shadow: 0 2px 12px #00ffae20;
+  box-shadow: 0 2px 12px var(--shadow-color-primary);
   padding: 10px 24px;
-  margin-bottom: 0;
-  position: relative;
-  z-index: 10;
-  transition: background 0.3s;
+  margin: 1rem auto; /* إضافة هامش علوي وسفلي وتوسيط */
+  max-width: 1300px; /* تحديد عرض أقصى للنافبار */
+  position: sticky; /* جعل النافبار ثابتًا عند التمرير */
+  top: 1rem;
+  z-index: 1000;
+  transition: background-color 0.3s;
 }
 
 .logo {
@@ -120,48 +47,66 @@ canvas {
   gap: 10px;
   font-size: 2rem;
   font-weight: 800;
-  color: #00ffae;
+  color: var(--primary-color);
   letter-spacing: 1px;
   transition: color 0.3s;
 }
 
 .logo img {
   height: 40px;
-  margin-left: 10px;
+  width: 40px; /* ضمان الأبعاد الصحيحة */
+  margin-left: 10px; /* في RTL، هذا يضع اللوجو على يمين النص */
   border-radius: 10px;
-  background: #fff;
+  background-color: var(--text-light);
   box-shadow: 0 2px 8px #eee;
   transition: box-shadow 0.3s;
 }
 
+.nav-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none; /* سيتم عرضه بواسطة JS و media query */
+  padding: 0.5rem;
+  z-index: 1002; /* فوق الروابط عند الفتح */
+}
+
+.nav-toggle span {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
 .nav-links {
+  list-style: none; /* إزالة النقاط الافتراضية للقائمة */
+  padding: 0;
+  margin: 0;
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background: #23233a;
+  background-color: var(--bg-interactive);
   border-radius: 30px;
-  box-shadow: 0 2px 12px #00ffae10;
+  box-shadow: 0 2px 12px var(--shadow-color-primary);
   padding: 6px 18px;
-  transition: box-shadow 0.3s, background 0.3s;
+  transition: box-shadow 0.3s, background-color 0.3s;
 }
 
 .nav-links a {
-  color: #fff;
+  color: var(--text-light);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.05rem;
   padding: 8px 16px;
   border-radius: 22px;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
   position: relative;
   letter-spacing: 0.5px;
 }
 
 .nav-links a.active,
 .nav-links a:hover {
-  background: #00ffae;
-  color: #18182a;
-  box-shadow: 0 2px 8px #00ffae30;
+  background-color: var(--primary-color);
+  color: var(--bg-medium); /* تغيير لون النص ليتناسب مع الخلفية */
+  box-shadow: 0 2px 8px var(--shadow-color-primary);
 }
 
 .nav-links a::after {
@@ -171,7 +116,7 @@ canvas {
   height: 2px;
   bottom: 4px;
   right: 16px;
-  background-color: #00ffae;
+  background-color: var(--primary-color); /* لون الخط يتناسب مع الحالة النشطة */
   border-radius: 2px;
   transition: width 0.3s;
 }
@@ -179,40 +124,178 @@ canvas {
 .nav-links a:hover::after,
 .nav-links a.active::after {
   width: 60%;
+  background-color: var(--bg-medium); /* لون الخط عند التحويم/نشط */
 }
 
 .main-btn {
-  background: linear-gradient(90deg, #00ffae, #1b1b2f);
-  color: #18182a;
+  background: linear-gradient(90deg, var(--primary-color), var(--bg-medium));
+  color: var(--bg-medium);
   border: none;
   font-weight: 700;
   padding: 8px 20px;
   border-radius: 30px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-  box-shadow: 0 2px 8px #00ffae20;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s, color 0.3s;
+  box-shadow: 0 2px 8px var(--shadow-color-primary);
   text-decoration: none;
   display: inline-block;
 }
 
-.main-btn:hover {
-  background: linear-gradient(90deg, #1b1b2f, #00ffae);
-  color: #fff;
+.main-btn:hover, .main-btn:focus {
+  background: linear-gradient(90deg, var(--bg-medium), var(--primary-color));
+  color: var(--text-light);
   transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 10px 20px #00ffae30;
+  box-shadow: 0 10px 20px var(--shadow-color-primary);
+  outline: none;
 }
 
-.three-d-canvas, .invention-3d {
-  width: 320px;
-  height: 220px;
-  background: linear-gradient(135deg, #0a1a2f 60%, #1b1b2f 100%);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px #001a3a80, 0 2px 8px #ffd70040;
-  margin: 0 auto 1.5rem;
+/* Header */
+header {
+  background: linear-gradient(145deg, #1b1b2f, #111111);
+  padding: 3rem 1.5rem; /* تعديل الحشوة لتناسب الشاشات المختلفة */
+  text-align: center;
+  box-shadow: 0 0 30px var(--shadow-color-dark);
+  margin-bottom: 2rem; /* إضافة هامش سفلي */
+}
+
+header h1 {
+  font-size: clamp(2rem, 5vw, 3rem); /* حجم خط متجاوب */
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+header .welcome-msg { /* استهداف الفقرة داخل الهيدر بشكل أكثر تحديدًا */
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: var(--text-muted);
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap; /* للسماح للأزرار بالانتقال لسطر جديد في الشاشات الصغيرة */
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: var(--text-dark);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 255, 174, 0.1);
+}
+
+.btn:hover, .btn:focus {
+  transform: scale(1.05); /* تكبير طفيف عند التحويم والتركيز */
+  box-shadow: 0 4px 12px rgba(0, 255, 174, 0.3);
+}
+
+.btn:focus {
+  outline: 2px solid var(--secondary-color); /* تمييز التركيز */
+  outline-offset: 2px;
+}
+
+.btn.virtual-btn { /* تمييز الزر الافتراضي */
+  background: linear-gradient(90deg, var(--secondary-color), var(--bg-dark) 90%);
+  color: var(--bg-dark);
+  font-weight: 900;
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0 2px 12px var(--shadow-color-secondary);
+}
+
+.btn.virtual-btn:hover, .btn.virtual-btn:focus {
+  background: linear-gradient(90deg, var(--bg-dark), var(--secondary-color) 90%);
+  color: var(--text-light);
+}
+
+/* Sections */
+section {
+  padding: 3rem 1.5rem; /* تعديل الحشوة */
+  border-bottom: 1px solid var(--border-color);
+  max-width: 1200px; /* تحديد عرض أقصى للمحتوى */
+  margin: 0 auto 2rem; /* توسيط المحتوى وإضافة هامش سفلي */
+}
+section:last-of-type {
+  border-bottom: none; /* إزالة الخط السفلي لآخر قسم */
+}
+
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem; /* زيادة الهامش السفلي */
+  font-size: clamp(1.8rem, 4vw, 2.2rem); /* حجم خط متجاوب */
+  text-align: center; /* توسيط العناوين الرئيسية للأقسام */
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2.5rem; /* زيادة الهامش العلوي */
+  font-size: 1.5rem;
+  flex-wrap: wrap; /* للسماح بالانتقال لسطر جديد */
+}
+
+.stats > div { /* استهداف العناصر الداخلية مباشرة */
+  text-align: center;
+}
+
+.advanced-stats {
+  background: linear-gradient(90deg, rgba(10, 26, 47, 0.8) 80%, rgba(255, 215, 0, 0.1) 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0, 26, 58, 0.6);
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+  gap: clamp(1rem, 5vw, 3rem); /* فجوة متجاوبة */
+}
+
+.advanced-stats .stat-value, .stats .stat-value {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-weight: bold;
+  color: var(--secondary-color);
   display: block;
+  margin-bottom: 0.25rem;
 }
 
+.advanced-stats .stat-label, .stats .stat-label {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: var(--text-light);
+  opacity: 0.85;
+}
+
+/* Feature, Step, Service, Dashboard, Gallery shared styles */
+.feature-box, .step-box, .service-box {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.5rem; /* تقليل الفجوة قليلاً */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* تحسين التجاوب */
+}
+
+.feature-box div,
+.step-box div,
+.service-box div {
+  background-color: var(--bg-light-card);
+  padding: 1.5rem; /* تعديل الحشوة */
+  border-radius: 15px; /* تعديل نصف القطر */
+  box-shadow: 0 0 15px var(--shadow-color-primary);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-box div:hover,
+.step-box div:hover,
+.service-box div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px var(--shadow-color-primary);
+}
+
+/* 3D Canvas Placeholders */
 .welcome-3d-container {
   display: flex;
   justify-content: center;
@@ -220,128 +303,157 @@ canvas {
   margin-bottom: 1.5rem;
 }
 
-.virtual-btn {
-  background: linear-gradient(90deg, #ffd700, #0a1a2f 90%);
-  color: #0a1a2f;
-  font-weight: 900;
-  border: 2px solid #ffd700;
-  box-shadow: 0 2px 12px #ffd70040;
-}
-
-.virtual-btn:hover {
-  background: linear-gradient(90deg, #0a1a2f, #ffd700 90%);
-  color: #fff;
-}
-
-.advanced-stats {
-  background: linear-gradient(90deg, #0a1a2f 80%, #ffd700 100%);
-  border-radius: 18px;
-  box-shadow: 0 4px 24px #001a3a60;
-  padding: 1.5rem 2rem;
-  margin-top: 2rem;
-  gap: 3rem;
-}
-
-.advanced-stats .stat-value {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #ffd700;
+.three-d-canvas, .invention-3d {
+  width: 100%; /* جعلها تأخذ عرض الحاوية */
+  max-width: 320px; /* تحديد عرض أقصى */
+  height: 220px;
+  background: linear-gradient(135deg, rgba(10, 26, 47, 0.7) 60%, rgba(27, 27, 47, 0.9) 100%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 26, 58, 0.5), 0 2px 8px rgba(255, 215, 0, 0.25);
+  margin: 0 auto 1.5rem;
   display: block;
 }
 
-.advanced-stats .stat-label {
-  font-size: 1.1rem;
-  color: #fff;
-  opacity: 0.85;
-}
-
+/* Gallery */
 .gallery-controls {
   display: flex;
   gap: 1rem;
-  justify-content: flex-end;
-  margin-bottom: 1.5rem;
+  justify-content: center; /* توسيط الفلاتر */
+  margin-bottom: 2rem; /* زيادة الهامش السفلي */
+  flex-wrap: wrap; /* للسماح بالانتقال لسطر جديد */
 }
 
 .gallery-controls select {
-  background: #0a1a2f;
-  color: #ffd700;
-  border: 1.5px solid #ffd700;
+  background-color: var(--bg-dark);
+  color: var(--secondary-color);
+  border: 1.5px solid var(--secondary-color);
   border-radius: 12px;
-  padding: 0.5rem 1.2rem;
+  padding: 0.6rem 1.3rem; /* تعديل الحشوة */
   font-size: 1rem;
   font-weight: bold;
-  box-shadow: 0 2px 8px #ffd70020;
+  box-shadow: 0 2px 8px var(--shadow-color-secondary);
   outline: none;
-  transition: border 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
 }
 
 .gallery-controls select:focus {
-  border: 2px solid #ffd700;
+  border-color: var(--primary-color); /* تغيير لون الحدود عند التركيز */
+  box-shadow: 0 0 10px var(--shadow-color-primary);
+}
+
+.gallery {
+  margin-top: 2rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* تحسين تجاوب البطاقات */
 }
 
 .invention-card {
-  background: linear-gradient(120deg, #18182a 80%, #ffd70010 100%);
+  background: linear-gradient(120deg, var(--bg-light-card) 80%, rgba(255, 215, 0, 0.05) 100%);
   border-radius: 24px;
-  box-shadow: 0 4px 24px #001a3a40, 0 2px 8px #ffd70020;
+  box-shadow: 0 4px 24px rgba(0, 26, 58, 0.25), 0 2px 8px rgba(255, 215, 0, 0.1);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  overflow: hidden; /* لضمان عدم تجاوز العناصر الداخلية */
 }
 
 .invention-card:hover {
-  transform: translateY(-6px) scale(1.03) rotateZ(-1deg);
-  box-shadow: 0 12px 32px #ffd70040, 0 2px 8px #ffd70040;
+  transform: translateY(-8px) scale(1.02); /* تعديل التحويل */
+  box-shadow: 0 12px 32px var(--shadow-color-secondary), 0 4px 12px var(--shadow-color-secondary);
+}
+
+.invention-info {
+  text-align: center; /* توسيط محتوى المعلومات */
+  width: 100%;
 }
 
 .invention-info h3 {
-  color: #ffd700;
-  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+  margin-top: 1rem; /* إضافة هامش علوي */
+  margin-bottom: 0.75rem; /* تعديل الهامش السفلي */
+  font-size: 1.5rem;
 }
 
 .ai-recommendation {
-  color: #00ffae;
+  color: var(--primary-color);
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
 }
 
 .performance-indicators {
-  color: #fff;
-  font-size: 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
   display: flex;
-  gap: 1.2rem;
-  margin-top: 0.5rem;
+  flex-direction: column; /* عرض المؤشرات بشكل عمودي */
+  gap: 0.5rem; /* تعديل الفجوة */
+  margin-top: 0.75rem;
+  align-items: center; /* توسيط المؤشرات */
+}
+.performance-indicators span b {
+  color: var(--text-light);
+  font-weight: 600;
 }
 
+#no-results-message {
+    grid-column: 1 / -1; /* لجعل الرسالة تمتد عبر كل الأعمدة */
+    text-align: center;
+    padding: 2rem;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+
+/* Dashboard */
 .dashboard {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+}
+
+.dashboard > div { /* استهداف العناصر الداخلية مباشرة */
+  background-color: var(--bg-light-card);
+  padding: 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 0 15px var(--shadow-color-primary);
+}
+
+.dashboard h4 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
 .dashboard-chart, .portfolio-demo {
   width: 100%;
   height: 180px;
-  background: linear-gradient(135deg, #0a1a2f 60%, #ffd70020 100%);
+  background: linear-gradient(135deg, var(--bg-dark) 60%, rgba(255, 215, 0, 0.1) 100%);
   border-radius: 18px;
-  box-shadow: 0 2px 12px #ffd70020;
+  box-shadow: 0 2px 12px var(--shadow-color-secondary);
+  display: flex; /* للتوسيط إذا كان هناك نص */
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
 }
 
 .chat-demo {
-  background: #23233a;
+  background-color: var(--bg-interactive);
   border-radius: 18px;
   min-height: 120px;
-  box-shadow: 0 2px 12px #00ffae20;
+  box-shadow: 0 2px 12px var(--shadow-color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffd700;
+  color: var(--secondary-color);
   font-weight: bold;
 }
 
+/* Membership */
 .membership-box {
   display: flex;
   gap: 2rem;
@@ -351,51 +463,59 @@ canvas {
 }
 
 .membership-card {
-  background: linear-gradient(120deg, #18182a 80%, #ffd70010 100%);
+  background: linear-gradient(120deg, var(--bg-light-card) 80%, rgba(255, 215, 0, 0.05) 100%);
   border-radius: 24px;
-  box-shadow: 0 4px 24px #ffd70030, 0 2px 8px #ffd70010;
+  box-shadow: 0 4px 24px rgba(255, 215, 0, 0.15), 0 2px 8px rgba(255, 215, 0, 0.05);
   padding: 2rem 1.5rem;
-  min-width: 240px;
-  max-width: 320px;
+  min-width: 280px; /* تعديل العرض الأدنى */
+  max-width: 340px; /* تعديل العرض الأقصى */
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center; /* توسيط النص داخل البطاقة */
   border: 2px solid transparent;
-  transition: border 0.2s, transform 0.2s;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-.membership-card.basic {
-  border-color: #00ffae;
+.membership-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 30px var(--shadow-color-secondary);
 }
 
-.membership-card.premium {
-  border-color: #ffd700;
-}
-
+.membership-card.basic { border-color: var(--primary-color); }
+.membership-card.premium { border-color: var(--secondary-color); }
 .membership-card.platinum {
-  border-color: #fff;
-  background: linear-gradient(120deg, #18182a 60%, #ffd70040 100%);
+  border-color: var(--text-light);
+  background: linear-gradient(120deg, var(--bg-light-card) 60%, rgba(255, 215, 0, 0.2) 100%);
 }
 
 .membership-card h3 {
-  color: #ffd700;
-  margin-bottom: 1rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem; /* زيادة الهامش */
+  font-size: 1.6rem;
 }
 
 .membership-card ul {
-  color: #fff;
+  list-style: disc; /* استخدام نقاط دائرية */
+  color: var(--text-light);
   text-align: right;
-  margin-bottom: 1.2rem;
-  padding-right: 1.2rem;
+  margin-bottom: 1.5rem;
+  padding-right: 1.5rem; /* زيادة الحشوة */
+  font-size: 0.95rem;
+}
+.membership-card ul li {
+    margin-bottom: 0.5rem; /* تباعد بين عناصر القائمة */
 }
 
 .membership-price {
-  color: #ffd700;
-  font-size: 1.3rem;
+  color: var(--secondary-color);
+  font-size: 1.4rem; /* تكبير حجم السعر */
   font-weight: bold;
-  margin-top: 0.5rem;
+  margin-top: auto; /* لدفع السعر إلى الأسفل إذا كانت البطاقات مختلفة الارتفاع */
+  padding-top: 1rem;
 }
 
+/* Success Stories */
 .success-stories {
   display: flex;
   gap: 2rem;
@@ -405,136 +525,293 @@ canvas {
 }
 
 .story-card {
-  background: linear-gradient(120deg, #18182a 80%, #ffd70010 100%);
+  background: linear-gradient(120deg, var(--bg-light-card) 80%, rgba(255, 215, 0, 0.05) 100%);
   border-radius: 24px;
-  box-shadow: 0 4px 24px #ffd70030, 0 2px 8px #ffd70010;
+  box-shadow: 0 4px 24px rgba(255, 215, 0, 0.15), 0 2px 8px rgba(255, 215, 0, 0.05);
   padding: 1.5rem;
-  min-width: 260px;
-  max-width: 340px;
+  min-width: 280px;
+  max-width: 350px; /* تعديل العرض الأقصى */
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 28px var(--shadow-color-secondary);
 }
 
 .story-video {
   width: 100%;
   border-radius: 16px;
   margin-bottom: 1rem;
-  box-shadow: 0 2px 12px #ffd70020;
+  box-shadow: 0 2px 12px var(--shadow-color-secondary);
+  aspect-ratio: 16 / 9; /* الحفاظ على نسبة العرض إلى الارتفاع */
+  object-fit: cover; /* ضمان ملء الفيديو للمساحة */
 }
 
 .story-info h4 {
-  color: #ffd700;
+  color: var(--secondary-color);
   margin-bottom: 0.5rem;
+  font-size: 1.3rem;
 }
 
 .story-info p {
-  color: #fff;
-  font-size: 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .story-stats {
-  color: #00ffae;
+  color: var(--primary-color);
   font-weight: bold;
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem; /* زيادة الفجوة */
+  font-size: 1.1rem;
 }
 
-.nav-toggle {
-  display: none;
+/* FAQ Section */
+.faq-section {
+    margin-top: 2rem;
+}
+.faq-item {
+    background-color: var(--bg-light-card);
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px var(--shadow-color-dark);
+    border-left: 4px solid var(--primary-color); /* شريط جانبي للتمييز */
+}
+.faq-question {
+    background-color: transparent;
+    border: none;
+    color: var(--text-light);
+    padding: 1rem 1.5rem;
+    width: 100%;
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+.faq-question:hover {
+    background-color: rgba(0, 255, 174, 0.1);
+}
+.faq-question::after { /* أيقونة السهم */
+    content: '▼';
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    color: var(--primary-color);
+}
+.faq-question.active::after {
+    transform: rotate(180deg);
+}
+.faq-answer {
+    padding: 0 1.5rem 1.5rem; /* إزالة الحشوة العلوية لأنها موجودة في السؤال */
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    display: none; /* مخفي بشكل افتراضي */
+    border-top: 1px solid var(--border-color); /* خط فاصل */
+    margin-top: 0.5rem; /* هامش بين السؤال والجواب */
+}
+.faq-answer.active {
+    display: block;
 }
 
-@media (max-width: 900px) {
+/* Call to Action (CTA) Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--bg-medium), var(--bg-dark));
+    padding: 3rem 1.5rem;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px var(--shadow-color-dark);
+    margin-top: 3rem;
+}
+.cta-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.cta-section p {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    font-size: 1.1rem;
+}
+.cta-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+}
+.cta-btn:hover, .cta-btn:focus {
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    box-shadow: 0 5px 15px var(--shadow-color-primary);
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--secondary-color);
+  background: linear-gradient(90deg, var(--bg-medium), var(--bg-interactive));
+  margin-top: 3rem; /* زيادة الهامش العلوي */
+  font-size: 1rem; /* تعديل حجم الخط */
+  letter-spacing: 0.5px; /* تعديل تباعد الأحرف */
+  border-top: 2px solid var(--primary-color); /* إضافة حد علوي مميز */
+}
+
+/* Responsive Design */
+@media (max-width: 992px) { /* تعديل نقطة التوقف */
+  .navbar {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
   .nav-links {
     gap: 0.7rem;
-    padding: 6px 8px;
+    padding: 6px 10px; /* تقليل الحشوة قليلاً */
+  }
+  .nav-links a {
+    font-size: 0.95rem; /* تصغير حجم خط الروابط */
+    padding: 7px 12px;
   }
   .main-btn {
-    padding: 7px 12px;
-    font-size: 0.98rem;
+    padding: 7px 14px; /* تعديل حشوة الزر الرئيسي */
+    font-size: 0.9rem;
   }
-  .gallery, .feature-box, .step-box, .service-box, .dashboard {
-    grid-template-columns: 1fr;
+  .feature-box, .step-box, .service-box, .dashboard {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* تحسين البطاقات في الشاشات الأصغر */
   }
 }
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 10px 0;
-    padding-left: 48px;
+    padding: 10px 1rem; /* تقليل الحشوة الجانبية للنافبار */
+    flex-wrap: wrap; /* السماح بتجاوز العناصر إذا لزم الأمر */
+    justify-content: space-between; /* ضمان التباعد بين الشعار وزر القائمة */
+  }
+  .nav-toggle {
+    display: block; /* إظهار زر القائمة */
+    position: static; /* إزالة التموضع المطلق إذا كان يؤثر */
+    /* يمكن إضافته إلى أقصى اليسار في RTL باستخدام flex order أو float إذا لزم الأمر */
   }
   .nav-links {
-    display: none;
+    display: none; /* إخفاء الروابط بشكل افتراضي */
     position: absolute;
-    top: 60px;
-    right: 10px;
+    top: calc(100% + 5px); /* تحت النافبار مباشرة */
+    right: 1rem; /* محاذاة لليمين */
+    left: 1rem; /* امتداد إلى اليسار */
+    width: auto; /* السماح بالعرض بالتكيف */
     flex-direction: column;
-    background: #23233a;
-    box-shadow: 0 8px 32px #00ffae20;
-    border-radius: 18px;
-    padding: 18px 0;
-    min-width: 170px;
+    background-color: var(--bg-interactive);
+    box-shadow: 0 8px 32px var(--shadow-color-primary);
+    border-radius: 12px; /* تعديل نصف القطر */
+    padding: 1rem 0;
     z-index: 1001;
-    gap: 0;
+    gap: 0.5rem; /* تقليل الفجوة بين الروابط */
   }
   .nav-links.show {
-    display: flex;
+    display: flex; /* إظهار الروابط عند النقر */
   }
   .nav-links a {
-    padding: 12px 24px;
+    padding: 10px 20px; /* تعديل حشوة الروابط */
     border-radius: 0;
     width: 100%;
     text-align: right;
-    margin: 0;
+    box-sizing: border-box; /* ضمان أن الحشوة لا تزيد العرض */
   }
-  .main-btn {
-    font-size: 0.95rem;
-    padding: 7px 10px;
+  .nav-links a:hover, .nav-links a.active {
+    background-color: var(--primary-color);
+    color: var(--bg-medium);
   }
+  .nav-links a::after { /* إخفاء الخط السفلي في وضع الموبايل */
+      display: none;
+  }
+
+  .main-btn { /* قد يتم وضعه داخل القائمة المنسدلة أو إخفاؤه */
+    margin-top: 0.5rem; /* إضافة هامش إذا كان مرئيًا ومستقلاً */
+  }
+
   .three-d-canvas, .invention-3d {
-    width: 100%;
-    height: 160px;
+    height: 180px; /* تقليل ارتفاع النماذج ثلاثية الأبعاد */
   }
-  .nav-toggle {
-    display: block !important;
-    position: absolute;
-    left: 16px;
-    top: 12px;
-    z-index: 1002;
+  .gallery-controls {
+    flex-direction: column; /* جعل الفلاتر عمودية */
+    align-items: stretch; /* تمديد الفلاتر لتأخذ العرض الكامل */
+  }
+  .gallery-controls select {
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
+  header {
+    padding: 2rem 1rem;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+  header .welcome-msg {
+    font-size: 0.9rem;
+  }
   .logo {
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* تصغير حجم الشعار */
   }
   .logo img {
     height: 32px;
+    width: 32px;
   }
-  .main-btn {
-    padding: 6px 8px;
-    font-size: 0.93rem;
+  .btn {
+    padding: 0.7rem 1.2rem; /* تصغير الأزرار */
+    font-size: 0.9rem;
+  }
+  .stats {
+    gap: 1rem; /* تقليل الفجوة بين الإحصائيات */
+  }
+  .advanced-stats .stat-value, .stats .stat-value {
+    font-size: 1.6rem;
+  }
+  .advanced-stats .stat-label, .stats .stat-label {
+    font-size: 0.8rem;
+  }
+  section {
+    padding: 2rem 1rem;
+  }
+  h2 {
+    font-size: 1.6rem;
   }
   .membership-card, .story-card {
-    min-width: 90vw;
-    max-width: 98vw;
-    padding: 1rem;
+    min-width: calc(100% - 2rem); /* جعل البطاقات تأخذ معظم العرض */
+    max-width: calc(100% - 2rem);
+    padding: 1.2rem;
+  }
+  .faq-question {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+  .faq-answer {
+    font-size: 0.9rem;
+    padding: 0 1rem 1rem;
+  }
+  .cta-section p {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 1100px) {
   .membership-box, .success-stories {
+    /* الترتيب العمودي وتوسيط العناصر قد يكون جيدًا هنا */
+    /* ولكن إذا كانت flex-wrap تعمل بشكل جيد، قد لا تحتاج لتغيير */
+    /* إذا أردت ترتيبهم عمودياً بشكل قسري:
     flex-direction: column;
     align-items: center;
+    */
   }
-}
-
-footer {
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-  border-top: 1px solid #23233a;
 }

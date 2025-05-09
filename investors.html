@@ -6,233 +6,341 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المستثمرين - منصة ابتكار</title>
     <link rel="stylesheet" href="css/investors.css">
-
+    <!-- يمكن إضافة أيقونة للموقع هنا -->
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
 </head>
-<nav class="navbar">
-    <div class="logo">
-        <img src="logo.png" alt="ابتكار لوجو" style="width:40px;height:40px;">
-        ابتكار
-    </div>
-    <button class="nav-toggle" aria-label="فتح القائمة" tabindex="0" style="background:none;border:none;cursor:pointer;display:none;">
-        <span style="font-size:2rem;color:#00ffae;">&#9776;</span>
-    </button>
-    <ul class="nav-links">
-        <a href="index.html" class="active">الرئيسية</a>
-        <a href="inventor.html">المخترعين</a>
-        <a href="investors.html">المستثمرين</a>
-        <a href="AI-for-ivn.html">ذكاء ابتكار</a>
-        <a href="#">عن المنصة</a>
-        <a href="Contact.html">تواصل معنا</a>
-    </ul>
-    <a href="#" class="main-btn" title="تسجيل الدخول">تسجيل الدخول</a>
-</nav>
+
 <body>
-    <header>
-        <div class="welcome-3d-container">
-            <!-- نموذج ثلاثي الأبعاد (مكان مخصص للـ 3D Canvas) -->
-            <canvas id="innovation3d" class="three-d-canvas"></canvas>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="شعار منصة ابتكار">
+            ابتكار
         </div>
-        <h1>فرص استثمارية سعودية تبدأ من هنا</h1>
-        <p class="welcome-msg">
-            اكتشف مستقبل الاستثمار في براءات الاختراع السعودية مع منصة ابتكار.<br>
-            حول الابتكار إلى فرصة استثمارية حقيقية، وكن جزءًا من قصص النجاح القادمة في المملكة.
-        </p>
-        <div class="btn-group">
-            <button class="btn" title="استكشاف أبرز الاختراعات">استكشف الاختراعات</button>
-            <button class="btn" title="دخول المستثمرين">تسجيل الدخول للمستثمرين</button>
-            <button class="btn virtual-btn" title="جرب المنصة افتراضياً">معاينة افتراضية للمنصة</button>
-        </div>
-        <div class="stats advanced-stats">
-            <div>
-                <span class="stat-value">+25%</span>
-                <span class="stat-label">متوسط عائد الاستثمار</span>
-            </div>
-            <div>
-                <span class="stat-value">+350</span>
-                <span class="stat-label">براءة اختراع متاحة</span>
-            </div>
-            <div>
-                <span class="stat-value">+120</span>
-                <span class="stat-label">شراكة صناعية ناجحة</span>
-            </div>
-        </div>
-    </header>
+        <button class="nav-toggle" aria-label="فتح/إغلاق القائمة" aria-expanded="false" aria-controls="nav-links-list">
+            <span>☰</span>
+        </button>
+        <ul class="nav-links" id="nav-links-list">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="inventor.html">المخترعين</a></li>
+            <li><a href="investors.html" class="active">المستثمرين</a></li>
+            <li><a href="AI-for-ivn.html">ذكاء ابتكار</a></li>
+            <li><a href="#">عن المنصة</a></li>
+            <li><a href="Contact.html">تواصل معنا</a></li>
+        </ul>
+        <a href="#" class="main-btn" title="تسجيل الدخول">تسجيل الدخول</a>
+    </nav>
 
-    <section>
-        <h2>مميزات الاستثمار في "ابتكار"</h2>
-        <div class="feature-box">
-            <div>توفير تكاليف البحث والتطوير عبر نماذج جاهزة</div>
-            <div>تقييم دقيق مدعوم بالذكاء الاصطناعي</div>
-            <div>حوافز من الجهات المختصة للاستثمار في المحتوى المحلي</div>
-            <div>حماية قانونية بالتعاون مع الهيئة السعودية للملكية الفكرية</div>
-        </div>
-    </section>
+    <main>
+        <header>
+            <div class="welcome-3d-container">
+                <!-- نموذج ثلاثي الأبعاد (مكان مخصص للـ 3D Canvas) -->
+                <canvas id="innovation3d" class="three-d-canvas" aria-label="عرض ثلاثي الأبعاد تفاعلي للابتكار"></canvas>
+            </div>
+            <h1>فرص استثمارية سعودية واعدة تبدأ من هنا</h1>
+            <p class="welcome-msg">
+                اكتشف مستقبل الاستثمار في براءات الاختراع السعودية مع منصة ابتكار.<br>
+                حوّل الابتكار إلى فرصة استثمارية حقيقية، وكن جزءًا من قصص النجاح الملهمة في المملكة.
+            </p>
+            <div class="btn-group">
+                <button class="btn" title="استكشاف أبرز الاختراعات" onclick="document.getElementById('inventions-gallery-section').scrollIntoView({ behavior: 'smooth' });">استكشف الاختراعات</button>
+                <button class="btn" title="دخول المستثمرين">تسجيل الدخول للمستثمرين</button>
+                <button class="btn virtual-btn" title="جرب المنصة افتراضياً">معاينة افتراضية للمنصة</button>
+            </div>
+            <div class="stats advanced-stats">
+                <div>
+                    <span class="stat-value" data-target="25">+0%</span>
+                    <span class="stat-label">متوسط عائد الاستثمار المتوقع</span>
+                </div>
+                <div>
+                    <span class="stat-value" data-target="350">+0</span>
+                    <span class="stat-label">براءة اختراع متاحة للاستثمار</span>
+                </div>
+                <div>
+                    <span class="stat-value" data-target="120">+0</span>
+                    <span class="stat-label">شراكة صناعية ناجحة</span>
+                </div>
+            </div>
+        </header>
 
-    <section>
-        <h2>معرض الاختراعات الأبرز</h2>
-        <div class="gallery-controls">
-            <!-- فلاتر تفاعلية -->
-            <select id="sector-filter" aria-label="تصفية حسب القطاع">
-                <option value="all">كل القطاعات</option>
-                <option value="الصحة">الصحة</option>
-                <option value="الطاقة">الطاقة</option>
-                <option value="التقنية">التقنية</option>
-                <option value="الصناعة">الصناعة</option>
-            </select>
-            <select id="cost-filter" aria-label="تصفية حسب التكلفة">
-                <option value="all">كل التكاليف</option>
-                <option value="lt100">أقل من 100 ألف</option>
-                <option value="100-500">100-500 ألف</option>
-                <option value="gt500">أكثر من 500 ألف</option>
-            </select>
-            <select id="return-filter" aria-label="تصفية حسب العائد">
-                <option value="all">كل العوائد</option>
-                <option value="high">عائد مرتفع</option>
-                <option value="medium">عائد متوسط</option>
-                <option value="low">عائد منخفض</option>
-            </select>
-        </div>
-        <div class="gallery" id="inventions-gallery">
-            <div class="invention-card">
-                <!-- نموذج ثلاثي الأبعاد للاختراع -->
-                <canvas class="invention-3d"></canvas>
-                <div class="invention-info">
-                    <h3>جهاز طبي ذكي</h3>
-                    <div class="ai-recommendation">توصية الذكاء الاصطناعي: ⭐⭐⭐⭐</div>
-                    <div class="performance-indicators">
-                        <span>العائد المتوقع: <b>32%</b></span>
-                        <span>القطاع: الصحة</span>
+        <section aria-labelledby="features-heading">
+            <h2 id="features-heading">مميزات الاستثمار عبر "ابتكار"</h2>
+            <div class="feature-box">
+                <div>
+                    <h4>نماذج أولية جاهزة</h4>
+                    <p>توفير تكاليف البحث والتطوير الأولية عبر الوصول إلى نماذج واختراعات جاهزة للتطوير.</p>
+                </div>
+                <div>
+                    <h4>تقييم ذكي</h4>
+                    <p>تقييم دقيق للفرص الاستثمارية مدعوم بأدوات الذكاء الاصطناعي وتحليل البيانات.</p>
+                </div>
+                <div>
+                    <h4>حوافز ودعم</h4>
+                    <p>الاستفادة من الحوافز المقدمة من الجهات المختصة للاستثمار في المحتوى المحلي والابتكار.</p>
+                </div>
+                <div>
+                    <h4>حماية قانونية</h4>
+                    <p>إطار قانوني واضح بالتعاون مع الهيئة السعودية للملكية الفكرية لضمان حقوق جميع الأطراف.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="inventions-gallery-section" aria-labelledby="gallery-heading">
+            <h2 id="gallery-heading">معرض الاختراعات الأبرز</h2>
+            <div class="gallery-controls">
+                <select id="sector-filter" aria-label="تصفية حسب القطاع">
+                    <option value="all">كل القطاعات</option>
+                    <option value="الصحة">الصحة</option>
+                    <option value="الطاقة">الطاقة</option>
+                    <option value="التقنية">التقنية</option>
+                    <option value="الصناعة">الصناعة</option>
+                    <option value="البيئة">البيئة</option>
+                </select>
+                <select id="cost-filter" aria-label="تصفية حسب التكلفة الاستثمارية">
+                    <option value="all">كل التكاليف</option>
+                    <option value="lt100">أقل من 100 ألف ريال</option>
+                    <option value="100-500">100 - 500 ألف ريال</option>
+                    <option value="gt500">أكثر من 500 ألف ريال</option>
+                </select>
+                <select id="return-filter" aria-label="تصفية حسب تصنيف العائد">
+                    <option value="all">كل العوائد</option>
+                    <option value="high">عائد مرتفع</option>
+                    <option value="medium">عائد متوسط</option>
+                    <option value="low">عائد منخفض</option>
+                </select>
+            </div>
+            <div class="gallery" id="inventions-gallery">
+                <article class="invention-card" data-sector="الصحة" data-cost="lt100" data-return="high">
+                    <canvas class="invention-3d" aria-label="نموذج ثلاثي الأبعاد لجهاز طبي ذكي"></canvas>
+                    <div class="invention-info">
+                        <h3>جهاز طبي ذكي</h3>
+                        <div class="ai-recommendation">توصية الذكاء الاصطناعي: ⭐⭐⭐⭐</div>
+                        <div class="performance-indicators">
+                            <span>العائد المتوقع: <b>32%</b></span>
+                            <span>القطاع: <span class="data-sector-display">الصحة</span></span>
+                            <span>التكلفة: <span class="data-cost-display">أقل من 100 ألف</span></span>
+                            <span>تصنيف العائد: <span class="data-return-display">مرتفع</span></span>
+                        </div>
+                        <button class="btn" style="margin-top: 1rem;">تفاصيل أكثر</button>
                     </div>
-                </div>
-            </div>
-            <div class="invention-card">
-                <canvas class="invention-3d"></canvas>
-                <div class="invention-info">
-                    <h3>حلول طاقة متجددة</h3>
-                    <div class="ai-recommendation">توصية الذكاء الاصطناعي: ⭐⭐⭐⭐⭐</div>
-                    <div class="performance-indicators">
-                        <span>العائد المتوقع: <b>41%</b></span>
-                        <span>القطاع: الطاقة</span>
+                </article>
+                <article class="invention-card" data-sector="الطاقة" data-cost="100-500" data-return="high">
+                    <canvas class="invention-3d" aria-label="نموذج ثلاثي الأبعاد لحلول طاقة متجددة"></canvas>
+                    <div class="invention-info">
+                        <h3>حلول طاقة متجددة</h3>
+                        <div class="ai-recommendation">توصية الذكاء الاصطناعي: ⭐⭐⭐⭐⭐</div>
+                        <div class="performance-indicators">
+                            <span>العائد المتوقع: <b>41%</b></span>
+                            <span>القطاع: <span class="data-sector-display">الطاقة</span></span>
+                            <span>التكلفة: <span class="data-cost-display">100-500 ألف</span></span>
+                            <span>تصنيف العائد: <span class="data-return-display">مرتفع</span></span>
+                        </div>
+                        <button class="btn" style="margin-top: 1rem;">تفاصيل أكثر</button>
                     </div>
+                </article>
+                <article class="invention-card" data-sector="التقنية" data-cost="gt500" data-return="medium">
+                    <canvas class="invention-3d" aria-label="نموذج ثلاثي الأبعاد لمنصة تعليمية تفاعلية"></canvas>
+                    <div class="invention-info">
+                        <h3>منصة تعليمية تفاعلية</h3>
+                        <div class="ai-recommendation">توصية الذكاء الاصطناعي: ⭐⭐⭐⭐</div>
+                        <div class="performance-indicators">
+                            <span>العائد المتوقع: <b>25%</b></span>
+                            <span>القطاع: <span class="data-sector-display">التقنية</span></span>
+                            <span>التكلفة: <span class="data-cost-display">أكثر من 500 ألف</span></span>
+                            <span>تصنيف العائد: <span class="data-return-display">متوسط</span></span>
+                        </div>
+                        <button class="btn" style="margin-top: 1rem;">تفاصيل أكثر</button>
+                    </div>
+                </article>
+                <article class="invention-card" data-sector="الصناعة" data-cost="100-500" data-return="medium">
+                    <canvas class="invention-3d" aria-label="نموذج ثلاثي الأبعاد لنظام تغليف ذكي"></canvas>
+                    <div class="invention-info">
+                        <h3>نظام تغليف ذكي للمنتجات</h3>
+                        <div class="ai-recommendation">توصية الذكاء الاصطناعي: ⭐⭐⭐</div>
+                        <div class="performance-indicators">
+                            <span>العائد المتوقع: <b>22%</b></span>
+                            <span>القطاع: <span class="data-sector-display">الصناعة</span></span>
+                            <span>التكلفة: <span class="data-cost-display">100-500 ألف</span></span>
+                            <span>تصنيف العائد: <span class="data-return-display">متوسط</span></span>
+                        </div>
+                        <button class="btn" style="margin-top: 1rem;">تفاصيل أكثر</button>
+                    </div>
+                </article>
+                 <article class="invention-card" data-sector="البيئة" data-cost="lt100" data-return="low">
+                    <canvas class="invention-3d" aria-label="نموذج ثلاثي الأبعاد لتقنية تدوير مياه مبتكرة"></canvas>
+                    <div class="invention-info">
+                        <h3>تقنية تدوير مياه مبتكرة</h3>
+                        <div class="ai-recommendation">توصية الذكاء الاصطناعي: ⭐⭐⭐</div>
+                        <div class="performance-indicators">
+                            <span>العائد المتوقع: <b>15%</b></span>
+                            <span>القطاع: <span class="data-sector-display">البيئة</span></span>
+                            <span>التكلفة: <span class="data-cost-display">أقل من 100 ألف</span></span>
+                            <span>تصنيف العائد: <span class="data-return-display">منخفض</span></span>
+                        </div>
+                        <button class="btn" style="margin-top: 1rem;">تفاصيل أكثر</button>
+                    </div>
+                </article>
+                <p id="no-results-message" style="display: none;">لا توجد اختراعات تطابق معايير البحث الحالية.</p>
+            </div>
+        </section>
+
+        <section aria-labelledby="dashboard-heading">
+            <h2 id="dashboard-heading">لوحة تحكم المستثمر (مثال توضيحي)</h2>
+            <div class="dashboard">
+                <div>
+                    <h4>تحليل ومقارنة الفرص الاستثمارية</h4>
+                    <canvas class="dashboard-chart" aria-label="رسم بياني يوضح مقارنة الفرص الاستثمارية"></canvas>
+                     <p style="font-size:0.8em; text-align:center; color: var(--text-muted)">[رسم بياني تفاعلي للفرص]</p>
+                </div>
+                <div>
+                    <h4>نظام محادثة مباشر مع المخترعين</h4>
+                    <div class="chat-demo">[نموذج محادثة تفاعلي مع المخترعين]</div>
+                </div>
+                <div>
+                    <h4>متابعة محفظة الاستثمارات والتقارير</h4>
+                    <div class="portfolio-demo">[رسم بياني لمحفظة استثمارية وتقارير الأداء]</div>
                 </div>
             </div>
-            <!-- ...يمكن إضافة المزيد من البطاقات... -->
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <h2>لوحة تحكم المستثمر</h2>
-        <div class="dashboard">
-            <div>
-                <h4>تحليل ومقارنة الفرص الاستثمارية</h4>
-                <canvas class="dashboard-chart"></canvas>
+        <section aria-labelledby="investment-steps-heading">
+            <h2 id="investment-steps-heading">خطوات الاستثمار في الاختراعات</h2>
+            <div class="step-box">
+                <div>١. البحث والاختيار من المنصة</div>
+                <div>٢. التواصل مع صاحب الاختراع والتفاوض المبدئي</div>
+                <div>٣. إجراء التقييمات ودراسات الجدوى</div>
+                <div>٤. توقيع العقود إلكترونياً بشكل آمن</div>
+                <div>٥. تطوير المنتج ومتابعة الأداء والنمو</div>
             </div>
-            <div>
-                <h4>نظام محادثة مباشر مع المخترعين</h4>
-                <div class="chat-demo">[نموذج محادثة تفاعلي]</div>
-            </div>
-            <div>
-                <h4>متابعة محفظة الاستثمارات والتقارير</h4>
-                <div class="portfolio-demo">[رسم بياني لمحفظة استثمارية]</div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <h2>خطوات الاستثمار في الاختراعات</h2>
-        <div class="step-box">
-            <div>١. البحث والاختيار من المنصة</div>
-            <div>٢. التواصل مع صاحب الاختراع والتفاوض</div>
-            <div>٣. توقيع العقود إلكترونياً</div>
-            <div>٤. تطوير المنتج ومتابعة الأداء</div>
-        </div>
-    </section>
-
-    <section>
-        <h2>خدمات التقييم والتحليل</h2>
-        <div class="service-box">
-            <div>تحليل السوق وتحديد الفرص</div>
-            <div>تقييم المخاطر والعوائد المتوقعة</div>
-            <div>دراسات جدوى اقتصادية بالذكاء الاصطناعي</div>
-            <div>تقارير المنافسين والاتجاهات</div>
-        </div>
-    </section>
-
-    <!-- قسم برامج وحزم العضوية -->
-    <section>
-        <h2>برامج وحزم العضوية</h2>
-        <div class="membership-box">
-            <div class="membership-card basic">
-                <h3>الحزمة الأساسية</h3>
-                <ul>
-                    <li>الوصول إلى قائمة الاختراعات العامة</li>
-                    <li>توصيات الذكاء الاصطناعي الأساسية</li>
-                    <li>تقارير أداء شهرية</li>
-                </ul>
-                <div class="membership-price">990 ريال/سنة</div>
+        <section aria-labelledby="evaluation-services-heading">
+            <h2 id="evaluation-services-heading">خدمات التقييم والتحليل المتقدمة</h2>
+            <div class="service-box">
+                <div>تحليل شامل للسوق وتحديد الفرص الواعدة</div>
+                <div>تقييم دقيق للمخاطر والعوائد المتوقعة للاختراعات</div>
+                <div>دراسات جدوى اقتصادية مدعومة بالذكاء الاصطناعي</div>
+                <div>تقارير مفصلة عن المنافسين والاتجاهات التكنولوجية</div>
             </div>
-            <div class="membership-card premium">
-                <h3>الحزمة المميزة</h3>
-                <ul>
-                    <li>كل مزايا الأساسية</li>
-                    <li>تحليلات متقدمة وتقارير أسبوعية</li>
-                    <li>أولوية في التواصل مع المخترعين</li>
-                </ul>
-                <div class="membership-price">3,900 ريال/سنة</div>
-            </div>
-            <div class="membership-card platinum">
-                <h3>العضوية البلاتينية</h3>
-                <ul>
-                    <li>كل مزايا المميزة</li>
-                    <li>استشارات استثمارية خاصة</li>
-                    <li>دعوات حصرية لفعاليات المنصة</li>
-                </ul>
-                <div class="membership-price">12,000 ريال/سنة</div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- قسم قصص نجاح الاستثمارات -->
-    <section>
-        <h2>قصص نجاح الاستثمارات</h2>
-        <div class="success-stories">
-            <div class="story-card">
-                <video controls poster="img/success1.jpg" class="story-video">
-                    <source src="videos/success1.mp4" type="video/mp4">
-                    متصفحك لا يدعم الفيديو.
-                </video>
-                <div class="story-info">
-                    <h4>استثمار في جهاز طبي ذكي</h4>
-                    <p>حقق عائد استثماري بنسبة 38% خلال عامين، وتم اعتماده في 12 مستشفى.</p>
+        <section aria-labelledby="membership-heading">
+            <h2 id="membership-heading">برامج وحزم العضوية للمستثمرين</h2>
+            <div class="membership-box">
+                <article class="membership-card basic">
+                    <h3>الحزمة الأساسية</h3>
+                    <ul>
+                        <li>الوصول إلى قائمة الاختراعات العامة</li>
+                        <li>توصيات الذكاء الاصطناعي الأساسية</li>
+                        <li>تقارير أداء شهرية موجزة</li>
+                        <li>تنبيهات بالفرص الجديدة</li>
+                    </ul>
+                    <div class="membership-price">990 ريال/سنة</div>
+                    <button class="btn" style="margin-top: 1rem;">اشتراك الآن</button>
+                </article>
+                <article class="membership-card premium">
+                    <h3>الحزمة المميزة</h3>
+                    <ul>
+                        <li>كل مزايا الحزمة الأساسية</li>
+                        <li>وصول للاختراعات الحصرية والمميزة</li>
+                        <li>تحليلات متقدمة وتقارير أسبوعية مفصلة</li>
+                        <li>أولوية في التواصل المباشر مع المخترعين</li>
+                    </ul>
+                    <div class="membership-price">3,900 ريال/سنة</div>
+                    <button class="btn" style="margin-top: 1rem;">اختيار المميزة</button>
+                </article>
+                <article class="membership-card platinum">
+                    <h3>العضوية البلاتينية</h3>
+                    <ul>
+                        <li>كل مزايا الحزمة المميزة</li>
+                        <li>استشارات استثمارية خاصة وشخصية</li>
+                        <li>دعوات حصرية لفعاليات ولقاءات المنصة</li>
+                        <li>مدير حساب مخصص</li>
+                    </ul>
+                    <div class="membership-price">12,000 ريال/سنة</div>
+                    <button class="btn" style="margin-top: 1rem;">الترقية للبلاتينية</button>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby="success-stories-heading">
+            <h2 id="success-stories-heading">قصص نجاح ملهمة من استثمارات "ابتكار"</h2>
+            <div class="success-stories">
+                <article class="story-card">
+                    <video controls poster="img/success1.jpg" class="story-video" preload="metadata" loading="lazy">
+                        <source src="videos/success1.mp4" type="video/mp4">
+                        متصفحك لا يدعم عرض الفيديو.
+                    </video>
+                    <div class="story-info">
+                        <h4>استثمار في جهاز طبي ذكي</h4>
+                        <p>حقق عائد استثماري بنسبة 38% خلال عامين، وتم اعتماده في 12 مستشفى ومركز صحي رائد.</p>
+                    </div>
+                </article>
+                <article class="story-card">
+                    <video controls poster="img/success2.jpg" class="story-video" preload="metadata" loading="lazy">
+                        <source src="videos/success2.mp4" type="video/mp4">
+                        متصفحك لا يدعم عرض الفيديو.
+                    </video>
+                    <div class="story-info">
+                        <h4>حلول طاقة متجددة للمصانع</h4>
+                        <p>استثمار ناجح أدى إلى توفير 20% من تكاليف الطاقة في 5 مصانع سعودية كبرى خلال السنة الأولى.</p>
+                    </div>
+                </article>
+                <article class="story-card">
+                    <div class="story-stats">
+                        <span>+120 مليون ريال عوائد استثمارية محققة</span>
+                        <span>+15 منتج مبتكر دخل السوق بنجاح</span>
+                        <span>+500 فرصة عمل جديدة تم توفيرها</span>
+                    </div>
+                    <div class="story-info">
+                        <h4>إحصائيات عامة مؤثرة</h4>
+                        <p>منصة ابتكار ساهمت في تحقيق عوائد استثمارية ضخمة للمستثمرين ودعم الاقتصاد الوطني.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- قسم الأسئلة الشائعة الجديد -->
+        <section class="faq-section" aria-labelledby="faq-heading">
+            <h2 id="faq-heading">الأسئلة الشائعة للمستثمرين</h2>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">ما هي أنواع الاختراعات المتاحة للاستثمار؟</button>
+                <div class="faq-answer" id="faq-answer-1" role="region" aria-hidden="true">
+                    <p>توفر منصة "ابتكار" مجموعة متنوعة من براءات الاختراع والابتكارات في قطاعات متعددة مثل الصحة، الطاقة، التقنية، الصناعة، البيئة، وغيرها. يتم تحديث القائمة باستمرار لتشمل أحدث الابتكارات السعودية.</p>
                 </div>
             </div>
-            <div class="story-card">
-                <video controls poster="img/success2.jpg" class="story-video">
-                    <source src="videos/success2.mp4" type="video/mp4">
-                    متصفحك لا يدعم الفيديو.
-                </video>
-                <div class="story-info">
-                    <h4>حلول طاقة متجددة</h4>
-                    <p>استثمار ناجح أدى إلى توفير 20% من تكاليف الطاقة في 5 مصانع سعودية.</p>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">كيف تضمن المنصة حقوق المستثمرين؟</button>
+                <div class="faq-answer" id="faq-answer-2" role="region" aria-hidden="true">
+                    <p>نعمل بالتعاون الوثيق مع الهيئة السعودية للملكية الفكرية ومستشارين قانونيين متخصصين لضمان إطار تعاقدي واضح يحمي حقوق جميع الأطراف. كما نوفر آليات للتحقق والتقييم قبل إتمام أي صفقة استثمارية.</p>
                 </div>
             </div>
-            <div class="story-card">
-                <div class="story-stats">
-                    <span>+120 مليون ريال عوائد استثمارية</span>
-                    <span>+15 منتج دخل السوق بنجاح</span>
-                </div>
-                <div class="story-info">
-                    <h4>إحصائيات عامة</h4>
-                    <p>منصة ابتكار ساهمت في تحقيق عوائد استثمارية ضخمة للمستثمرين.</p>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">ما هو دور الذكاء الاصطناعي في المنصة؟</button>
+                <div class="faq-answer" id="faq-answer-3" role="region" aria-hidden="true">
+                    <p>يستخدم الذكاء الاصطناعي في "ابتكار" لتحليل البيانات، تقييم الفرص الاستثمارية، تقديم توصيات مخصصة، التنبؤ بالعائد المحتمل، ودعم عمليات اتخاذ القرار للمستثمرين بناءً على معايير متعددة.</p>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">هل يمكنني التواصل مباشرة مع المخترعين؟</button>
+                <div class="faq-answer" id="faq-answer-4" role="region" aria-hidden="true">
+                    <p>نعم، توفر المنصة آليات للتواصل المباشر والآمن بين المستثمرين والمخترعين، خاصة لأصحاب العضويات المميزة والبلاتينية، لتسهيل عمليات التفاوض وبناء الشراكات.</p>
+                </div>
+            </div>
+        </section>
 
-    <footer style="text-align:center;padding:2rem 0;color:#ffd700;background:linear-gradient(90deg,#18182a,#23233a);margin-top:2rem;">
-        جميع الحقوق محفوظة &copy; ابتكار 2024
+        <!-- قسم دعوة للعمل الجديد -->
+        <section class="cta-section" aria-labelledby="cta-heading">
+            <h2 id="cta-heading">هل أنت مستعد لتكون جزءًا من مستقبل الابتكار؟</h2>
+            <p>انضم إلى شبكة المستثمرين في "ابتكار" اليوم، واكتشف فرصًا استثمارية فريدة تساهم في نمو الاقتصاد السعودي وتحقق عوائد مجزية.</p>
+            <a href="#" class="btn cta-btn" title="انضم كمستثمر الآن">انضم إلينا الآن</a>
+        </section>
+
+    </main>
+
+    <footer>
+        جميع الحقوق محفوظة © منصة ابتكار <span id="current-year">2024</span>
     </footer>
+
     <script src="js/investors.js"></script>
 </body>
-
 </html>
