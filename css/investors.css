@@ -192,6 +192,245 @@ canvas {
   box-shadow: 0 10px 20px #00ffae30;
 }
 
+.three-d-canvas, .invention-3d {
+  width: 320px;
+  height: 220px;
+  background: linear-gradient(135deg, #0a1a2f 60%, #1b1b2f 100%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px #001a3a80, 0 2px 8px #ffd70040;
+  margin: 0 auto 1.5rem;
+  display: block;
+}
+
+.welcome-3d-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.virtual-btn {
+  background: linear-gradient(90deg, #ffd700, #0a1a2f 90%);
+  color: #0a1a2f;
+  font-weight: 900;
+  border: 2px solid #ffd700;
+  box-shadow: 0 2px 12px #ffd70040;
+}
+
+.virtual-btn:hover {
+  background: linear-gradient(90deg, #0a1a2f, #ffd700 90%);
+  color: #fff;
+}
+
+.advanced-stats {
+  background: linear-gradient(90deg, #0a1a2f 80%, #ffd700 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #001a3a60;
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+  gap: 3rem;
+}
+
+.advanced-stats .stat-value {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #ffd700;
+  display: block;
+}
+
+.advanced-stats .stat-label {
+  font-size: 1.1rem;
+  color: #fff;
+  opacity: 0.85;
+}
+
+.gallery-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-controls select {
+  background: #0a1a2f;
+  color: #ffd700;
+  border: 1.5px solid #ffd700;
+  border-radius: 12px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #ffd70020;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.gallery-controls select:focus {
+  border: 2px solid #ffd700;
+}
+
+.invention-card {
+  background: linear-gradient(120deg, #18182a 80%, #ffd70010 100%);
+  border-radius: 24px;
+  box-shadow: 0 4px 24px #001a3a40, 0 2px 8px #ffd70020;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.invention-card:hover {
+  transform: translateY(-6px) scale(1.03) rotateZ(-1deg);
+  box-shadow: 0 12px 32px #ffd70040, 0 2px 8px #ffd70040;
+}
+
+.invention-info h3 {
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+}
+
+.ai-recommendation {
+  color: #00ffae;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.performance-indicators {
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.dashboard-chart, .portfolio-demo {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, #0a1a2f 60%, #ffd70020 100%);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px #ffd70020;
+}
+
+.chat-demo {
+  background: #23233a;
+  border-radius: 18px;
+  min-height: 120px;
+  box-shadow: 0 2px 12px #00ffae20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.membership-box {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.membership-card {
+  background: linear-gradient(120deg, #18182a 80%, #ffd70010 100%);
+  border-radius: 24px;
+  box-shadow: 0 4px 24px #ffd70030, 0 2px 8px #ffd70010;
+  padding: 2rem 1.5rem;
+  min-width: 240px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid transparent;
+  transition: border 0.2s, transform 0.2s;
+}
+
+.membership-card.basic {
+  border-color: #00ffae;
+}
+
+.membership-card.premium {
+  border-color: #ffd700;
+}
+
+.membership-card.platinum {
+  border-color: #fff;
+  background: linear-gradient(120deg, #18182a 60%, #ffd70040 100%);
+}
+
+.membership-card h3 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.membership-card ul {
+  color: #fff;
+  text-align: right;
+  margin-bottom: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+.membership-price {
+  color: #ffd700;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.success-stories {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.story-card {
+  background: linear-gradient(120deg, #18182a 80%, #ffd70010 100%);
+  border-radius: 24px;
+  box-shadow: 0 4px 24px #ffd70030, 0 2px 8px #ffd70010;
+  padding: 1.5rem;
+  min-width: 260px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.story-video {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 12px #ffd70020;
+}
+
+.story-info h4 {
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+}
+
+.story-info p {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.story-stats {
+  color: #00ffae;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 @media (max-width: 900px) {
   .nav-links {
     gap: 0.7rem;
@@ -200,6 +439,9 @@ canvas {
   .main-btn {
     padding: 7px 12px;
     font-size: 0.98rem;
+  }
+  .gallery, .feature-box, .step-box, .service-box, .dashboard {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -237,6 +479,10 @@ canvas {
     font-size: 0.95rem;
     padding: 7px 10px;
   }
+  .three-d-canvas, .invention-3d {
+    width: 100%;
+    height: 160px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -249,5 +495,17 @@ canvas {
   .main-btn {
     padding: 6px 8px;
     font-size: 0.93rem;
+  }
+  .membership-card, .story-card {
+    min-width: 90vw;
+    max-width: 98vw;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .membership-box, .success-stories {
+    flex-direction: column;
+    align-items: center;
   }
 }
