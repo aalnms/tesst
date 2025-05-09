@@ -13,6 +13,9 @@
         <img src="logo.png" alt="ابتكار لوجو" style="width:40px;height:40px;">
         ابتكار
     </div>
+    <button class="nav-toggle" aria-label="فتح القائمة" tabindex="0" style="background:none;border:none;cursor:pointer;display:none;">
+        <span style="font-size:2rem;color:#00ffae;">&#9776;</span>
+    </button>
     <ul class="nav-links">
         <a href="index.html" class="active">الرئيسية</a>
         <a href="inventor.html">المخترعين</a>
@@ -21,7 +24,7 @@
         <a href="#">عن المنصة</a>
         <a href="Contact.html">تواصل معنا</a>
     </ul>
-    <a href="#" class="main-btn">تسجيل الدخول</a>
+    <a href="#" class="main-btn" title="تسجيل الدخول">تسجيل الدخول</a>
 </nav>
 <body>
     <header>
@@ -35,9 +38,9 @@
             حول الابتكار إلى فرصة استثمارية حقيقية، وكن جزءًا من قصص النجاح القادمة في المملكة.
         </p>
         <div class="btn-group">
-            <button class="btn">استكشف الاختراعات</button>
-            <button class="btn">تسجيل الدخول للمستثمرين</button>
-            <button class="btn virtual-btn">معاينة افتراضية للمنصة</button>
+            <button class="btn" title="استكشاف أبرز الاختراعات">استكشف الاختراعات</button>
+            <button class="btn" title="دخول المستثمرين">تسجيل الدخول للمستثمرين</button>
+            <button class="btn virtual-btn" title="جرب المنصة افتراضياً">معاينة افتراضية للمنصة</button>
         </div>
         <div class="stats advanced-stats">
             <div>
@@ -69,27 +72,27 @@
         <h2>معرض الاختراعات الأبرز</h2>
         <div class="gallery-controls">
             <!-- فلاتر تفاعلية -->
-            <select>
-                <option>كل القطاعات</option>
-                <option>الصحة</option>
-                <option>الطاقة</option>
-                <option>التقنية</option>
-                <option>الصناعة</option>
+            <select id="sector-filter" aria-label="تصفية حسب القطاع">
+                <option value="all">كل القطاعات</option>
+                <option value="الصحة">الصحة</option>
+                <option value="الطاقة">الطاقة</option>
+                <option value="التقنية">التقنية</option>
+                <option value="الصناعة">الصناعة</option>
             </select>
-            <select>
-                <option>كل التكاليف</option>
-                <option>أقل من 100 ألف</option>
-                <option>100-500 ألف</option>
-                <option>أكثر من 500 ألف</option>
+            <select id="cost-filter" aria-label="تصفية حسب التكلفة">
+                <option value="all">كل التكاليف</option>
+                <option value="lt100">أقل من 100 ألف</option>
+                <option value="100-500">100-500 ألف</option>
+                <option value="gt500">أكثر من 500 ألف</option>
             </select>
-            <select>
-                <option>كل العوائد</option>
-                <option>عائد مرتفع</option>
-                <option>عائد متوسط</option>
-                <option>عائد منخفض</option>
+            <select id="return-filter" aria-label="تصفية حسب العائد">
+                <option value="all">كل العوائد</option>
+                <option value="high">عائد مرتفع</option>
+                <option value="medium">عائد متوسط</option>
+                <option value="low">عائد منخفض</option>
             </select>
         </div>
-        <div class="gallery">
+        <div class="gallery" id="inventions-gallery">
             <div class="invention-card">
                 <!-- نموذج ثلاثي الأبعاد للاختراع -->
                 <canvas class="invention-3d"></canvas>
@@ -226,6 +229,9 @@
         </div>
     </section>
 
+    <footer style="text-align:center;padding:2rem 0;color:#ffd700;background:linear-gradient(90deg,#18182a,#23233a);margin-top:2rem;">
+        جميع الحقوق محفوظة &copy; ابتكار 2024
+    </footer>
     <script src="js/investors.js"></script>
 </body>
 
