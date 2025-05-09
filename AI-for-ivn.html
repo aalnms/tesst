@@ -3,796 +3,952 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ذكاء ابتكار | منصة ابتكار</title>
+    <title>ذكاء ابتكار | منصة لتسريع الابتكار</title>
+    <meta name="description" content="منصة ذكاء ابتكار تستخدم الذكاء الاصطناعي لمساعدة المخترعين والمستثمرين في تقييم، تطوير، وتحليل الأفكار والمشاريع الابتكارية.">
+    <meta name="keywords" content="ذكاء اصطناعي, ابتكار, اختراعات, استثمار, تحليل سوق, تقييم مشاريع, Gemini API">
+    
     <link rel="stylesheet" href="css/AI-for-ivn.css">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Favicon (example, replace with your actual favicon) -->
+    <link rel="icon" href="logo.png" type="image/png">
+
 </head>
 <body>
     <header>
         <div class="container header-content">
-            <div class="logo">
-                <img src="logo.png" alt="ابتكار" style="width:40px;height:40px;">
-                ابتكار
-            </div>
-            <nav>
+            <a href="index.html" class="logo-link">
                 <div class="logo">
-                    <img src="logo.png" alt="ابتكار" style="width:40px;height:40px;">
-                    <h1>ابتكار</h1>
+                    <img src="logo.png" alt="شعار منصة ابتكار">
+                    <h1>إبتكار</h1>
                 </div>
-                
+            </a>
+            <nav>
                 <div class="nav-links">
-                    <a href="index.html" class="active">الرئيسية</a>
+                    <a href="index.html">الرئيسية</a>
                     <a href="inventor.html">المخترعين</a>
                     <a href="investors.html">المستثمرين</a>
-                    <a href="AI-for-ivn.html">ذكاء ابتكار</a>
-                    <a href="#">عن المنصة</a>
+                    <a href="AI-for-ivn.html" class="active">ذكاء ابتكار</a>
+                    <a href="#about-platform">عن المنصة</a>
                     <a href="Contact.html">تواصل معنا</a>
                 </div>
                 
                 <div class="auth-buttons">
-                    <button class="language-toggle">English</button>
+                    <button class="language-toggle btn btn-secondary">English</button>
                     <a href="#" class="btn btn-login">تسجيل الدخول</a>
                     <a href="#" class="btn btn-register">إنشاء حساب</a>
                 </div>
                 
-                <button class="mobile-menu-btn">
+                <button class="mobile-menu-btn" aria-label="فتح القائمة" aria-expanded="false">
                     <i class="fas fa-bars"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container" style="display: flex; align-items: center;">
-            <div class="hero-content">
-                <h1 class="hero-title">ذكاء ابتكار</h1>
-                <p class="hero-description">
-                    منصة ذكاء ابتكار هي نظام متكامل للذكاء الاصطناعي مصمم خصيصاً لتلبية احتياجات المخترعين والمستثمرين. 
-                    تم تطوير النظام على مدار سنة و4 شهور بواسطة نخبة من الخبراء في مجالات الذكاء الاصطناعي وريادة الأعمال والابتكار.
-                </p>
-                <div class="stats-container">
-                    <div class="stat-item">
-                        <div class="stat-number">97%</div>
-                        <div class="stat-label">نسبة دقة التحليل</div>
+    <main>
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">مرحباً بك في <span class="highlight">ذكاء ابتكار</span></h1>
+                    <p class="hero-description">
+                        نظام الذكاء الاصطناعي المتكامل لدعم رحلتك في عالم الابتكار. تم تطويره بعناية على مدار سنة و4 أشهر بواسطة نخبة من الخبراء لتمكين المخترعين والمستثمرين بأدوات تحليلية قوية.
+                    </p>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number">97%</div>
+                            <div class="stat-label">دقة التحليل المبدئي</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">+5K</div>
+                            <div class="stat-label">براءة اختراع تم تحليلها</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">89%</div>
+                            <div class="stat-label">نجاح التوقعات الأولية</div>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">+5000</div>
-                        <div class="stat-label">براءة اختراع تم تحليلها</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">89%</div>
-                        <div class="stat-label">نسبة نجاح التوقعات</div>
+                     <a href="#inventor-services" class="btn btn-primary hero-cta">اكتشف خدماتنا <i class="fas fa-arrow-down"></i></a>
+                </div>
+                <div class="hero-visual">
+                    <div class="ai-brain" id="brain-model" aria-label="رسم متحرك لعقل إلكتروني يمثل الذكاء الاصطناعي">
+                        <canvas class="brain-canvas" id="brainCanvas"></canvas>
                     </div>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="ai-brain" id="brain-model">
-                    <canvas class="brain-canvas" id="brainCanvas"></canvas>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section" id="inventor-services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">خدمات الذكاء الاصطناعي للمخترعين</h2>
-                <p class="section-description">
-                    نقدم باقة متكاملة من خدمات الذكاء الاصطناعي المصممة خصيصاً لمساعدة المخترعين في تطوير وتقييم ابتكاراتهم،
-                    وتحسين فرص نجاحها في السوق. جرب الأدوات التفاعلية أدناه.
-                </p>
-            </div>
-
-            <div class="cards-container">
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-balance-scale animate-glow"></i> <!-- Font Awesome icon, ensure library is linked if you want it to show -->
-                    </div>
-                    <h3 class="card-title">تقييم الاختراعات</h3>
-                    <div class="card-content-wrapper">
-                        <p class="card-description">
-                            نظام متطور لتقييم الاختراعات. أدخل بيانات اختراعك للحصول على تقييم أولي.
-                        </p>
-                        <ul class="card-features">
-                            <li>تصنيف الاختراع ضمن القطاعات</li>
-                            <li>تحليل عناصر الابتكار والجدة</li>
-                            <li>مقارنة مع براءات مشابهة</li>
-                            <li>تقدير القيمة السوقية المحتملة</li>
-                        </ul>
-                    </div>
-                    <div class="ui-preview">
-                        <div class="ui-preview-title">تجربة تقييم الاختراعات</div>
-                        <div class="form-group">
-                            <label class="form-label" for="inv-eval-name">اسم الاختراع</label>
-                            <input type="text" id="inv-eval-name" class="form-input" placeholder="مثال: نظام ري ذكي">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="inv-eval-sector">القطاع</label>
-                            <input type="text" id="inv-eval-sector" class="form-input" placeholder="مثال: الزراعة التكنولوجية">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="inv-eval-desc">وصف مختصر</label>
-                            <textarea id="inv-eval-desc" class="form-input form-textarea" placeholder="اشرح فكرة الاختراع باختصار"></textarea>
-                        </div>
-                        <button class="btn btn-primary btn-small" id="analyze-inv-eval-btn">تقييم الاختراع</button>
-                        <div class="ui-preview-output" id="inv-eval-output">
-                            <span>أدخل البيانات واضغط "تقييم الاختراع" لعرض النتائج.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-file-alt animate-glow"></i>
-                    </div>
-                    <h3 class="card-title">تحسين توثيق الاختراعات</h3>
-                     <div class="card-content-wrapper">
-                        <p class="card-description">
-                            أدوات ذكية لتحسين طريقة توثيق وشرح الاختراع. أدخل نص التوثيق الحالي للحصول على اقتراحات.
-                        </p>
-                        <ul class="card-features">
-                            <li>تحليل نقاط القوة والضعف في التوثيق</li>
-                            <li>اقتراحات لغوية وتقنية لتحسين الوصف</li>
-                            <li>إضافة المصطلحات التقنية المناسبة</li>
-                        </ul>
-                    </div>
-                    <div class="ui-preview">
-                        <div class="ui-preview-title">تجربة تحسين التوثيق</div>
-                        <div class="form-group">
-                            <label class="form-label" for="doc-imprv-text">نص توثيق الاختراع</label>
-                            <textarea id="doc-imprv-text" class="form-input form-textarea" placeholder="الصق هنا نص توثيق الاختراع الحالي..."></textarea>
-                        </div>
-                        <button class="btn btn-primary btn-small" id="analyze-doc-imprv-btn">تحليل التوثيق</button>
-                        <div class="ui-preview-output" id="doc-imprv-output">
-                             <span>أدخل نص التوثيق واضغط "تحليل التوثيق" لعرض الاقتراحات.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-line animate-glow"></i>
-                    </div>
-                    <h3 class="card-title">تحليل السوق للمخترعين</h3>
-                    <div class="card-content-wrapper">
-                        <p class="card-description">
-                            تحليل شامل للسوق المستهدف وفرص نجاح الاختراع. أدخل معلومات حول اختراعك.
-                        </p>
-                        <ul class="card-features">
-                            <li>تحديد حجم السوق المستهدف</li>
-                            <li>تحليل المنافسين الحاليين والمحتملين</li>
-                            <li>دراسة اتجاهات السوق المستقبلية</li>
-                        </ul>
-                    </div>
-                    <div class="ui-preview">
-                        <div class="ui-preview-title">تجربة تحليل السوق</div>
-                        <div class="form-group">
-                            <label class="form-label" for="market-inv-sector">قطاع الاختراع</label>
-                            <input type="text" id="market-inv-sector" class="form-input" placeholder="مثال: التكنولوجيا المالية">
-                        </div>
-                         <div class="form-group">
-                            <label class="form-label" for="market-inv-audience">الجمهور المستهدف (اختياري)</label>
-                            <input type="text" id="market-inv-audience" class="form-input" placeholder="مثال: الشركات الصغيرة والمتوسطة">
-                        </div>
-                        <button class="btn btn-primary btn-small" id="analyze-market-inv-btn">تحليل السوق</button>
-                        <div class="ui-preview-output" id="market-inv-output">
-                            <span>أدخل البيانات واضغط "تحليل السوق" لعرض النتائج.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="investor-services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">خدمات الذكاء الاصطناعي للمستثمرين</h2>
-                <p class="section-description">
-                    أدوات متقدمة لمساعدة المستثمرين في اكتشاف الفرص الاستثمارية. جرب الأدوات التفاعلية.
-                </p>
-            </div>
-
-            <div class="cards-container">
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-lightbulb animate-glow"></i>
-                    </div>
-                    <h3 class="card-title">نظام التوصيات الذكية</h3>
-                    <div class="card-content-wrapper">
-                        <p class="card-description">
-                            نظام يقترح الاختراعات المناسبة بناءً على اهتماماتك. أدخل تفضيلاتك.
-                        </p>
-                        <ul class="card-features">
-                            <li>تحليل اهتمامات المستثمر</li>
-                            <li>توصيات مخصصة بناءً على معايير متعددة</li>
-                        </ul>
-                    </div>
-                    <div class="ui-preview">
-                        <div class="ui-preview-title">تجربة التوصيات</div>
-                         <div class="form-group">
-                            <label class="form-label" for="reco-interests">اهتماماتك الاستثمارية (قطاعات، تقنيات)</label>
-                            <input type="text" id="reco-interests" class="form-input" placeholder="مثال: الطاقة المتجددة، الذكاء الاصطناعي في الصحة">
-                        </div>
-                         <div class="form-group">
-                            <label class="form-label" for="reco-profile">ملفك الاستثماري السابق (موجز)</label>
-                            <textarea id="reco-profile" class="form-input form-textarea" placeholder="مثال: استثمارات في شركات ناشئة تقنية، أفضل الاستثمارات طويلة الأجل"></textarea>
-                        </div>
-                        <button class="btn btn-primary btn-small" id="analyze-reco-btn">الحصول على توصيات</button>
-                        <div class="ui-preview-output" id="reco-output">
-                            <span>أدخل تفضيلاتك واضغط "الحصول على توصيات".</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-shield-alt animate-glow"></i>
-                    </div>
-                    <h3 class="card-title">تحليل المخاطر الاستثمارية</h3>
-                    <div class="card-content-wrapper">
-                        <p class="card-description">
-                            تقييم شامل للمخاطر المحتملة لكل استثمار. أدخل تفاصيل الفرصة.
-                        </p>
-                        <ul class="card-features">
-                            <li>تحديد عوامل المخاطرة الرئيسية</li>
-                            <li>التقييم الكمي والنوعي للمخاطر</li>
-                        </ul>
-                    </div>
-                    <div class="ui-preview">
-                        <div class="ui-preview-title">تجربة تحليل المخاطر</div>
-                        <div class="form-group">
-                            <label class="form-label" for="risk-inv-desc">وصف الاختراع/الفرصة الاستثمارية</label>
-                            <textarea id="risk-inv-desc" class="form-input form-textarea" placeholder="صف الاختراع أو الشركة التي تفكر بالاستثمار بها"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="risk-inv-amount">مبلغ الاستثمار المقترح</label>
-                            <input type="text" id="risk-inv-amount" class="form-input" placeholder="مثال: 100,000 دولار">
-                        </div>
-                        <button class="btn btn-primary btn-small" id="analyze-risk-btn">تحليل المخاطر</button>
-                        <div class="ui-preview-output" id="risk-output">
-                            <span>أدخل البيانات واضغط "تحليل المخاطر".</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-pie animate-glow"></i>
-                    </div>
-                    <h3 class="card-title">تحليل السوق للمستثمرين</h3>
-                    <div class="card-content-wrapper">
-                        <p class="card-description">
-                            تحليل متعمق للسوق المستهدف وتوقعات النمو. حدد القطاع محل الاهتمام.
-                        </p>
-                        <ul class="card-features">
-                            <li>حجم السوق المستهدف</li>
-                            <li>تحليل المنافسين</li>
-                            <li>توقعات النمو والطلب</li>
-                        </ul>
-                    </div>
-                    <div class="ui-preview">
-                        <div class="ui-preview-title">تجربة تحليل السوق للمستثمر</div>
-                        <div class="form-group">
-                            <label class="form-label" for="market-investor-sector">القطاع محل الاهتمام</label>
-                            <input type="text" id="market-investor-sector" class="form-input" placeholder="مثال: قطاع التكنولوجيا الحيوية">
-                        </div>
-                        <button class="btn btn-primary btn-small" id="analyze-market-investor-btn">تحليل سوق المستثمر</button>
-                        <div class="ui-preview-output" id="market-investor-output">
-                            <span>أدخل القطاع واضغط "تحليل سوق المستثمر".</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="match-system">
-        <div class="container">
-            <div class="match-system">
-                <div class="match-header">
-                    <h2 class="match-title">نظام المطابقة الذكي</h2>
-                    <p class="match-description">
-                        جرب نظام المطابقة الذكي. أدخل معلومات بسيطة عن مخترع ومستثمر لمعرفة مدى التوافق.
+        <section class="section" id="inventor-services">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">خدمات الذكاء الاصطناعي للمخترعين</h2>
+                    <p class="section-description">
+                        نقدم باقة متكاملة من خدمات الذكاء الاصطناعي المصممة خصيصاً لمساعدة المخترعين في تطوير وتقييم ابتكاراتهم،
+                        وتحسين فرص نجاحها في السوق. جرب الأدوات التفاعلية أدناه.
                     </p>
                 </div>
 
-                <div class="match-stats">
-                    <div class="match-stat">
-                        <div class="match-stat-number">83%</div>
-                        <div class="match-stat-label">نسبة نجاح المطابقة</div>
-                    </div>
-                    <div class="match-stat">
-                        <div class="match-stat-number">+650</div>
-                        <div class="match-stat-label">صفقة ناجحة</div>
-                    </div>
-                    <div class="match-stat">
-                        <div class="match-stat-number">21</div>
-                        <div class="match-stat-label">عامل مطابقة</div>
-                    </div>
-                </div>
-
-                <div class="match-ui-interactive">
-                     <h3 class="ui-preview-title" style="text-align: center; margin-bottom: 20px;">تجربة نظام المطابقة</h3>
-                     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                        <div style="flex: 1; min-width: 250px;">
-                            <h4 style="color: var(--primary-color); margin-bottom:10px;">ملف المخترع</h4>
+                <div class="cards-container">
+                    <article class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-balance-scale animate-glow"></i>
+                        </div>
+                        <h3 class="card-title">تقييم الاختراعات</h3>
+                        <div class="card-content-wrapper">
+                            <p class="card-description">
+                                نظام متطور لتقييم الاختراعات. أدخل بيانات اختراعك للحصول على تقييم أولي.
+                            </p>
+                            <ul class="card-features">
+                                <li>تصنيف الاختراع ضمن القطاعات</li>
+                                <li>تحليل عناصر الابتكار والجدة</li>
+                                <li>مقارنة مع براءات مشابهة</li>
+                                <li>تقدير القيمة السوقية المحتملة</li>
+                            </ul>
+                        </div>
+                        <div class="ui-preview">
+                            <h4 class="ui-preview-title">تجربة تقييم الاختراعات</h4>
                             <div class="form-group">
-                                <label class="form-label" for="match-inventor-field">مجال الاختراع/الاحتياجات</label>
-                                <textarea id="match-inventor-field" class="form-input form-textarea" placeholder="مثال: تطبيق جوال لخدمات تعليمية، بحاجة لتمويل أولي وتسويق"></textarea>
-                            </div>
-                        </div>
-                        <div style="flex: 1; min-width: 250px;">
-                             <h4 style="color: var(--secondary-color); margin-bottom:10px;">ملف المستثمر</h4>
-                            <div class="form-group">
-                                <label class="form-label" for="match-investor-interest">اهتمامات المستثمر/قدرة الاستثمار</label>
-                                <textarea id="match-investor-interest" class="form-input form-textarea" placeholder="مثال: مهتم بتطبيقات التعليم، يستثمر حتى 50 ألف دولار في مراحل مبكرة"></textarea>
-                            </div>
-                        </div>
-                     </div>
-                    <div style="text-align: center; margin-top: 20px;">
-                        <button class="btn btn-primary" id="analyze-match-btn">تحليل المطابقة</button>
-                    </div>
-                    <div class="match-ui-output" id="match-output">
-                        <span>أدخل بيانات المخترع والمستثمر واضغط "تحليل المطابقة".</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="financial-analysis">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">نظام التحليل المالي والاقتصادي</h2>
-                <p class="section-description">
-                    أدوات لتحليل الجوانب المالية والاقتصادية للاختراعات. جربها بنفسك.
-                </p>
-            </div>
-
-            <div class="cards-container">
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-coins animate-glow"></i>
-                    </div>
-                    <h3 class="card-title">تقدير التكاليف</h3>
-                     <div class="card-content-wrapper">
-                        <p class="card-description">
-                            تقدير دقيق لتكاليف التصنيع والتسويق والتشغيل. أدخل تفاصيل اختراعك.
-                        </p>
-                    </div>
-                    <div class="ui-preview">
-                        <div class="ui-preview-title">تجربة تقدير التكاليف</div>
-                        <div class="form-group">
-                            <label class="form-label" for="cost-inv-type">نوع الاختراع</label>
-                            <input type="text" id="cost-inv-type" class="form-input" placeholder="مثال: جهاز إلكتروني صغير">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="cost-complexity">درجة التعقيد (بسيط، متوسط، معقد)</label>
-                            <input type="text" id="cost-complexity" class="form-input" placeholder="مثال: متوسط">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="cost-scale">نطاق الإنتاج المتوقع</label>
-                            <input type="text" id="cost-scale" class="form-input" placeholder="مثال: دفعة أولية 1000 وحدة">
-                        </div>
-                        <button class="btn btn-primary btn-small" id="analyze-cost-btn">تقدير التكاليف</button>
-                        <div class="ui-preview-output" id="cost-output">
-                           <span>أدخل البيانات لعرض تقدير التكاليف.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-hand-holding-usd animate-glow"></i>
-                    </div>
-                    <h3 class="card-title">نماذج التسعير</h3>
-                     <div class="card-content-wrapper">
-                        <p class="card-description">
-                            اقتراح نماذج تسعير متعددة بناءً على تحليل السوق. أدخل معلومات منتجك.
-                        </p>
-                    </div>
-                    <div class="ui-preview">
-                        <div class="ui-preview-title">تجربة نماذج التسعير</div>
-                         <div class="form-group">
-                            <label class="form-label" for="price-prod-type">نوع المنتج/الفئة</label>
-                            <input type="text" id="price-prod-type" class="form-input" placeholder="مثال: برنامج خدمي SaaS">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="price-target-market">شريحة السوق المستهدفة</label>
-                            <input type="text" id="price-target-market" class="form-input" placeholder="مثال: المحترفون المستقلون">
-                        </div>
-                        <button class="btn btn-primary btn-small" id="analyze-price-btn">اقتراح نماذج تسعير</button>
-                        <div class="ui-preview-output" id="price-output">
-                            <span>أدخل البيانات لعرض نماذج التسعير.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-bar animate-glow"></i>
-                    </div>
-                    <h3 class="card-title">تحليل الربحية</h3>
-                     <div class="card-content-wrapper">
-                        <p class="card-description">
-                            تحليل شامل للربحية المتوقعة ونقطة التعادل. أدخل بياناتك المالية الأولية.
-                        </p>
-                    </div>
-                    <div class="ui-preview">
-                        <div class="ui-preview-title">تجربة تحليل الربحية</div>
-                        <div class="form-group">
-                            <label class="form-label" for="profit-costs">التكاليف المقدرة (إجمالية أو للوحدة)</label>
-                            <input type="text" id="profit-costs" class="form-input" placeholder="مثال: 50 دولار للوحدة">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="profit-price">السعر المقترح للبيع</label>
-                            <input type="text" id="profit-price" class="form-input" placeholder="مثال: 120 دولار للوحدة">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="profit-sales">حجم المبيعات المتوقع (فترة أولية)</label>
-                            <input type="text" id="profit-sales" class="form-input" placeholder="مثال: 500 وحدة شهريًا">
-                        </div>
-                        <button class="btn btn-primary btn-small" id="analyze-profit-btn">تحليل الربحية</button>
-                        <div class="ui-preview-output" id="profit-output">
-                            <span>أدخل البيانات لعرض تحليل الربحية.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="interactive-demo">
-        <div class="container">
-            <div class="interactive-demo">
-                <div class="demo-header">
-                    <h2 class="demo-title">منصة تفاعلية للتجربة المباشرة</h2>
-                    <p class="demo-description">
-                        جرب بنفسك قدرات نظام ذكاء ابتكار من خلال هذه المنصة التفاعلية. أدخل بيانات افتراضية وشاهد النتائج فوراً.
-                    </p>
-                </div>
-
-                <div class="demo-container">
-                    <div class="tabs">
-                        <div class="tab active" data-tab="inventor-tab">محاكاة تقييم الاختراع</div>
-                        <div class="tab" data-tab="investor-tab">محاكاة تحليل الاستثمار</div>
-                        <div class="tab" data-tab="market-tab">محاكاة تحليل السوق</div>
-                    </div>
-
-                    <div class="tab-content active" id="inventor-tab">
-                        <div class="demo-form">
-                            <div class="form-group">
-                                <label class="form-label" for="demo-inv-name">اسم الاختراع</label>
-                                <input type="text" id="demo-inv-name" class="form-input" placeholder="أدخل اسم الاختراع">
+                                <label class="form-label" for="inv-eval-name">اسم الاختراع</label>
+                                <input type="text" id="inv-eval-name" class="form-input" placeholder="مثال: نظام ري ذكي يعمل بالطاقة الشمسية">
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="demo-inv-sector">القطاع</label>
-                                <select id="demo-inv-sector" class="form-input">
-                                    <option value="">اختر القطاع</option>
-                                    <option value="tech">التكنولوجيا</option>
-                                    <option value="health">الصحة</option>
-                                    <option value="energy">الطاقة</option>
-                                    <option value="industry">الصناعة</option>
-                                    <option value="agriculture">الزراعة</option>
-                                    <option value="other">أخرى (يرجى التحديد في الوصف)</option>
-                                </select>
+                                <label class="form-label" for="inv-eval-sector">القطاع</label>
+                                <input type="text" id="inv-eval-sector" class="form-input" placeholder="مثال: الزراعة التكنولوجية المستدامة">
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="demo-inv-desc">وصف الاختراع</label>
-                                <textarea id="demo-inv-desc" class="form-input form-textarea" placeholder="أدخل وصف مختصر للاختراع"></textarea>
+                                <label class="form-label" for="inv-eval-desc">وصف مختصر</label>
+                                <textarea id="inv-eval-desc" class="form-input form-textarea" placeholder="اشرح فكرة الاختراع الأساسية، المشكلة التي يحلها، وأهم مميزاته"></textarea>
                             </div>
-                            <div class="form-group">
-                                <label class="form-label" for="trl-range">مستوى الجاهزية التكنولوجية (TRL)</label>
-                                <input type="range" min="1" max="9" value="5" class="input-range" id="trl-range">
-                                <div id="trl-value" style="text-align: center; color: var(--text-muted);">5</div>
+                            <button class="btn btn-primary btn-small" id="analyze-inv-eval-btn">تقييم الاختراع</button>
+                            <div class="ui-preview-output" id="inv-eval-output" aria-live="polite">
+                                <span>أدخل البيانات واضغط "تقييم الاختراع" لعرض النتائج.</span>
                             </div>
-                            <button class="btn btn-primary" id="analyze-invention-demo-btn">تحليل الاختراع (تجريبي)</button>
                         </div>
+                    </article>
 
-                        <div class="demo-result" id="invention-demo-result">
-                            <div class="result-header">
-                                <div class="result-icon">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <div class="result-title">نتائج تحليل الاختراع (تجريبي)</div>
+                    <article class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-alt animate-glow"></i>
+                        </div>
+                        <h3 class="card-title">تحسين توثيق الاختراعات</h3>
+                         <div class="card-content-wrapper">
+                            <p class="card-description">
+                                أدوات ذكية لتحسين طريقة توثيق وشرح الاختراع. أدخل نص التوثيق الحالي للحصول على اقتراحات.
+                            </p>
+                            <ul class="card-features">
+                                <li>تحليل نقاط القوة والضعف في التوثيق</li>
+                                <li>اقتراحات لغوية وتقنية لتحسين الوصف</li>
+                                <li>إضافة المصطلحات التقنية المناسبة</li>
+                            </ul>
+                        </div>
+                        <div class="ui-preview">
+                            <h4 class="ui-preview-title">تجربة تحسين التوثيق</h4>
+                            <div class="form-group">
+                                <label class="form-label" for="doc-imprv-text">نص توثيق الاختراع</label>
+                                <textarea id="doc-imprv-text" class="form-input form-textarea" placeholder="الصق هنا نص توثيق الاختراع الحالي أو مسودة منه..."></textarea>
                             </div>
-                            <div class="result-content">
-                                <p>أدخل بيانات الاختراع واضغط "تحليل الاختراع (تجريبي)" لعرض النتائج.</p>
+                            <button class="btn btn-primary btn-small" id="analyze-doc-imprv-btn">تحليل التوثيق</button>
+                            <div class="ui-preview-output" id="doc-imprv-output" aria-live="polite">
+                                 <span>أدخل نص التوثيق واضغط "تحليل التوثيق" لعرض الاقتراحات.</span>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="tab-content" id="investor-tab">
-                        <div class="demo-form">
-                            <div class="form-group">
-                                <label class="form-label" for="demo-investor-sector">قطاع الاستثمار المرغوب</label>
-                                <input type="text" id="demo-investor-sector" class="form-input" placeholder="مثال: التكنولوجيا النظيفة">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="demo-investor-amount">مبلغ الاستثمار المتوقع</label>
-                                <input type="text" id="demo-investor-amount" class="form-input" placeholder="مثال: 250,000 ريال سعودي">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="demo-investor-risk">مستوى تحمل المخاطر</label>
-                                <select id="demo-investor-risk" class="form-input">
-                                    <option value="منخفض">منخفض</option>
-                                    <option value="متوسط">متوسط</option>
-                                    <option value="مرتفع">مرتفع</option>
-                                </select>
-                            </div>
-                            <button class="btn btn-primary" id="analyze-investment-demo-btn">تحليل الاستثمار (تجريبي)</button>
+                    <article class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line animate-glow"></i>
                         </div>
-                         <div class="demo-result" id="investment-demo-result">
-                            <div class="result-header">
-                                <div class="result-icon"><i class="fas fa-chart-line"></i></div>
-                                <div class="result-title">نتائج تحليل الاستثمار (تجريبي)</div>
-                            </div>
-                            <div class="result-content">
-                                <p>أدخل بيانات الاستثمار واضغط "تحليل الاستثمار (تجريبي)" لعرض النتائج.</p>
-                            </div>
+                        <h3 class="card-title">تحليل السوق للمخترعين</h3>
+                        <div class="card-content-wrapper">
+                            <p class="card-description">
+                                تحليل شامل للسوق المستهدف وفرص نجاح الاختراع. أدخل معلومات حول اختراعك.
+                            </p>
+                            <ul class="card-features">
+                                <li>تحديد حجم السوق المستهدف</li>
+                                <li>تحليل المنافسين الحاليين والمحتملين</li>
+                                <li>دراسة اتجاهات السوق المستقبلية</li>
+                            </ul>
                         </div>
-                    </div>
-
-                    <div class="tab-content" id="market-tab">
-                        <div class="demo-form">
+                        <div class="ui-preview">
+                            <h4 class="ui-preview-title">تجربة تحليل السوق</h4>
                             <div class="form-group">
-                                <label class="form-label" for="demo-market-industry">السوق/الصناعة</label>
-                                <input type="text" id="demo-market-industry" class="form-input" placeholder="مثال: سوق التجارة الإلكترونية في الشرق الأوسط">
+                                <label class="form-label" for="market-inv-sector">قطاع الاختراع</label>
+                                <input type="text" id="market-inv-sector" class="form-input" placeholder="مثال: التكنولوجيا المالية (FinTech)">
                             </div>
                              <div class="form-group">
-                                <label class="form-label" for="demo-market-product">المنتج/الخدمة الرئيسية للتحليل</label>
-                                <input type="text" id="demo-market-product" class="form-input" placeholder="مثال: منصات الدفع الإلكتروني">
+                                <label class="form-label" for="market-inv-audience">الجمهور المستهدف (اختياري)</label>
+                                <input type="text" id="market-inv-audience" class="form-input" placeholder="مثال: الشركات الصغيرة والمتوسطة في قطاع التجزئة">
                             </div>
-                            <button class="btn btn-primary" id="analyze-market-demo-btn">تحليل السوق (تجريبي)</button>
-                        </div>
-                        <div class="demo-result" id="market-demo-result">
-                            <div class="result-header">
-                                <div class="result-icon"><i class="fas fa-search-dollar"></i></div>
-                                <div class="result-title">نتائج تحليل السوق (تجريبي)</div>
-                            </div>
-                            <div class="result-content">
-                               <p>أدخل بيانات السوق واضغط "تحليل السوق (تجريبي)" لعرض النتائج.</p>
+                            <button class="btn btn-primary btn-small" id="analyze-market-inv-btn">تحليل السوق</button>
+                            <div class="ui-preview-output" id="market-inv-output" aria-live="polite">
+                                <span>أدخل البيانات واضغط "تحليل السوق" لعرض النتائج.</span>
                             </div>
                         </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="investor-services">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">خدمات الذكاء الاصطناعي للمستثمرين</h2>
+                    <p class="section-description">
+                        أدوات متقدمة لمساعدة المستثمرين في اكتشاف الفرص الاستثمارية الواعدة واتخاذ قرارات مستنيرة. جرب الأدوات التفاعلية.
+                    </p>
+                </div>
+
+                <div class="cards-container">
+                    <article class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-lightbulb animate-glow"></i>
+                        </div>
+                        <h3 class="card-title">نظام التوصيات الذكية</h3>
+                        <div class="card-content-wrapper">
+                            <p class="card-description">
+                                نظام يقترح الاختراعات والقطاعات المناسبة بناءً على اهتماماتك وملفك الاستثماري.
+                            </p>
+                            <ul class="card-features">
+                                <li>تحليل اهتمامات المستثمر بدقة</li>
+                                <li>توصيات مخصصة بناءً على معايير متعددة</li>
+                                <li>اكتشاف فرص استثمارية مبتكرة</li>
+                            </ul>
+                        </div>
+                        <div class="ui-preview">
+                            <h4 class="ui-preview-title">تجربة التوصيات</h4>
+                             <div class="form-group">
+                                <label class="form-label" for="reco-interests">اهتماماتك الاستثمارية (قطاعات، تقنيات، مراحل)</label>
+                                <input type="text" id="reco-interests" class="form-input" placeholder="مثال: الطاقة المتجددة، الذكاء الاصطناعي في الصحة، استثمار تأسيسي (Seed)">
+                            </div>
+                             <div class="form-group">
+                                <label class="form-label" for="reco-profile">ملفك الاستثماري السابق (موجز)</label>
+                                <textarea id="reco-profile" class="form-input form-textarea" placeholder="مثال: استثمارات في شركات ناشئة تقنية، أفضل الاستثمارات طويلة الأجل ذات العائد المرتفع والمخاطر المتوسطة"></textarea>
+                            </div>
+                            <button class="btn btn-primary btn-small" id="analyze-reco-btn">الحصول على توصيات</button>
+                            <div class="ui-preview-output" id="reco-output" aria-live="polite">
+                                <span>أدخل تفضيلاتك واضغط "الحصول على توصيات".</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt animate-glow"></i>
+                        </div>
+                        <h3 class="card-title">تحليل المخاطر الاستثمارية</h3>
+                        <div class="card-content-wrapper">
+                            <p class="card-description">
+                                تقييم شامل للمخاطر المحتملة لكل استثمار. أدخل تفاصيل الفرصة للحصول على تحليل.
+                            </p>
+                            <ul class="card-features">
+                                <li>تحديد عوامل المخاطرة الرئيسية (تقنية، سوقية، مالية)</li>
+                                <li>التقييم الكمي والنوعي للمخاطر</li>
+                                <li>اقتراحات استراتيجيات للتخفيف من المخاطر</li>
+                            </ul>
+                        </div>
+                        <div class="ui-preview">
+                            <h4 class="ui-preview-title">تجربة تحليل المخاطر</h4>
+                            <div class="form-group">
+                                <label class="form-label" for="risk-inv-desc">وصف الاختراع/الفرصة الاستثمارية</label>
+                                <textarea id="risk-inv-desc" class="form-input form-textarea" placeholder="صف الاختراع أو الشركة التي تفكر بالاستثمار بها، مع ذكر نقاط القوة والتحديات المتوقعة"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="risk-inv-amount">مبلغ الاستثمار المقترح</label>
+                                <input type="text" id="risk-inv-amount" class="form-input" placeholder="مثال: 100,000 دولار أمريكي">
+                            </div>
+                            <button class="btn btn-primary btn-small" id="analyze-risk-btn">تحليل المخاطر</button>
+                            <div class="ui-preview-output" id="risk-output" aria-live="polite">
+                                <span>أدخل البيانات واضغط "تحليل المخاطر".</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-pie animate-glow"></i>
+                        </div>
+                        <h3 class="card-title">تحليل السوق للمستثمرين</h3>
+                        <div class="card-content-wrapper">
+                            <p class="card-description">
+                                تحليل متعمق للسوق المستهدف وتوقعات النمو. حدد القطاع محل الاهتمام.
+                            </p>
+                            <ul class="card-features">
+                                <li>تحليل حجم السوق وإمكانات النمو</li>
+                                <li>تحديد اللاعبين الرئيسيين والمنافسة</li>
+                                <li>توقعات النمو والطلب المستقبلي</li>
+                                <li>الفرص والتحديات في القطاع</li>
+                            </ul>
+                        </div>
+                        <div class="ui-preview">
+                            <h4 class="ui-preview-title">تجربة تحليل السوق للمستثمر</h4>
+                            <div class="form-group">
+                                <label class="form-label" for="market-investor-sector">القطاع محل الاهتمام</label>
+                                <input type="text" id="market-investor-sector" class="form-input" placeholder="مثال: قطاع التكنولوجيا الحيوية في الشرق الأوسط">
+                            </div>
+                            <button class="btn btn-primary btn-small" id="analyze-market-investor-btn">تحليل سوق المستثمر</button>
+                            <div class="ui-preview-output" id="market-investor-output" aria-live="polite">
+                                <span>أدخل القطاع واضغط "تحليل سوق المستثمر".</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="match-system">
+            <div class="container">
+                <div class="match-system-wrapper">
+                    <div class="match-header">
+                        <h2 class="match-title">نظام المطابقة الذكي</h2>
+                        <p class="match-description">
+                            نربط بين المخترعين ذوي الأفكار الواعدة والمستثمرين الباحثين عن الفرص الفريدة. جرب نظام المطابقة الذكي.
+                        </p>
+                    </div>
+
+                    <div class="match-stats">
+                        <div class="match-stat">
+                            <div class="match-stat-icon"><i class="fas fa-link"></i></div>
+                            <div class="match-stat-number">83%</div>
+                            <div class="match-stat-label">نسبة نجاح المطابقة الأولية</div>
+                        </div>
+                        <div class="match-stat">
+                            <div class="match-stat-icon"><i class="fas fa-handshake"></i></div>
+                            <div class="match-stat-number">+650</div>
+                            <div class="match-stat-label">صفقة محتملة تم تسهيلها</div>
+                        </div>
+                        <div class="match-stat">
+                            <div class="match-stat-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="match-stat-number">21+</div>
+                            <div class="match-stat-label">عامل مطابقة وتحليل</div>
+                        </div>
+                    </div>
+
+                    <div class="match-ui-interactive">
+                         <h3 class="ui-preview-title" style="text-align: center; margin-bottom: 20px;">تجربة نظام المطابقة</h3>
+                         <div class="match-form-container">
+                            <div class="match-profile-column">
+                                <h4 class="profile-column-title"><i class="fas fa-user-astronaut"></i> ملف المخترع</h4>
+                                <div class="form-group">
+                                    <label class="form-label" for="match-inventor-field">مجال الاختراع/الاحتياجات التمويلية والخبرات</label>
+                                    <textarea id="match-inventor-field" class="form-input form-textarea" placeholder="مثال: تطبيق جوال لخدمات تعليمية تفاعلية باستخدام الواقع المعزز. بحاجة لتمويل أولي (Pre-seed) بقيمة 75 ألف دولار، وشريك بخبرة في التسويق الرقمي وتطوير الأعمال."></textarea>
+                                </div>
+                            </div>
+                            <div class="match-profile-column">
+                                 <h4 class="profile-column-title"><i class="fas fa-user-tie"></i> ملف المستثمر</h4>
+                                <div class="form-group">
+                                    <label class="form-label" for="match-investor-interest">اهتمامات المستثمر/القدرة الاستثمارية والخبرات المقدمة</label>
+                                    <textarea id="match-investor-interest" class="form-input form-textarea" placeholder="مثال: مهتم بالاستثمار في تطبيقات التعليم (EdTech) وحلول الواقع المعزز. أستثمر عادةً في مراحل مبكرة (Seed/Pre-seed) بمبالغ تتراوح بين 50-100 ألف دولار. أقدم توجيهًا استراتيجيًا وشبكة علاقات واسعة."></textarea>
+                                </div>
+                            </div>
+                         </div>
+                        <div style="text-align: center; margin-top: 20px;">
+                            <button class="btn btn-primary btn-large" id="analyze-match-btn">تحليل المطابقة <i class="fas fa-sync-alt"></i></button>
+                        </div>
+                        <div class="match-ui-output" id="match-output" aria-live="polite">
+                            <span>أدخل بيانات المخترع والمستثمر واضغط "تحليل المطابقة".</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section success-gallery" id="success-gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">معرض نماذج ناجحة</h2>
-                <p class="section-description">
-                    نماذج من اختراعات نجحت في التطوير والدخول للأسواق بمساعدة نظام ذكاء ابتكار.
-                </p>
-            </div>
-
-            <div class="gallery-container">
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <span>صورة ثلاثية الأبعاد لاختراع في مجال الطاقة المتجددة</span>
-                    </div>
-                    <div class="gallery-content">
-                        <h3 class="gallery-title">نظام طاقة شمسية مبتكر</h3>
-                        <p class="gallery-description">
-                            نظام جديد لتخزين الطاقة الشمسية بكفاءة أعلى بنسبة 40% من الأنظمة التقليدية.
-                        </p>
-                    </div>
+        <section class="section" id="financial-analysis">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">نظام التحليل المالي والاقتصادي</h2>
+                    <p class="section-description">
+                        أدوات متقدمة لتحليل الجوانب المالية والاقتصادية للاختراعات والمشاريع الناشئة، مما يساعد في اتخاذ قرارات استثمارية وتشغيلية مدروسة.
+                    </p>
                 </div>
 
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <span>صورة ثلاثية الأبعاد لاختراع في مجال التكنولوجيا الطبية</span>
-                    </div>
-                    <div class="gallery-content">
-                        <h3 class="gallery-title">جهاز تشخيص طبي</h3>
-                        <p class="gallery-description">
-                            جهاز محمول للكشف المبكر عن أمراض القلب باستخدام تقنيات الذكاء الاصطناعي.
-                        </p>
-                    </div>
-                </div>
+                <div class="cards-container">
+                    <article class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-coins animate-glow"></i>
+                        </div>
+                        <h3 class="card-title">تقدير التكاليف</h3>
+                         <div class="card-content-wrapper">
+                            <p class="card-description">
+                                تقدير شامل لتكاليف تطوير وتصنيع وتسويق وتشغيل الاختراع.
+                            </p>
+                             <ul class="card-features">
+                                <li>تحليل تكاليف المواد الخام والعمالة</li>
+                                <li>تقدير تكاليف البحث والتطوير والنماذج الأولية</li>
+                                <li>احتساب تكاليف التسويق والتوزيع الأولية</li>
+                            </ul>
+                        </div>
+                        <div class="ui-preview">
+                            <h4 class="ui-preview-title">تجربة تقدير التكاليف</h4>
+                            <div class="form-group">
+                                <label class="form-label" for="cost-inv-type">نوع الاختراع/المنتج</label>
+                                <input type="text" id="cost-inv-type" class="form-input" placeholder="مثال: جهاز إلكتروني استهلاكي صغير">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="cost-complexity">درجة التعقيد (بسيط، متوسط، معقد)</label>
+                                <select id="cost-complexity" class="form-input">
+                                    <option value="بسيط">بسيط</option>
+                                    <option value="متوسط" selected>متوسط</option>
+                                    <option value="معقد">معقد</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="cost-scale">نطاق الإنتاج المتوقع (الدفعة الأولى)</label>
+                                <input type="text" id="cost-scale" class="form-input" placeholder="مثال: 1000 وحدة">
+                            </div>
+                            <button class="btn btn-primary btn-small" id="analyze-cost-btn">تقدير التكاليف</button>
+                            <div class="ui-preview-output" id="cost-output" aria-live="polite">
+                               <span>أدخل البيانات لعرض تقدير التكاليف.</span>
+                            </div>
+                        </div>
+                    </article>
 
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <span>صورة ثلاثية الأبعاد لاختراع في مجال الزراعة المستدامة</span>
-                    </div>
-                    <div class="gallery-content">
-                        <h3 class="gallery-title">نظام ري ذكي</h3>
-                        <p class="gallery-description">
-                            نظام ري يوفر 60% من استهلاك المياه مع زيادة في الإنتاجية بنسبة 25%.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <article class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-hand-holding-usd animate-glow"></i>
+                        </div>
+                        <h3 class="card-title">نماذج التسعير</h3>
+                         <div class="card-content-wrapper">
+                            <p class="card-description">
+                                اقتراح نماذج تسعير متعددة ومناسبة بناءً على تحليل السوق والمنتج.
+                            </p>
+                            <ul class="card-features">
+                                <li>تسعير قائم على التكلفة مضافاً إليها هامش ربح</li>
+                                <li>تسعير قائم على القيمة المدركة للعميل</li>
+                                <li>نماذج تسعير تنافسية واختراق السوق</li>
+                            </ul>
+                        </div>
+                        <div class="ui-preview">
+                            <h4 class="ui-preview-title">تجربة نماذج التسعير</h4>
+                             <div class="form-group">
+                                <label class="form-label" for="price-prod-type">نوع المنتج/الفئة الخدمية</label>
+                                <input type="text" id="price-prod-type" class="form-input" placeholder="مثال: برنامج خدمي SaaS للاشتراكات الشهرية">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="price-target-market">شريحة السوق المستهدفة</label>
+                                <input type="text" id="price-target-market" class="form-input" placeholder="مثال: المحترفون المستقلون والعاملون عن بعد">
+                            </div>
+                            <button class="btn btn-primary btn-small" id="analyze-price-btn">اقتراح نماذج تسعير</button>
+                            <div class="ui-preview-output" id="price-output" aria-live="polite">
+                                <span>أدخل البيانات لعرض نماذج التسعير.</span>
+                            </div>
+                        </div>
+                    </article>
 
-    <section class="section roadmap" id="roadmap">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">خارطة التطوير المستقبلي</h2>
-                <p class="section-description">
-                    خطة تطوير نظام ذكاء ابتكار خلال الأعوام القادمة لتعزيز قدراته وإضافة ميزات جديدة.
-                </p>
-            </div>
-
-            <div class="roadmap-timeline">
-                <div class="roadmap-item">
-                    <div class="roadmap-point"></div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">الربع الثالث 2025</div>
-                        <h3 class="roadmap-title">تطوير نماذج التنبؤ</h3>
-                        <p class="roadmap-description">
-                            تحسين دقة نماذج التنبؤ بالتوجهات السوقية المستقبلية باستخدام تقنيات معالجة البيانات الضخمة.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="roadmap-item">
-                    <div class="roadmap-point"></div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">الربع الأول 2026</div>
-                        <h3 class="roadmap-title">التكامل مع تقنيات الواقع الافتراضي</h3>
-                        <p class="roadmap-description">
-                            دمج تقنيات الواقع الافتراضي لتمكين المستخدمين من اختبار النماذج الأولية للاختراعات بشكل افتراضي.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="roadmap-item">
-                    <div class="roadmap-point"></div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">الربع الثالث 2026</div>
-                        <h3 class="roadmap-title">التوسع في قطاعات جديدة</h3>
-                        <p class="roadmap-description">
-                            إضافة دعم لقطاعات جديدة مثل التقنية الحيوية والروبوتات المتقدمة وانترنت الأشياء الصناعي.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="roadmap-item">
-                    <div class="roadmap-point"></div>
-                    <div class="roadmap-content">
-                        <div class="roadmap-date">الربع الأول 2027</div>
-                        <h3 class="roadmap-title">منصة تعاونية متكاملة</h3>
-                        <p class="roadmap-description">
-                            تطوير منصة تعاونية متكاملة تجمع المخترعين والمستثمرين والخبراء في بيئة عمل واحدة.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section faq-section" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">الأسئلة الشائعة حول الذكاء الاصطناعي</h2>
-                <p class="section-description">
-                    إجابات على الأسئلة الأكثر شيوعاً حول نظام ذكاء ابتكار وكيفية استخدامه.
-                </p>
-            </div>
-
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>كيف يمكنني الاستفادة من نظام ذكاء ابتكار كمخترع؟</h3>
-                        <div class="faq-toggle">+</div>
-                    </div>
-                    <div class="faq-answer">
-                        <p>
-                            يمكنك كمخترع الاستفادة من نظام ذكاء ابتكار من خلال تقييم فكرة اختراعك، وتحسين توثيقها، وإجراء تحليل للسوق المستهدف،
-                            والحصول على توصيات لتحسين قابلية الاختراع للتسويق. كما يساعدك النظام في التواصل مع المستثمرين المناسبين لمشروعك عبر أدوات التحليل التفاعلية.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>ما هي دقة التوقعات التي يقدمها النظام؟</h3>
-                        <div class="faq-toggle">+</div>
-                    </div>
-                    <div class="faq-answer">
-                        <p>
-                            يعتمد نظام ذكاء ابتكار على نماذج لغوية متقدمة من Google (Gemini) لتقديم تحليلات واقتراحات. بينما نسعى لتقديم أدق المعلومات الممكنة، يجب اعتبار النتائج بمثابة إرشادات وأدوات مساعدة وليست توقعات مضمونة. دقة التحليل تعتمد على جودة البيانات المدخلة وتعقيد الطلب.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>هل بياناتي آمنة عند استخدام الأدوات التفاعلية؟</h3>
-                        <div class="faq-toggle">+</div>
-                    </div>
-                    <div class="faq-answer">
-                        <p>
-                            البيانات التي تدخلها في الأدوات التفاعلية يتم إرسالها إلى Google Gemini API لمعالجتها. نحن لا نقوم بتخزين هذه البيانات على خوادمنا بشكل دائم بعد انتهاء الجلسة. يرجى مراجعة سياسة خصوصية Google فيما يتعلق باستخدام واجهات برمجة التطبيقات الخاصة بهم. لا تشارك معلومات حساسة للغاية في النماذج التجريبية.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>كيف يتم تدريب نماذج الذكاء الاصطناعي المستخدمة؟</h3>
-                        <div class="faq-toggle">+</div>
-                    </div>
-                    <div class="faq-answer">
-                        <p>
-                            نحن نستخدم نموذج Gemini 1.5 Flash من Google، وهو نموذج مدرب مسبقًا على كميات هائلة من البيانات النصية والبرمجية. يتم توجيه سلوك النموذج من خلال "System Prompts" محددة لكل أداة لتقديم إجابات ذات صلة بالسياق المطلوب (مثل تقييم الاختراعات، تحليل السوق، إلخ).
-                        </p>
-                    </div>
+                    <article class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-bar animate-glow"></i>
+                        </div>
+                        <h3 class="card-title">تحليل الربحية</h3>
+                         <div class="card-content-wrapper">
+                            <p class="card-description">
+                                تحليل شامل للربحية المتوقعة، نقطة التعادل، والعائد على الاستثمار.
+                            </p>
+                            <ul class="card-features">
+                                <li>حساب نقطة التعادل (Break-even point)</li>
+                                <li>تقدير هوامش الربح الإجمالية والصافية</li>
+                                <li>تحليل العائد على الاستثمار (ROI) الأولي</li>
+                            </ul>
+                        </div>
+                        <div class="ui-preview">
+                            <h4 class="ui-preview-title">تجربة تحليل الربحية</h4>
+                            <div class="form-group">
+                                <label class="form-label" for="profit-costs">التكاليف المتغيرة للوحدة / التكاليف الثابتة الشهرية</label>
+                                <input type="text" id="profit-costs" class="form-input" placeholder="مثال: 50 دولار للوحدة / 5000 دولار شهريًا">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="profit-price">السعر المقترح لبيع الوحدة</label>
+                                <input type="text" id="profit-price" class="form-input" placeholder="مثال: 120 دولار للوحدة">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="profit-sales">حجم المبيعات المتوقع (شهريًا/سنويًا)</label>
+                                <input type="text" id="profit-sales" class="form-input" placeholder="مثال: 500 وحدة شهريًا">
+                            </div>
+                            <button class="btn btn-primary btn-small" id="analyze-profit-btn">تحليل الربحية</button>
+                            <div class="ui-preview-output" id="profit-output" aria-live="polite">
+                                <span>أدخل البيانات لعرض تحليل الربحية.</span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
+        <section class="section" id="interactive-demo">
+            <div class="container">
+                <div class="interactive-demo-wrapper">
+                    <div class="demo-header">
+                        <h2 class="demo-title">منصة تفاعلية للتجربة المباشرة</h2>
+                        <p class="demo-description">
+                            جرب بنفسك قدرات نظام ذكاء ابتكار من خلال هذه المنصة التفاعلية. أدخل بيانات افتراضية وشاهد النتائج فوراً، واستكشف كيف يمكن للذكاء الاصطناعي أن يدعم قراراتك.
+                        </p>
+                    </div>
+
+                    <div class="demo-container">
+                        <div class="tabs">
+                            <button class="tab active" data-tab="inventor-tab" aria-controls="inventor-tab-content" aria-selected="true"><i class="fas fa-lightbulb"></i> محاكاة تقييم الاختراع</button>
+                            <button class="tab" data-tab="investor-tab" aria-controls="investor-tab-content" aria-selected="false"><i class="fas fa-search-dollar"></i> محاكاة تحليل الاستثمار</button>
+                            <button class="tab" data-tab="market-tab" aria-controls="market-tab-content" aria-selected="false"><i class="fas fa-store-alt"></i> محاكاة تحليل السوق</button>
+                        </div>
+
+                        <div class="tab-content active" id="inventor-tab" role="tabpanel" aria-labelledby="inventor-tab">
+                            <div class="demo-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="demo-inv-name">اسم الاختراع</label>
+                                        <input type="text" id="demo-inv-name" class="form-input" placeholder="أدخل اسم الاختراع الافتراضي">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="demo-inv-sector">القطاع</label>
+                                        <select id="demo-inv-sector" class="form-input">
+                                            <option value="">اختر القطاع</option>
+                                            <option value="التكنولوجيا">التكنولوجيا والبرمجيات</option>
+                                            <option value="الصحة">الصحة والتكنولوجيا الحيوية</option>
+                                            <option value="الطاقة">الطاقة المتجددة والبيئة</option>
+                                            <option value="الصناعة">الصناعة والإنتاج</option>
+                                            <option value="الزراعة">الزراعة والأغذية</option>
+                                            <option value="التعليم">التعليم والتكنولوجيا التعليمية</option>
+                                            <option value="الترفيه">الترفيه والإعلام</option>
+                                            <option value="النقل">النقل والخدمات اللوجستية</option>
+                                            <option value="أخرى">أخرى (يرجى التحديد في الوصف)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="demo-inv-desc">وصف الاختراع</label>
+                                    <textarea id="demo-inv-desc" class="form-input form-textarea" placeholder="أدخل وصف مختصر للاختراع الافتراضي"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="trl-range">مستوى الجاهزية التكنولوجية (TRL: 1-9)</label>
+                                    <input type="range" min="1" max="9" value="5" class="input-range" id="trl-range">
+                                    <div id="trl-value" class="range-value-display">5</div>
+                                </div>
+                                <button class="btn btn-primary btn-large" id="analyze-invention-demo-btn">تحليل الاختراع (تجريبي)</button>
+                            </div>
+
+                            <div class="demo-result" id="invention-demo-result" aria-live="polite">
+                                <div class="result-header">
+                                    <div class="result-icon">
+                                        <i class="fas fa-flask"></i>
+                                    </div>
+                                    <h4 class="result-title">نتائج تحليل الاختراع (تجريبي)</h4>
+                                </div>
+                                <div class="result-content">
+                                    <p>أدخل بيانات الاختراع واضغط "تحليل الاختراع (تجريبي)" لعرض النتائج.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="investor-tab" role="tabpanel" aria-labelledby="investor-tab">
+                            <div class="demo-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="demo-investor-sector">قطاع الاستثمار المرغوب</label>
+                                        <input type="text" id="demo-investor-sector" class="form-input" placeholder="مثال: التكنولوجيا النظيفة، الذكاء الاصطناعي">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="demo-investor-amount">مبلغ الاستثمار المتوقع</label>
+                                        <input type="text" id="demo-investor-amount" class="form-input" placeholder="مثال: 250,000 ريال سعودي">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="demo-investor-risk">مستوى تحمل المخاطر</label>
+                                    <select id="demo-investor-risk" class="form-input">
+                                        <option value="منخفض">منخفض</option>
+                                        <option value="متوسط" selected>متوسط</option>
+                                        <option value="مرتفع">مرتفع</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-primary btn-large" id="analyze-investment-demo-btn">تحليل الاستثمار (تجريبي)</button>
+                            </div>
+                             <div class="demo-result" id="investment-demo-result" aria-live="polite">
+                                <div class="result-header">
+                                    <div class="result-icon"><i class="fas fa-piggy-bank"></i></div>
+                                    <h4 class="result-title">نتائج تحليل الاستثمار (تجريبي)</h4>
+                                </div>
+                                <div class="result-content">
+                                    <p>أدخل بيانات الاستثمار واضغط "تحليل الاستثمار (تجريبي)" لعرض النتائج.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="market-tab" role="tabpanel" aria-labelledby="market-tab">
+                            <div class="demo-form">
+                                 <div class="form-group">
+                                    <label class="form-label" for="demo-market-industry">السوق/الصناعة المستهدفة</label>
+                                    <input type="text" id="demo-market-industry" class="form-input" placeholder="مثال: سوق التجارة الإلكترونية في الشرق الأوسط وشمال أفريقيا">
+                                </div>
+                                 <div class="form-group">
+                                    <label class="form-label" for="demo-market-product">المنتج/الخدمة الرئيسية للتحليل</label>
+                                    <input type="text" id="demo-market-product" class="form-input" placeholder="مثال: منصات الدفع الإلكتروني المبتكرة للشركات الصغيرة">
+                                </div>
+                                <button class="btn btn-primary btn-large" id="analyze-market-demo-btn">تحليل السوق (تجريبي)</button>
+                            </div>
+                            <div class="demo-result" id="market-demo-result" aria-live="polite">
+                                <div class="result-header">
+                                    <div class="result-icon"><i class="fas-store-alt"></i></div>
+                                    <h4 class="result-title">نتائج تحليل السوق (تجريبي)</h4>
+                                </div>
+                                <div class="result-content">
+                                   <p>أدخل بيانات السوق واضغط "تحليل السوق (تجريبي)" لعرض النتائج.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section how-it-works" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">آلية عمل ذكاء ابتكار</h2>
+                    <p class="section-description">
+                        نظامنا يعتمد على خطوات مدروسة لتحليل بياناتك وتقديم رؤى قيمة.
+                    </p>
+                </div>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-icon"><i class="fas fa-keyboard"></i></div>
+                        <h3 class="step-title">1. إدخال البيانات</h3>
+                        <p class="step-description">تقوم بإدخال معلومات اختراعك، فكرتك، أو استفسارك الاستثماري عبر نماذجنا التفاعلية.</p>
+                    </div>
+                    <div class="step-arrow"><i class="fas fa-long-arrow-alt-left"></i></div>
+                    <div class="step-item">
+                        <div class="step-icon"><i class="fas fa-cogs"></i></div>
+                        <h3 class="step-title">2. التحليل بالذكاء الاصطناعي</h3>
+                        <p class="step-description">يقوم نموذج Gemini 1.5 Flash المتقدم بتحليل البيانات المدخلة بناءً على توجيهاتنا المتخصصة لكل خدمة.</p>
+                    </div>
+                    <div class="step-arrow"><i class="fas fa-long-arrow-alt-left"></i></div>
+                    <div class="step-item">
+                        <div class="step-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <h3 class="step-title">3. عرض النتائج والرؤى</h3>
+                        <p class="step-description">نقدم لك تقريراً مفصلاً، اقتراحات، أو تحليلات تساعدك في اتخاذ قرارات مستنيرة والمضي قدماً.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section success-gallery" id="success-gallery">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">معرض نماذج ناجحة (أمثلة توضيحية)</h2>
+                    <p class="section-description">
+                        أمثلة لأنواع الاختراعات التي يمكن لنظام ذكاء ابتكار المساعدة في تقييمها وتطويرها.
+                    </p>
+                </div>
+
+                <div class="gallery-container">
+                    <article class="gallery-item">
+                        <div class="gallery-image-placeholder" aria-label="صورة توضيحية لنظام طاقة شمسية">
+                            <i class="fas fa-solar-panel fa-3x"></i>
+                            <span>الطاقة المتجددة</span>
+                        </div>
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">نظام طاقة شمسية مبتكر</h3>
+                            <p class="gallery-description">
+                                نظام جديد لتخزين الطاقة الشمسية بكفاءة أعلى بنسبة 40% من الأنظمة التقليدية، مع تكلفة إنتاج أقل.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="gallery-item">
+                        <div class="gallery-image-placeholder" aria-label="صورة توضيحية لجهاز تشخيص طبي">
+                             <i class="fas fa-heartbeat fa-3x"></i>
+                             <span>التكنولوجيا الطبية</span>
+                        </div>
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">جهاز تشخيص طبي ذكي</h3>
+                            <p class="gallery-description">
+                                جهاز محمول للكشف المبكر عن أمراض القلب باستخدام خوارزميات الذكاء الاصطناعي لتحليل البيانات الحيوية.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="gallery-item">
+                        <div class="gallery-image-placeholder" aria-label="صورة توضيحية لنظام ري ذكي">
+                            <i class="fas fa-tint fa-3x"></i>
+                            <span>الزراعة المستدامة</span>
+                        </div>
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">نظام ري ذكي متكامل</h3>
+                            <p class="gallery-description">
+                                نظام ري يعتمد على حساسات إنترنت الأشياء وتحليل البيانات لتوفير 60% من استهلاك المياه وزيادة الإنتاجية.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section roadmap" id="roadmap">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">خارطة التطوير المستقبلي</h2>
+                    <p class="section-description">
+                        نحن ملتزمون بالتطوير المستمر لنظام ذكاء ابتكار لتعزيز قدراته وإضافة ميزات جديدة تلبي احتياجاتكم المتطورة.
+                    </p>
+                </div>
+
+                <div class="roadmap-timeline">
+                    <div class="roadmap-item">
+                        <div class="roadmap-point"></div>
+                        <div class="roadmap-content">
+                            <div class="roadmap-date">الربع الثالث 2025</div>
+                            <h3 class="roadmap-title">تطوير نماذج التنبؤ المتقدمة</h3>
+                            <p class="roadmap-description">
+                                تحسين دقة نماذج التنبؤ بالتوجهات السوقية المستقبلية باستخدام تقنيات معالجة البيانات الضخمة وتحليل المشاعر.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-point"></div>
+                        <div class="roadmap-content">
+                            <div class="roadmap-date">الربع الأول 2026</div>
+                            <h3 class="roadmap-title">التكامل مع تقنيات الواقع الافتراضي والمعزز</h3>
+                            <p class="roadmap-description">
+                                دمج تقنيات VR/AR لتمكين المستخدمين من اختبار النماذج الأولية للاختراعات بشكل افتراضي وتفاعلي.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-point"></div>
+                        <div class="roadmap-content">
+                            <div class="roadmap-date">الربع الثالث 2026</div>
+                            <h3 class="roadmap-title">التوسع في قطاعات جديدة ودعم لغات إضافية</h3>
+                            <p class="roadmap-description">
+                                إضافة دعم لقطاعات جديدة مثل التقنية الحيوية المتقدمة، الروبوتات، وإنترنت الأشياء الصناعي، مع دعم لغات عالمية أخرى.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-point"></div>
+                        <div class="roadmap-content">
+                            <div class="roadmap-date">الربع الأول 2027</div>
+                            <h3 class="roadmap-title">منصة تعاونية متكاملة للمبتكرين</h3>
+                            <p class="roadmap-description">
+                                تطوير منصة تعاونية متكاملة تجمع المخترعين، المستثمرين، الخبراء، والمصنعين في بيئة عمل واحدة محفزة للابتكار.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" id="tech-stack">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">التقنيات التي تقود ابتكارنا</h2>
+                    <p class="section-description">
+                        نعتمد على أحدث التقنيات لتقديم أفضل الخدمات التحليلية والاستشارية.
+                    </p>
+                </div>
+                <div class="tech-icons-container">
+                    <div class="tech-icon-item">
+                        <img src="https://www.gstatic.com/lamda/images/gemini_flash_logo_1536_738019c14c0a27ebd0a5.svg" alt="Google Gemini API" title="Google Gemini 1.5 Flash">
+                        <p>Google Gemini 1.5 Flash</p>
+                    </div>
+                    <div class="tech-icon-item">
+                        <i class="fab fa-html5 fa-3x" style="color: #E34F26;" title="HTML5"></i>
+                        <p>HTML5</p>
+                    </div>
+                    <div class="tech-icon-item">
+                        <i class="fab fa-css3-alt fa-3x" style="color: #1572B6;" title="CSS3"></i>
+                        <p>CSS3</p>
+                    </div>
+                    <div class="tech-icon-item">
+                        <i class="fab fa-js-square fa-3x" style="color: #F7DF1E;" title="JavaScript ES6+"></i>
+                        <p>JavaScript ES6+</p>
+                    </div>
+                    <div class="tech-icon-item">
+                        <i class="fas fa-server fa-3x" style="color: #68A063;" title="Secure Backend (Conceptual)"></i>
+                        <p>بنية تحتية آمنة (مستقبلاً)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="privacy-security">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">التزامنا بالخصوصية والأمان</h2>
+                    <p class="section-description">
+                        نأخذ خصوصية بياناتك وأمانها على محمل الجد.
+                    </p>
+                </div>
+                <div class="privacy-content">
+                    <div class="privacy-icon"><i class="fas fa-user-shield fa-4x"></i></div>
+                    <p>عند استخدامك للأدوات التفاعلية في "ذكاء ابتكار"، يتم إرسال البيانات التي تدخلها إلى واجهة برمجة تطبيقات Google Gemini لمعالجتها وتقديم التحليل المطلوب. نحن لا نقوم بتخزين هذه البيانات بشكل دائم على خوادمنا بعد انتهاء الجلسة التفاعلية.</p>
+                    <p><strong>نصائح هامة:</strong></p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> نوصي بعدم مشاركة معلومات شديدة الحساسية أو أسرار تجارية كاملة في النماذج التجريبية أو قبل توقيع اتفاقيات عدم إفصاح مع الأطراف المعنية.</li>
+                        <li><i class="fas fa-check-circle"></i> لأغراض الإنتاج والتطبيقات التجارية الكاملة، سيتم تطبيق إجراءات أمان إضافية وبروتوكولات تشفير متقدمة من خلال بنية تحتية خلفية مخصصة (مستقبلاً).</li>
+                        <li><i class="fas fa-check-circle"></i> يرجى مراجعة <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">سياسة خصوصية Google</a> و <a href="https://ai.google.dev/terms" target="_blank" rel="noopener noreferrer">شروط خدمة Google Generative AI</a> لفهم كيفية تعامل Google مع البيانات المرسلة عبر واجهات برمجة التطبيقات الخاصة بهم.</li>
+                    </ul>
+                    <p>نحن ملتزمون بتوفير بيئة آمنة وموثوقة لدعم ابتكاراتك.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section faq-section" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">الأسئلة الشائعة حول ذكاء ابتكار</h2>
+                    <p class="section-description">
+                        إجابات على الأسئلة الأكثر شيوعاً حول نظام ذكاء ابتكار وكيفية استخدامه بفعالية.
+                    </p>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-1">
+                            <h3>كيف يمكنني الاستفادة من نظام ذكاء ابتكار كمخترع؟</h3>
+                            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer" id="faq-answer-1" role-region">
+                            <p>
+                                يمكنك كمخترع الاستفادة من نظام ذكاء ابتكار من خلال:
+                                <ul>
+                                    <li>تقييم فكرة اختراعك بشكل أولي وتحديد نقاط القوة والضعف.</li>
+                                    <li>تحسين جودة توثيق اختراعك لجعله أكثر وضوحاً واحترافية.</li>
+                                    <li>إجراء تحليل مبدئي للسوق المستهدف والمنافسين المحتملين.</li>
+                                    <li>الحصول على تقديرات أولية للتكاليف والربحية المحتملة.</li>
+                                    <li>فهم أفضل لمتطلبات المستثمرين من خلال أدوات تحليل المخاطر والتوصيات.</li>
+                                </ul>
+                                 يهدف النظام إلى تزويدك بالرؤى اللازمة لتطوير فكرتك وتقديمها بشكل أفضل.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-2">
+                            <h3>ما هي دقة التوقعات والتحليلات التي يقدمها النظام؟</h3>
+                            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer" id="faq-answer-2" role="region">
+                            <p>
+                                يعتمد نظام ذكاء ابتكار على نماذج لغوية متقدمة مثل Google Gemini 1.5 Flash، والتي تم تدريبها على كميات هائلة من البيانات. بينما نسعى لتقديم أدق المعلومات والتحليلات الممكنة، يجب اعتبار النتائج بمثابة <strong>إرشادات وأدوات مساعدة أولية</strong> وليست توقعات مضمونة أو استشارات نهائية. 
+                                دقة التحليل تعتمد بشكل كبير على:
+                                <ul>
+                                    <li>جودة وتفصيل البيانات المدخلة من قبلك.</li>
+                                    <li>تعقيد الطلب والمجال المحدد.</li>
+                                    <li>القيود الطبيعية لنماذج الذكاء الاصطناعي الحالية.</li>
+                                </ul>
+                                نوصي دائمًا بالاستعانة بخبراء متخصصين والقيام ببحث معمق خاص بك قبل اتخاذ أي قرارات حاسمة.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-3">
+                            <h3>هل بياناتي آمنة عند استخدام الأدوات التفاعلية؟</h3>
+                            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer" id="faq-answer-3" role="region">
+                            <p>
+                                نحن نأخذ خصوصية بياناتك على محمل الجد. كما هو موضح في قسم "التزامنا بالخصوصية والأمان"، البيانات التي تدخلها في الأدوات التفاعلية التجريبية يتم إرسالها إلى Google Gemini API لمعالجتها. نحن لا نقوم بتخزين هذه البيانات بشكل دائم على خوادمنا بعد انتهاء الجلسة.
+                                يرجى العلم أن استخدامك للخدمة يخضع لسياسات Google. لا تشارك معلومات حساسة للغاية في النماذج التجريبية. في تطبيقات الإنتاج المستقبلية، سيتم تطبيق تدابير أمان إضافية.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-4">
+                            <h3>كيف يتم تدريب نماذج الذكاء الاصطناعي المستخدمة؟</h3>
+                            <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer" id="faq-answer-4" role="region">
+                            <p>
+                                نحن نستخدم نموذج Gemini 1.5 Flash من Google، وهو نموذج لغوي كبير (LLM) تم تدريبه مسبقًا بواسطة Google على مجموعة بيانات ضخمة ومتنوعة من النصوص والتعليمات البرمجية. هذا التدريب المسبق يمنحه قدرة واسعة على فهم وتوليد النصوص، والإجابة على الأسئلة، وإجراء التحليلات.
+                                نحن لا نقوم بإعادة تدريب النموذج الأساسي، ولكننا نوجه سلوكه من خلال "توجيهات النظام" (System Prompts) المصممة بعناية لكل أداة من أدوات "ذكاء ابتكار". هذه التوجيهات تحدد السياق، الدور المطلوب من النموذج (مثلاً، "أنت خبير في تقييم الاختراعات")، ونوع المخرجات المطلوبة، مما يجعله يقدم إجابات ذات صلة بالسياق المحدد.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer id="about-platform">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h3 class="footer-title">ابتكار</h3>
-                    <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
-                        منصة ابتكار هي مركز متكامل للمخترعين والمستثمرين، تهدف إلى تسهيل عملية تطوير الاختراعات
-                        وربط المخترعين بالمستثمرين المناسبين.
+                <div class="footer-column footer-about">
+                    <div class="logo footer-logo">
+                        <img src="logo.png" alt="شعار منصة ابتكار">
+                        <h3 class="footer-title">ابتكار</h3>
+                    </div>
+                    <p>
+                        منصة ابتكار هي بوابتك نحو تحقيق أفكارك الرائدة. نسعى لتمكين المخترعين والمستثمرين بأدوات الذكاء الاصطناعي المتطورة لتسهيل عملية تطوير الاختراعات، تحليل الأسواق، وربط العقول المبدعة بالفرص الاستثمارية الواعدة.
                     </p>
                 </div>
 
                 <div class="footer-column">
                     <h3 class="footer-title">روابط سريعة</h3>
                     <ul class="footer-links">
-                        <li class="footer-link"><a href="#">الرئيسية</a></li>
-                        <li class="footer-link"><a href="#">عن المنصة</a></li>
-                        <li class="footer-link"><a href="#">خدماتنا</a></li>
-                        <li class="footer-link"><a href="#">المدونة</a></li>
-                        <li class="footer-link"><a href="#">تواصل معنا</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                        <li><a href="#inventor-services"><i class="fas fa-tools"></i> خدمات المخترعين</a></li>
+                        <li><a href="#investor-services"><i class="fas fa-chart-line"></i> خدمات المستثمرين</a></li>
+                        <li><a href="#faq"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
+                        <li><a href="Contact.html"><i class="fas fa-envelope"></i> تواصل معنا</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
                     <h3 class="footer-title">خدمات المنصة</h3>
                     <ul class="footer-links">
-                        <li class="footer-link"><a href="#">ذكاء ابتكار</a></li>
-                        <li class="footer-link"><a href="#">تسجيل الاختراعات</a></li>
-                        <li class="footer-link"><a href="#">الاستشارات القانونية</a></li>
-                        <li class="footer-link"><a href="#">التمويل والاستثمار</a></li>
-                        <li class="footer-link"><a href="#">التدريب والتطوير</a></li>
+                        <li><a href="AI-for-ivn.html"><i class="fas fa-brain"></i> ذكاء ابتكار</a></li>
+                        <li><a href="#"><i class="fas fa-file-signature"></i> تسجيل الاختراعات (قريباً)</a></li>
+                        <li><a href="#"><i class="fas fa-gavel"></i> الاستشارات القانونية (قريباً)</a></li>
+                        <li><a href="#"><i class="fas fa-search-dollar"></i> التمويل والاستثمار</a></li>
+                        <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> التدريب والتطوير (ورش عمل)</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
                     <h3 class="footer-title">تواصل معنا</h3>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="#">info@ebtekar.com</a></li>
-                        <li class="footer-link"><a href="#">+966 12 345 6789</a></li>
-                        <li class="footer-link"><a href="#">الرياض، المملكة العربية السعودية</a></li>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</li>
+                        <li><a href="mailto:info@ebtekar.com"><i class="fas fa-envelope"></i> info@ebtekar.com</a></li>
+                        <li><a href="tel:+966123456789"><i class="fas fa-phone-alt"></i> +966 12 345 6789</a></li>
                     </ul>
+                    <div class="social-links">
+                        <a href="#" aria-label="تابعنا على تويتر"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="تابعنا على فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="تابعنا على لينكدإن"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="تابعنا على انستجرام"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>© 2025 ابتكار - جميع الحقوق محفوظة</p>
+                <p>© <span id="current-year">2024</span> منصة ابتكار - جميع الحقوق محفوظة.</p>
+                <p><a href="#privacy-policy">سياسة الخصوصية</a> | <a href="#terms-of-service">شروط الخدمة</a></p>
             </div>
         </div>
     </footer>
 
-    <!-- Popup -->
-    <div class="popup" id="demo-popup">
+    <!-- Popup (Kept as is, can be customized or removed if not used) -->
+    <div class="popup" id="demo-popup" role="dialog" aria-labelledby="popup-title" aria-modal="true">
         <div class="popup-content">
-            <div class="popup-close" id="popup-close-icon">×</div>
+            <button class="popup-close" id="popup-close-icon" aria-label="إغلاق النافذة المنبثقة">×</button>
             <div class="popup-header">
-                <h3 class="popup-title">عرض تفصيلي</h3>
+                <h3 class="popup-title" id="popup-title-text">عرض تفصيلي</h3>
             </div>
-            <div class="popup-body">
+            <div class="popup-body" id="popup-body-content">
                 <p>محتوى العرض التفصيلي سيظهر هنا.</p>
             </div>
             <div class="popup-footer">
-                <button class="btn btn-primary" id="popup-close-btn">إغلاق</button>
+                <button class="btn btn-secondary" id="popup-close-btn">إغلاق</button>
             </div>
         </div>
     </div>
 
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
     <script src="js/AI-for-ivn.js"></script>
 </body>
 </html>
