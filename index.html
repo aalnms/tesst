@@ -10,56 +10,36 @@
 
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
-            <nav>
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="logo.png" alt="ابتكار" style="width:40px;height:40px;">
-                    </a>
-                    <h1>ابتكار</h1>
-                </div>
-                
-                <div class="nav-links">
-                    <a href="index.html" class="active">الرئيسية</a>
-                    <a href="inventor.html">المخترعين</a>
-                    <a href="investors.html">المستثمرين</a>
-                    <a href="AI-for-ivn.html">ذكاء ابتكار</a>
-                    <a href="#">عن المنصة</a>
-                    <a href="Contact.html">تواصل معنا</a>
-                </div>
-                
-                <div class="auth-buttons">
-                    <button class="language-toggle">English</button>
-                    <a href="#" class="btn btn-login">تسجيل الدخول</a>
-                    <a href="#" class="btn btn-register">إنشاء حساب</a>
-                </div>
-                
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
+            <nav class="nav-links">
+                <a href="index.html" class="active">الرئيسية</a>
+                <a href="inventor.html">المخترعين</a>
+                <a href="investors.html">المستثمرين</a>
+                <a href="AI-for-ivn.html">ذكاء ابتكار</a>
+                <a href="#">عن المنصة</a>
+                <a href="Contact.html">تواصل معنا</a>
             </nav>
         </div>
     </header>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <canvas id="hero-canvas"></canvas>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text animate">
-                    <h1>منصة ابتكار</h1>
-                    <p>منصة سعودية رائدة تجمع بين المخترعين والمستثمرين، وتسهّل تحويل براءات الاختراع إلى منتجات تجارية ناجحة بالتعاون مع الهيئة السعودية للملكية الفكرية.</p>
-                    <div class="hero-buttons">
-                        <a href="#" class="btn btn-inventor">التسجيل كمخترع</a>
-                        <a href="#" class="btn btn-investor">التسجيل كمستثمر</a>
-                    </div>
-                </div>
+        <!-- Hero Section with Brain Canvas -->
+        <section class="hero">
+    <div class="container hero-flex">
+        <div class="hero-visual">
+            <div class="ai-brain" id="brain-model">
+                <canvas class="brain-canvas" id="brainCanvas"></canvas>
             </div>
         </div>
-    </section>
-    
+        <div class="hero-content hero-description">
+            <h1>إبتكار</h1>
+            <p class="hero-lead">
+                إختراع بدون فرصة.. <br>
+                يضيع… وإحنا نفتح له الباب 
+            </p>
+        </div>
+    </div>
+</section>
+        
     <!-- Stats Section -->
     <section class="stats">
         <div class="container">
@@ -432,5 +412,85 @@
     <!-- Scripts -->
 
      <script src="js/script.js"></script>
+<script>
+// Brain Animation (نسخ من AI-for-ivn.js)
+document.addEventListener('DOMContentLoaded', function() {
+    const canvas = document.getElementById('brainCanvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        canvas.width = canvas.parentElement.offsetWidth || 500;
+        canvas.height = canvas.parentElement.offsetHeight || 500;
+
+        let particles = [];
+        const numParticles = Math.min(200, Math.floor(canvas.width / 3));
+        const connectionDistance = Math.min(100, canvas.width / 5);
+        const maxConnections = 5;
+        const center_x = canvas.width / 2;
+        const center_y = canvas.height / 2;
+        const max_radius = Math.min(center_x, center_y) * 0.7;
+
+        for (let i = 0; i < numParticles; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const radius = (max_radius * 0.6) + Math.random() * (max_radius * 0.4);
+            const x = center_x + Math.cos(angle) * radius * (0.8 + Math.sin(angle * 3) * 0.3);
+            const y = center_y + Math.sin(angle) * radius * (0.8 + Math.sin(angle * 2) * 0.2);
+
+            particles.push({
+                x, y,
+                size: 1 + Math.random() * 2,
+                speedX: (Math.random() - 0.5) * 0.5,
+                speedY: (Math.random() - 0.5) * 0.5,
+                color: `rgba(33, 150, 243, ${0.3 + Math.random() * 0.7})`,
+                connections: 0,
+                pulse: Math.random() * Math.PI * 2
+            });
+        }
+
+        function animateBrain() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                p.pulse += 0.02;
+                const pulseFactor = (Math.sin(p.pulse) + 1) * 0.5;
+                p.x += p.speedX;
+                p.y += p.speedY;
+                const distFromCenter = Math.sqrt(Math.pow(p.x - center_x, 2) + Math.pow(p.y - center_y, 2));
+                if (distFromCenter > max_radius * 1.1) {
+                    const angleToCenter = Math.atan2(center_y - p.y, center_x - p.x);
+                    p.speedX += Math.cos(angleToCenter) * 0.1;
+                    p.speedY += Math.sin(angleToCenter) * 0.1;
+                }
+                if (p.x < 0 || p.x > canvas.width) p.speedX *= -0.8;
+                if (p.y < 0 || p.y > canvas.height) p.speedY *= -0.8;
+
+                p.speedX *= 0.99; p.speedY *= 0.99;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size * (0.7 + pulseFactor * 0.5), 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.fill();
+                p.connections = 0;
+            }
+            ctx.lineWidth = 0.5;
+            for (let i = 0; i < particles.length; i++) {
+                const p1 = particles[i];
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    if (p1.connections >= maxConnections || p2.connections >= maxConnections) continue;
+                    const dx = p1.x - p2.x; const dy = p1.y - p2.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < connectionDistance) {
+                        const opacity = (1 - distance / connectionDistance) * 0.8;
+                        ctx.strokeStyle = `rgba(33, 150, 243, ${opacity})`;
+                        ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
+                        p1.connections++; p2.connections++;
+                    }
+                }
+            }
+            requestAnimationFrame(animateBrain);
+        }
+        animateBrain();
+    }
+});
+</script>
 </body>
 </html>
