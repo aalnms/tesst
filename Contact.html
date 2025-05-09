@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تواصل معنا | ابتكار</title>
+    <link rel="stylesheet" href="css/Contact.css">
+</head>
+<body>
+    <!-- قسم الترحيب -->
+    <section class="contact-welcome">
+        <div class="welcome-3d">
+            <!-- نموذج ثلاثي الأبعاد لمركز الاتصال (رمز SVG أو صورة 3D) -->
+            <img src="assets/3d-call-center.svg" alt="مركز اتصال ثلاثي الأبعاد">
+        </div>
+        <div class="welcome-message">
+            <h1>مرحباً بك في منصة ابتكار!</h1>
+            <p>نسعد بتواصلك معنا. آراؤك واقتراحاتك تساهم في تطوير منصتنا وتقديم أفضل الخدمات.</p>
+            <p>لا تتردد في التواصل معنا لأي استفسار أو اقتراح.</p>
+        </div>
+    </section>
+
+    <!-- نموذج التواصل الرئيسي -->
+    <section class="contact-form-section">
+        <form id="contactForm" class="contact-form-3d" enctype="multipart/form-data">
+            <h2>نموذج التواصل</h2>
+            <div class="form-group">
+                <label for="fullName">الاسم الكامل</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">رقم الهاتف</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="inquiryType">نوع الاستفسار</label>
+                <select id="inquiryType" name="inquiryType" required>
+                    <option value="">اختر نوع الاستفسار</option>
+                    <option value="اختراع">اختراع</option>
+                    <option value="استثمار">استثمار</option>
+                    <option value="شراكة">شراكة</option>
+                    <option value="استفسار عام">استفسار عام</option>
+                    <option value="اقتراح">اقتراح</option>
+                    <option value="شكوى">شكوى</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">تفاصيل الرسالة</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="attachment">إرفاق ملفات</label>
+                <input type="file" id="attachment" name="attachment" multiple>
+            </div>
+            <button type="submit" class="submit-btn-3d">إرسال</button>
+            <div id="formConfirmation" class="form-confirmation-3d" style="display:none;">
+                <span>تم إرسال رسالتك بنجاح! شكراً لتواصلك معنا.</span>
+            </div>
+        </form>
+    </section>
+
+    <!-- قسم المساعدة الفورية -->
+    <section class="instant-help-section">
+        <div class="ai-chatbot-3d">
+            <img src="assets/3d-chatbot.svg" alt="روبوت محادثة ثلاثي الأبعاد">
+            <div class="chatbot-container">
+                <div id="chatWindow" class="chat-window"></div>
+                <form id="chatForm" class="chat-form">
+                    <input type="text" id="chatInput" placeholder="اكتب سؤالك هنا..." autocomplete="off">
+                    <button type="submit">إرسال</button>
+                </form>
+            </div>
+        </div>
+        <p class="chatbot-note">اسأل روبوت ابتكار الذكي عن أي شيء أو تصفح الأسئلة الشائعة!</p>
+    </section>
+
+    <script src="js/Contact.js"></script>
+</body>
+</html>

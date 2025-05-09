@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدلة تسجيل براءات الاختراع | ابتكار</title>
+    <style>
+        :root {
+            --primary-color: #0c6b58; /* لون أساسي */
+            --secondary-color: #17a589; /* لون ثانوي */
+            --accent-color: #f39c12; /* لون تمييز */
+            --light-color: #f5f5f5; /* لون فاتح */
+            --dark-color: #333; /* لون داكن */
+            --grey-color: #777; /* لون رمادي */
+            --light-grey-color: #e0e0e0; /* لون رمادي فاتح */
+            --background-color: #f8f9fa; /* لون الخلفية */
+            --white-color: #ffffff; /* لون أبيض */
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ظل */
+            --border-radius: 8px; /* نصف قطر الحواف */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* استخدام خط Tajawal الشائع في المواقع العربية الحكومية والرسمية */
+            font-family: 'Tajawal', sans-serif;
+            /* تحميل الخط من Google Fonts */
+            /* يمكن استضافته محلياً لأداء أفضل في بيئة الإنتاج */
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
+        body {
+            background-color: var(--background-color);
+            color: var(--dark-color);
+            line-height: 1.7; /* تحسين قابلية القراءة */
+            font-size: 16px; /* حجم خط أساسي */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles (Consistent with previous examples) */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white-color);
+            padding: 15px 0; /* تقليل الحشو قليلاً */
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white-color);
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--white-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px; /* زيادة المسافة قليلاً */
+        }
+
+        .nav-links a {
+            color: var(--white-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active { /* تمييز الرابط النشط */
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.8rem; /* تكبير أيقونة القائمة */
+            cursor: pointer;
+            color: var(--white-color);
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            padding: 20px 0; /* زيادة الحشو */
+            background-color: var(--light-color);
+            border-bottom: 1px solid var(--light-grey-color);
+        }
+
+        .breadcrumbs ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap; /* للسماح بالالتفاف في الشاشات الصغيرة */
+        }
+
+        .breadcrumbs li {
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem; /* تصغير حجم الخط قليلاً */
+        }
+
+        .breadcrumbs li:not(:last-child)::after {
+            content: '/';
+            margin: 0 10px;
+            color: var(--grey-color);
+        }
+
+        .breadcrumbs a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        .breadcrumbs .current {
+            color: var(--grey-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            background-color: var(--white-color);
+            text-align: center;
+            border-bottom: 1px solid var(--light-grey-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem; /* حجم أكبر للعنوان الرئيسي */
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem; /* حجم أكبر للنص التمهيدي */
+            max-width: 850px; /* زيادة العرض الأقصى */
+            margin: 0 auto 30px;
+            color: var(--grey-color);
+        }
+
+        /* Main Content Area */
+        .main-content {
+            padding: 50px 0;
+        }
+
+        .content-section {
+            background-color: var(--white-color);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .content-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block; /* لجعل الحد السفلي يتبع النص */
+        }
+
+        .content-section h3 {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .content-section p,
+        .content-section ul,
+        .content-section ol {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            line-height: 1.8; /* زيادة التباعد بين الأسطر */
+        }
+
+        .content-section ul,
+        .content-section ol {
+            padding-right: 20px; /* مسافة بادئة للقوائم */
+        }
+
+        .content-section ul li::marker {
+            color: var(--accent-color); /* لون نقاط القائمة */
+        }
+         .content-section ol li::marker {
+            color: var(--primary-color); /* لون أرقام القائمة */
+            font-weight: bold;
+        }
+
+        .content-section strong {
+            color: var(--primary-color); /* تمييز النص الهام */
+        }
+
+        .content-section a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .content-section a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* Accordion Styles (for steps) */
+        .accordion-item {
+            border: 1px solid var(--light-grey-color);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden; /* لإخفاء المحتوى عند الإغلاق */
+        }
+
+        .accordion-header {
+            background-color: var(--light-color);
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700; /* خط أعرض لعنوان الخطوة */
+            color: var(--primary-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: #e9ecef; /* لون أغمق قليلاً عند المرور */
+        }
+
+        .accordion-content {
+            padding: 0 20px; /* إزالة الحشو العمودي عند الإغلاق */
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease; /* حركة فتح وإغلاق سلسة */
+            background-color: var(--white-color);
+        }
+
+        .accordion-item.active .accordion-content {
+            padding: 20px; /* إضافة الحشو عند الفتح */
+            max-height: 1000px; /* قيمة كبيرة لضمان ظهور المحتوى */
+            border-top: 1px solid var(--light-grey-color);
+        }
+
+        .accordion-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Alert Box */
+        .alert {
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            border: 1px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .alert-info {
+            color: #0c5460;
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+        }
+
+        .alert-warning {
+            color: #856404;
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+        }
+
+        .alert-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Button Styles */
+        .btn {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background-color: var(--accent-color);
+            color: var(--white-color);
+        }
+         .btn-secondary:hover {
+            background-color: #d68910; /* درجة أغمق من اللون البرتقالي */
+         }
+
+        /* Footer Styles (Consistent with previous examples) */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white-color);
+            padding: 50px 0 20px;
+            margin-top: 40px; /* إضافة هامش علوي قبل التذييل */
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-right: 15px;
+            color: var(--white-color);
+        }
+
+        .footer-column h3::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 20px;
+            background-color: var(--accent-color);
+            border-radius: 5px;
+        }
+
+        .footer-column p {
+            color: #ccc; /* لون أفتح للنص في التذييل */
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style-type: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--white-color);
+            padding-right: 5px; /* حركة بسيطة عند المرور */
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white-color);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent-color);
+            transform: scale(1.1); /* تكبير الأيقونة عند المرور */
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%; /* يظهر تحت الهيدر مباشرة */
+                left: 0;
+                right: 0;
+                background-color: var(--primary-color);
+                padding: 20px;
+                gap: 15px; /* تقليل المسافة في القائمة المنسدلة */
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                border-top: 1px solid rgba(255, 255, 255, 0.2); /* خط فاصل */
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-section h2 {
+                font-size: 1.6rem;
+            }
+             .content-section h3 {
+                font-size: 1.3rem;
+            }
+
+            .hero {
+                padding: 40px 0;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr; /* عمود واحد في الشاشات الصغيرة */
+                text-align: center; /* توسيط المحتوى في التذييل */
+            }
+             .footer-column h3::before {
+                 display: none; /* إخفاء الخط العمودي في الشاشات الصغيرة */
+             }
+             .footer-column ul {
+                 padding-right: 0; /* إزالة المسافة البادئة للقوائم */
+             }
+             .social-icons {
+                 justify-content: center; /* توسيط أيقونات التواصل */
+             }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 15px; /* تصغير حجم الخط الأساسي قليلاً */
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+             .content-section {
+                 padding: 20px; /* تقليل الحشو في الأقسام */
+             }
+             .accordion-header {
+                 padding: 12px 15px;
+                 font-size: 0.95rem;
+             }
+             .accordion-content {
+                 padding: 15px; /* تقليل الحشو داخل الأكورديون */
+             }
+             .btn {
+                 padding: 10px 20px;
+                 font-size: 0.9rem;
+             }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="/Users/yzydalshmry/Desktop/web/logo.png" alt="شعار ابتكار" style="width:32px;height:32px;background:transparent;">
+                    <h1>ابتكار</h1>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <a href="#">الرئيسية</a>
+                    <a href="#">المنصة</a>
+                    <a href="#" class="active">مركز المعرفة</a> <!-- تمييز الرابط النشط -->
+                    <a href="#">الفعاليات</a>
+                    <a href="#">تواصل معنا</a>
+                </div>
+                <div class="mobile-menu" id="mobileMenu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">مركز المعرفة</a></li>
+                <li><span class="current">أدلة تسجيل براءات الاختراع</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>أدلة تسجيل براءات الاختراع</h1>
+            <p>دليلك الشامل لفهم إجراءات ومتطلبات تسجيل براءات الاختراع في المملكة العربية السعودية وحماية ابتكاراتك القيمة بالتعاون مع الهيئة السعودية للملكية الفكرية (SAIP).</p>
+            <a href="#registration-steps" class="btn">ابدأ بخطوات التسجيل</a>
+            <a href="#important-notes" class="btn btn-secondary">ملاحظات هامة</a>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Introduction Section -->
+            <section class="content-section">
+                <h2>مقدمة عن براءات الاختراع في المملكة</h2>
+                <p>تُعد براءة الاختراع حقاً حصرياً يُمنح للمخترع مقابل الكشف عن اختراعه للجمهور، مما يتيح له منع الآخرين من صنع أو استخدام أو بيع أو عرض للبيع أو استيراد الاختراع المحمي دون موافقته لمدة محددة (عادة 20 عاماً من تاريخ إيداع الطلب) في إقليم الدولة التي منحت البراءة.</p>
+                <p>في المملكة العربية السعودية، تتولى <strong>الهيئة السعودية للملكية الفكرية (SAIP)</strong> مسؤولية فحص ومنح براءات الاختراع وفقاً لنظام براءات الاختراع والتصميمات التخطيطية للدارات المتكاملة والأصناف النباتية والنماذج الصناعية ولائحته التنفيذية.</p>
+                <p>يهدف هذا الدليل إلى تبسيط عملية التسجيل وتقديم المعلومات الأساسية التي يحتاجها المخترعون. ومع ذلك، ننصح دائماً بالرجوع إلى <a href="https://www.saip.gov.sa" target="_blank" rel="noopener noreferrer">الموقع الرسمي للهيئة السعودية للملكية الفكرية</a> للحصول على أحدث المعلومات والنماذج والرسوم.</p>
+            </section>
+
+            <!-- Conditions Section -->
+            <section class="content-section">
+                <h2>شروط الحصول على براءة اختراع</h2>
+                <p>لكي يكون الاختراع قابلاً للحماية بموجب براءة اختراع في المملكة، يجب أن يستوفي الشروط التالية:</p>
+                <ul>
+                    <li><strong>الجدة (Novelty):</strong> يجب أن يكون الاختراع جديداً ولم يسبق الكشف عنه للجمهور بأي وسيلة (نشر، استخدام، إلخ) قبل تاريخ إيداع الطلب أو تاريخ الأولوية المطالب به.</li>
+                    <li><strong>الخطوة الابتكارية (Inventive Step):</strong> يجب أن لا يكون الاختراع بديهياً لشخص ذي خبرة عادية في مجال التقنية المتعلق بالاختراع.</li>
+                    <li><strong>القابلية للتطبيق الصناعي (Industrial Applicability):</strong> يجب أن يكون الاختراع قابلاً للتصنيع أو الاستخدام في أي نوع من أنواع الصناعة أو الزراعة.</li>
+                    <li><strong>المشروعية (Legality):</strong> يجب ألا يكون الاختراع مخالفاً للنظام العام أو الآداب أو أحكام الشريعة الإسلامية في المملكة.</li>
+                </ul>
+                <p>هناك بعض الاستثناءات من الحماية مثل الاكتشافات والنظريات العلمية والطرق الرياضية، وطرق أداء الأعمال التجارية، وطرق علاج الإنسان أو الحيوان والعمليات الجراحية (مع إمكانية حماية المنتجات المستخدمة في هذه الطرق).</p>
+            </section>
+
+            <!-- Registration Steps Section -->
+            <section class="content-section" id="registration-steps">
+                <h2>خطوات تسجيل براءة الاختراع لدى SAIP</h2>
+                <p>تتم عملية تسجيل براءة الاختراع في المملكة بشكل أساسي عبر البوابة الإلكترونية للهيئة السعودية للملكية الفكرية. فيما يلي الخطوات الرئيسية:</p>
+
+                <div class="accordion">
+                    <!-- Step 1: Preliminary Search -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>الخطوة 1: البحث المبدئي (اختياري ولكنه موصى به)</span>
+                            <span class="accordion-toggle">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>قبل إيداع الطلب، يُنصح بشدة بإجراء بحث شامل في قواعد بيانات براءات الاختراع المحلية والعالمية للتأكد من جدة اختراعك وتجنب إهدار الوقت والمال في طلب قد يتم رفضه لاحقاً. يمكنك استخدام:</p>
+                            <ul>
+                                <li>قاعدة بيانات براءات الاختراع السعودية على موقع SAIP.</li>
+                                <li>محركات بحث براءات الاختراع العالمية مثل Google Patents, Espacenet, USPTO Patent Database, WIPO PATENTSCOPE.</li>
+                            </ul>
+                            <p>هذا البحث يساعدك أيضاً على فهم حالة التقنية السابقة وتحديد نطاق الحماية المناسب لاختراعك.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Prepare Application Documents -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>الخطوة 2: إعداد مستندات طلب براءة الاختراع</span>
+                            <span class="accordion-toggle">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>يجب إعداد مجموعة من المستندات الفنية والقانونية باللغة العربية (أو الإنجليزية مع ترجمة عربية معتمدة لاحقاً حسب متطلبات الهيئة). تشمل هذه المستندات عادةً:</p>
+                            <ul>
+                                <li><strong>الوصف الكامل (Specification):</strong> شرح تفصيلي وواضح للاختراع بحيث يمكن لشخص ذي خبرة في المجال تنفيذه. يجب أن يتضمن خلفية الاختراع، وصفاً موجزاً للرسومات (إن وجدت)، ووصفاً تفصيلياً لطريقة عمل الاختراع وأفضل طريقة لتنفيذه.</li>
+                                <li><strong>عناصر الحماية (Claims):</strong> هي الجزء القانوني الأهم في الطلب، وتحدد نطاق الحماية المطلوب للاختراع بدقة ووضوح. يجب أن تكون مدعومة بالوصف الكامل.</li>
+                                <li><strong>الملخص (Abstract):</strong> موجز قصير للاختراع (عادة أقل من 150 كلمة) يوضح المشكلة التقنية والحل المقدم والفائدة الرئيسية.</li>
+                                <li><strong>الرسومات التوضيحية (Drawings):</strong> إن كانت ضرورية لفهم الاختراع، يجب تقديم رسومات واضحة ومفصلة وفقاً للمعايير المحددة.</li>
+                                <li><strong>معلومات أخرى:</strong> بيانات المخترع ومقدم الطلب، طلب الأولوية (إن وجد)، إثبات الصفة (إذا كان مقدم الطلب غير المخترع)، إلخ.</li>
+                            </ul>
+                            <p><strong>نصيحة:</strong> يُفضل الاستعانة بوكيل براءات اختراع معتمد أو خبير في صياغة طلبات البراءات لضمان جودة المستندات وزيادة فرص الحصول على الحماية.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Submit Application -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>الخطوة 3: تقديم الطلب ودفع رسوم الإيداع</span>
+                            <span class="accordion-toggle">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>يتم تقديم طلب براءة الاختراع إلكترونياً عبر <a href="https://www.saip.gov.sa/ar/our-services/" target="_blank" rel="noopener noreferrer">بوابة الخدمات الإلكترونية للهيئة السعودية للملكية الفكرية (SAIP)</a>.</p>
+                            <p>يتضمن التقديم:</p>
+                            <ul>
+                                <li>إنشاء حساب على بوابة الهيئة.</li>
+                                <li>تعبئة نموذج الطلب الإلكتروني بالبيانات المطلوبة.</li>
+                                <li>تحميل المستندات المُعدة (الوصف، عناصر الحماية، الملخص، الرسومات، وغيرها).</li>
+                                <li>دفع رسوم إيداع الطلب المحددة من قبل الهيئة.</li>
+                            </ul>
+                            <p>بعد التقديم الناجح، ستحصل على رقم إيداع وتاريخ إيداع رسمي لطلبك.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Formal Examination -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>الخطوة 4: الفحص الشكلي</span>
+                            <span class="accordion-toggle">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>تقوم الهيئة بفحص الطلب للتأكد من اكتمال جميع المستندات والمعلومات المطلوبة واستيفاء الشروط الشكلية (مثل التنسيق، وضوح الرسومات، دفع الرسوم).</p>
+                            <p>إذا كان هناك أي نواقص أو أخطاء شكلية، ستقوم الهيئة بإخطار مقدم الطلب لمنحه مهلة لتصحيحها.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Publication -->
+                     <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>الخطوة 5: النشر</span>
+                            <span class="accordion-toggle">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>بعد اجتياز الفحص الشكلي، يتم نشر الطلب في الجريدة الرسمية لبراءات الاختراع (عادة بعد 18 شهراً من تاريخ الإيداع أو تاريخ الأولوية الأسبق). يتيح النشر للجمهور الاطلاع على الاختراع وإمكانية تقديم اعتراضات خلال فترة محددة (عادة 90 يوماً من تاريخ النشر).</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 6: Substantive Examination -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>الخطوة 6: الفحص الموضوعي</span>
+                            <span class="accordion-toggle">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>يجب على مقدم الطلب طلب إجراء الفحص الموضوعي ودفع الرسوم المقررة خلال فترة زمنية محددة بعد استيفاء الشروط الشكلية (أو بعد النشر).</p>
+                            <p>يقوم فاحصون متخصصون في الهيئة بتقييم الاختراع للتأكد من استيفائه للشروط الموضوعية للحماية (الجدة، الخطوة الابتكارية، القابلية للتطبيق الصناعي، والمشروعية) بناءً على حالة التقنية السابقة.</p>
+                            <p>قد يصدر الفاحص تقارير فحص تتضمن اعتراضات أو طلبات لتعديل عناصر الحماية أو الوصف، ويجب على مقدم الطلب الرد على هذه التقارير خلال المهلة المحددة.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 7: Grant or Refusal -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>الخطوة 7: قرار المنح أو الرفض</span>
+                            <span class="accordion-toggle">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>بناءً على نتائج الفحص الموضوعي وردود مقدم الطلب، تتخذ الهيئة قراراً إما بمنح براءة الاختراع أو رفض الطلب.</p>
+                            <ul>
+                                <li><strong>في حالة المنح:</strong> يتم إخطار مقدم الطلب ويجب عليه دفع رسوم المنح والنشر النهائي.</li>
+                                <li><strong>في حالة الرفض:</strong> يتم إخطار مقدم الطلب بأسباب الرفض، ويمكنه التظلم من القرار وفقاً للإجراءات المتبعة.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                     <!-- Step 8: Issuance & Maintenance -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>الخطوة 8: إصدار وثيقة البراءة والمحافظة عليها</span>
+                            <span class="accordion-toggle">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>بعد دفع رسوم المنح والنشر، تقوم الهيئة بإصدار وثيقة براءة الاختراع الرسمية ونشر قرار المنح.</p>
+                            <p>للمحافظة على سريان البراءة طوال مدة حمايتها (حتى 20 عاماً)، يجب على مالك البراءة دفع <strong>رسوم سنوية (Annuities)</strong> للهيئة. يبدأ استحقاق هذه الرسوم عادةً بعد السنة الأولى من تاريخ الإيداع. عدم دفع الرسوم السنوية في موعدها قد يؤدي إلى سقوط البراءة.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <!-- International Registration (PCT) Section -->
+            <section class="content-section">
+                <h2>التسجيل الدولي (معاهدة التعاون بشأن البراءات - PCT)</h2>
+                <p>إذا كنت ترغب في حماية اختراعك في عدة دول حول العالم، يمكنك الاستفادة من نظام معاهدة التعاون بشأن البراءات (PCT) التي تديرها المنظمة العالمية للملكية الفكرية (WIPO) والمملكة العربية السعودية عضو فيها.</p>
+                <p>يتيح لك تقديم طلب دولي واحد (عبر SAIP كمكتب تسلم أو مباشرة لدى WIPO) الحصول على تاريخ إيداع دولي وتأجيل مرحلة الدخول الوطني في الدول الأعضاء التي تختارها (حتى 30 أو 31 شهراً من تاريخ الأولوية).</p>
+                <p>مميزات نظام PCT:</p>
+                <ul>
+                    <li>تأجيل التكاليف والقرارات المتعلقة بالدول التي ترغب في الحماية بها.</li>
+                    <li>الحصول على تقرير بحث دولي ورأي مكتوب حول أهلية الاختراع للحماية، مما يساعد في اتخاذ قرارات مستنيرة.</li>
+                    <li>تبسيط إجراءات التقديم في الدول الأعضاء.</li>
+                </ul>
+                 <p>لمزيد من المعلومات، يمكنك زيارة <a href="https://www.wipo.int/pct/ar/" target="_blank" rel="noopener noreferrer">صفحة نظام PCT على موقع WIPO</a>.</p>
+            </section>
+
+            <!-- Fees and Timeline Section -->
+            <section class="content-section">
+                <h2>الرسوم والجدول الزمني</h2>
+                <h3>الرسوم:</h3>
+                <p>تتضمن عملية تسجيل براءة الاختراع والمحافظة عليها مجموعة من الرسوم التي تحددها الهيئة السعودية للملكية الفكرية، وتشمل على سبيل المثال لا الحصر:</p>
+                <ul>
+                    <li>رسوم إيداع الطلب.</li>
+                    <li>رسوم الفحص الموضوعي.</li>
+                    <li>رسوم النشر.</li>
+                    <li>رسوم المنح.</li>
+                    <li>الرسوم السنوية للمحافظة على البراءة.</li>
+                </ul>
+                <div class="alert alert-warning">
+                    <span class="alert-icon">⚠️</span>
+                    <div>
+                        <strong>ملاحظة هامة:</strong> تتغير الرسوم بشكل دوري. للحصول على أحدث قائمة بالرسوم، يرجى زيارة <a href="https://www.saip.gov.sa/ar/fees-calculator/" target="_blank" rel="noopener noreferrer">صفحة الرسوم الرسمية على موقع الهيئة السعودية للملكية الفكرية</a>.
+                    </div>
+                </div>
+
+                <h3>الجدول الزمني:</h3>
+                <p>تختلف المدة الزمنية اللازمة للحصول على براءة اختراع بشكل كبير وتعتمد على عدة عوامل، منها:</p>
+                <ul>
+                    <li>مدى تعقيد الاختراع والمجال التقني.</li>
+                    <li>جودة إعداد مستندات الطلب.</li>
+                    <li>عبء العمل لدى فاحصي الهيئة.</li>
+                    <li>سرعة تجاوب مقدم الطلب مع تقارير الفحص.</li>
+                    <li>وجود اعتراضات من الغير بعد النشر.</li>
+                </ul>
+                <p>بشكل عام، قد تستغرق العملية <strong>عدة سنوات</strong> من تاريخ الإيداع حتى قرار المنح النهائي. نظام PCT يمكن أن يمدد هذه الفترة الإجمالية قبل الدخول للمرحلة الوطنية.</p>
+            </section>
+
+             <!-- Important Notes Section -->
+            <section class="content-section" id="important-notes">
+                <h2>نصائح وملاحظات هامة</h2>
+                <ul>
+                    <li><strong>السرية:</strong> حافظ على سرية اختراعك قبل تاريخ إيداع الطلب لتجنب فقدان شرط الجدة.</li>
+                    <li><strong>التوثيق:</strong> احتفظ بسجلات دقيقة لعملية تطوير الاختراع وتجاربه وتواريخه.</li>
+                    <li><strong>الاستشارة المتخصصة:</strong> الاستعانة بوكيل براءات اختراع معتمد يمكن أن يزيد بشكل كبير من فرص نجاح طلبك والحصول على حماية قوية وفعالة.</li>
+                    <li><strong>المتابعة:</strong> تابع حالة طلبك بانتظام عبر بوابة الهيئة والتزم بالمواعيد النهائية للردود ودفع الرسوم.</li>
+                    <li><strong>الرسوم السنوية:</strong> تذكر أهمية دفع الرسوم السنوية في مواعيدها للحفاظ على براءتك سارية المفعول.</li>
+                    <li><strong>المعلومات الرسمية:</strong> اعتمد دائماً على المعلومات والإجراءات والنماذج الصادرة عن الهيئة السعودية للملكية الفكرية كمصدر رسمي ونهائي.</li>
+                </ul>
+                 <div class="alert alert-info">
+                     <span class="alert-icon">ℹ️</span>
+                     <div>
+                         <strong>هل تحتاج إلى مساعدة؟</strong> منصة "ابتكار" توفر <a href="#">موارد إضافية للمخترعين</a> ويمكنها ربطك <a href="#">بخبراء ومستشارين متخصصين</a> في مجال الملكية الفكرية.
+                     </div>
+                 </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>عن المنصة</h3>
+                    <p>منصة "ابتكار" هي الجسر بين المخترعين والمستثمرين في المملكة العربية السعودية، تسعى لتعزيز مكانة المملكة في مجال الابتكار والملكية الفكرية.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="تويتر">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="لينكد إن">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <!-- Add other social icons as needed -->
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#">مركز المعرفة</a></li>
+                        <li><a href="#">موارد المخترعين</a></li>
+                        <li><a href="#">موارد المستثمرين</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>مصادر المعرفة</h3>
+                    <ul>
+                        <li><a href="#">أدلة تسجيل براءات الاختراع</a></li>
+                        <li><a href="#">موارد للمخترعين</a></li>
+                        <li><a href="#">موارد للمستثمرين</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">المدونة</a></li>
+                         <li><a href="https://www.saip.gov.sa" target="_blank" rel="noopener noreferrer">موقع الهيئة السعودية للملكية الفكرية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>تواصل معنا</h3>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; display: inline-block; vertical-align: middle;">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span>8001234567</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; display: inline-block; vertical-align: middle;">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>info@ibtikar.sa</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; display: inline-block; vertical-align: middle;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>الرياض، المملكة العربية السعودية</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 منصة ابتكار - جميع الحقوق محفوظة | بالشراكة مع الهيئة السعودية للملكية الفكرية</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        // Accordion functionality
+        const accordionItems = document.querySelectorAll('.accordion-item');
+
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            header.addEventListener('click', () => {
+                // Close other active items
+                // accordionItems.forEach(otherItem => {
+                //     if (otherItem !== item && otherItem.classList.contains('active')) {
+                //         otherItem.classList.remove('active');
+                //     }
+                // });
+
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+         // Smooth scroll for internal links
+         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start' // Scrolls so the top of the target element is at the top of the viewport
+                    });
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

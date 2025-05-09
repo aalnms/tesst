@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ابتكار - منصة ربط المخترعين والمستثمرين السعوديين</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            --primary-color: #0e5e6f;
+            --secondary-color: #3a8891;
+            --accent-color: #4fbdba;
+            --light-color: #f6f6f6;
+            --dark-color: #333;
+            --gold-color: #daa520;
+            --green-color: #01a36e;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease-in-out;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-left: 10px;
+        }
+        
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            right: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 8px 15px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn-login {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-login:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-register {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-register:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .language-toggle {
+            background: transparent;
+            border: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            cursor: pointer;
+            margin-right: 15px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text {
+            max-width: 600px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 30px;
+        }
+        
+        .btn-inventor {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .btn-investor {
+            background-color: var(--gold-color);
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .hero-buttons .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+        }
+        
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+        }
+        
+        .stat-item {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            margin: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .stat-item .number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .stat-item .label {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        /* How It Works Section */
+        .how-it-works {
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 15%;
+            border-radius: 5px;
+        }
+        
+        .process-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .process-track {
+            position: relative;
+            margin-bottom: 50px;
+        }
+        
+        .process-track::after {
+            content: '';
+            position: absolute;
+            top: 165px;
+            right: 10%;
+            width: 80%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            z-index: 1;
+            border-radius: 5px;
+        }
+        
+        .process-item {
+            position: relative;
+            width: 270px;
+            text-align: center;
+            z-index: 2;
+        }
+        
+        .process-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: 5px solid var(--primary-color);
+            position: relative;
+        }
+        
+        .process-icon i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+        
+        .process-item:hover .process-icon {
+            transform: scale(1.1);
+            border-color: var(--accent-color);
+        }
+        
+        .process-item h3 {
+            margin: 15px 0;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+        
+        .process-item p {
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .process-number {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Success Stories */
+        .success-stories {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+            position: relative;
+        }
+        
+        .stories-container {
+            margin-top: 50px;
+        }
+        
+        .story-slider {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .story-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .story-card {
+            min-width: 100%;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .story-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .story-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .story-card:hover .story-image img {
+            transform: scale(1.1);
+        }
+        
+        .story-info {
+            flex: 1;
+        }
+        
+        .story-info h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .story-info .inventor {
+            color: var(--secondary-color);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .story-info .investor {
+            color: var(--gold-color);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .story-content {
+            line-height: 1.7;
+            color: var(--dark-color);
+        }
+        
+        .story-indicators {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .indicator.active {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+        }
+        
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+        
+        .slider-controls button {
+            background-color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .slider-controls button:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(14, 94, 111, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover .feature-icon {
+            background-color: var(--primary-color);
+            transform: scale(1.1);
+        }
+        
+        .feature-icon i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover .feature-icon i {
+            color: white;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        /* News Section */
+        .news {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .news-category {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .news-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .news-header h3 {
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .news-content {
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .news-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            transition: var(--transition);
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        
+        .news-item:hover {
+            background-color: rgba(14, 94, 111, 0.05);
+            transform: translateX(-5px);
+        }
+        
+        .news-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .news-item p {
+            color: var(--dark-color);
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        
+        .news-item a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+        
+        .news-item a:hover {
+            color: var(--primary-color);
+            gap: 8px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .cta-buttons .btn {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 70px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 40px;
+            margin-left: 10px;
+        }
+        
+        .footer-logo h2 {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer-links h3, .footer-contact h3 {
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links h3::after, .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            transform: translateX(-5px);
+        }
+        
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+        
+        .contact-item i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+        
+        .newsletter form {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .newsletter input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .newsletter button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .newsletter button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media screen and (max-width: 1024px) {
+            .process-track::after {
+                top: auto;
+                right: 0;
+                width: 5px;
+                height: 80%;
+                bottom: 50px;
+            }
+            
+            .process-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .nav-links, .auth-buttons {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .story-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .story-image {
+                margin: 0 auto;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .stat-item .number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delayed-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delayed-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delayed-3 {
+            animation-delay: 0.6s;
+        }
+        
+        .delayed-4 {
+            animation-delay: 0.8s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDUiIGZpbGw9IiMwZTVlNmYiLz4KICA8cGF0aCBkPSJNMzAgNDVMNTAgMjVMNzAgNDVMNTAgNjVMMzAgNDVaIiBmaWxsPSIjNGZiZGJhIi8+CiAgPHBhdGggZD0iTTQ1IDcwTDY1IDUwTDg1IDcwTDY1IDkwTDQ1IDcwWiIgZmlsbD0iI2RhYTUyMCIvPgogIDxwYXRoIGQ9Ik0xNSA3MEwzNSA1MEw1NSA3MEwzNSA5MEwxNSA3MFoiIGZpbGw9IiNmZmZmZmYiLz4KPC9zdmc+Cg==" alt="ابتكار">
+                    <h1>ابتكار</h1>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="#" class="active">الرئيسية</a>
+                    <a href="#">المخترعين</a>
+                    <a href="#">المستثمرين</a>
+                    <a href="#">ذكاء ابتكار</a>
+                    <a href="#">عن المنصة</a>
+                    <a href="#">تواصل معنا</a>
+                </div>
+                
+                <div class="auth-buttons">
+                    <button class="language-toggle">English</button>
+                    <a href="#" class="btn btn-login">تسجيل الدخول</a>
+                    <a href="#" class="btn btn-register">إنشاء حساب</a>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text animate">
+                    <h1>منصة ابتكار</h1>
+                    <p>منصة سعودية رائدة تجمع بين المخترعين والمستثمرين، وتسهّل تحويل براءات الاختراع إلى منتجات تجارية ناجحة بالتعاون مع الهيئة السعودية للملكية الفكرية.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-inventor">التسجيل كمخترع</a>
+                        <a href="#" class="btn btn-investor">التسجيل كمستثمر</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item animate delayed-1">
+                    <div class="number" data-target="850">0</div>
+                    <div class="label">مخترع مسجل</div>
+                </div>
+                <div class="stat-item animate delayed-2">
+                    <div class="number" data-target="1240">0</div>
+                    <div class="label">براءة اختراع متاحة</div>
+                </div>
+                <div class="stat-item animate delayed-3">
+                    <div class="number" data-target="320">0</div>
+                    <div class="label">مستثمر نشط</div>
+                </div>
+                <div class="stat-item animate delayed-4">
+                    <div class="number" data-target="75">0</div>
+                    <div class="label">مليون ريال قيمة الصفقات</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>كيف تعمل المنصة</h2>
+            </div>
+            
+            <div class="process-track">
+                <div class="process-container">
+                    <div class="process-item animate delayed-1">
+                        <div class="process-icon">
+                            <i class="fas fa-lightbulb"></i>
+                            <div class="process-number">1</div>
+                        </div>
+                        <h3>تسجيل الاختراع</h3>
+                        <p>قم بتسجيل اختراعك في المنصة مع توفير جميع المعلومات والوثائق اللازمة.</p>
+                    </div>
+                    
+                    <div class="process-item animate delayed-2">
+                        <div class="process-icon">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="process-number">2</div>
+                        </div>
+                        <h3>تقييم وتحليل</h3>
+                        <p>يتم تقييم وتحليل اختراعك بواسطة خبراء ونظام الذكاء الاصطناعي للمنصة.</p>
+                    </div>
+                    
+                    <div class="process-item animate delayed-3">
+                        <div class="process-icon">
+                            <i class="fas fa-link"></i>
+                            <div class="process-number">3</div>
+                        </div>
+                        <h3>الربط مع المستثمرين</h3>
+                        <p>يتم مطابقة اختراعك مع المستثمرين المهتمين وفقًا لمجالاتهم واهتماماتهم.</p>
+                    </div>
+                    
+                    <div class="process-item animate delayed-4">
+                        <div class="process-icon">
+                            <i class="fas fa-handshake"></i>
+                            <div class="process-number">4</div>
+                        </div>
+                        <h3>إتمام الصفقة</h3>
+                        <p>بعد التفاوض وتوقيع العقود، يمكنك تحويل اختراعك إلى منتج تجاري ناجح.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <div class="section-title">
+                <h2>قصص نجاح</h2>
+            </div>
+            
+            <div class="stories-container">
+                <div class="story-slider">
+                    <div class="story-slide">
+                        <div class="story-card">
+                            <div class="story-header">
+                                <div class="story-image">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNlOWVjZWYiLz4KICA8Y2lyY2xlIGN4PSIxNTAiIGN5PSIxMDAiIHI9IjUwIiBmaWxsPSIjMGU1ZTZmIi8+CiAgPHBhdGggZD0iTTYwIDE3MFYyNzBIMjQwVjE3MCIgZmlsbD0iI2RhYTUyMCIvPgogIDxwYXRoIGQ9Ik05MCAxNzBMMTMwIDEyMEwxNzAgMTcwIiBmaWxsPSIjNGZiZGJhIi8+CiAgPHBhdGggZD0iTTEzMCAxNzBMMTcwIDEyMEwyMTAgMTcwIiBmaWxsPSIjNGZiZGJhIi8+Cjwvc3ZnPgo=" alt="نظام الري الذكي">
+                                </div>
+                                <div class="story-info">
+                                    <h3>نظام الري الذكي الموفر للمياه</h3>
+                                    <div class="inventor">
+                                        <i class="fas fa-user-alt"></i>
+                                        <span>المخترع: م. أحمد العتيبي</span>
+                                    </div>
+                                    <div class="investor">
+                                        <i class="fas fa-wallet"></i>
+                                        <span>المستثمر: شركة واحة التقنية الزراعية</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="story-content">
+                                <p>تمكن المهندس أحمد العتيبي من تطوير نظام ري ذكي يقلل استهلاك المياه بنسبة 40% مقارنة بالأنظمة التقليدية. من خلال منصة ابتكار، تم ربط المخترع مع شركة واحة التقنية الزراعية التي استثمرت في المشروع وساعدت في تحويله إلى منتج تجاري. اليوم، يتم استخدام هذا النظام في أكثر من 200 مزرعة في مختلف مناطق المملكة، مما ساهم في توفير ملايين اللترات من المياه سنويًا.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-header">
+                                <div class="story-image">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNlOWVjZWYiLz4KICA8cmVjdCB4PSI1MCIgeT0iMTAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgcng9IjEwIiBmaWxsPSIjMGU1ZTZmIi8+CiAgPGNpcmNsZSBjeD0iOTAiIGN5PSIxNTAiIHI9IjIwIiBmaWxsPSIjNGZiZGJhIi8+CiAgPGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSIyMCIgZmlsbD0iI2RhYTUyMCIvPgogIDxjaXJjbGUgY3g9IjIxMCIgY3k9IjE1MCIgcj0iMjAiIGZpbGw9IiM0ZmJkYmEiLz4KICA8cGF0aCBkPSJNNzAgMjIwTDExMCAyMjBMMTEwIDI2MEw3MCAyNjBMNzAgMjIwWiIgZmlsbD0iIzBkNDc1NCIvPgogIDxwYXRoIGQ9Ik0xMzAgMjIwTDE3MCAyMjBMMTcwIDI2MEwxMzAgMjYwTDEzMCAyMjBaIiBmaWxsPSIjMGQ0NzU0Ii8+CiAgPHBhdGggZD0iTTE5MCAyMjBMMjMwIDIyMEwyMzAgMjYwTDE5MCAyNjBMMTkwIDIyMFoiIGZpbGw9IiMwZDQ3NTQiLz4KPC9zdmc+Cg==" alt="جهاز شحن الطاقة الشمسية">
+                                </div>
+                                <div class="story-info">
+                                    <h3>جهاز شحن الطاقة الشمسية المحمول</h3>
+                                    <div class="inventor">
+                                        <i class="fas fa-user-alt"></i>
+                                        <span>المخترعة: د. نورة الزهراني</span>
+                                    </div>
+                                    <div class="investor">
+                                        <i class="fas fa-wallet"></i>
+                                        <span>المستثمر: صندوق الاستثمارات التقنية</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="story-content">
+                                <p>طورت الدكتورة نورة الزهراني جهاز شحن محمول يعمل بالطاقة الشمسية بكفاءة تحويل تصل إلى 30% أعلى من المنتجات المماثلة في السوق. من خلال منصة ابتكار، تم تقييم الابتكار وربط المخترعة مع صندوق الاستثمارات التقنية الذي قدم التمويل اللازم لتطوير المنتج وتسويقه. حاليًا، يتم تصنيع الجهاز محليًا وتصديره إلى 12 دولة، مما يسهم في تعزيز الصادرات السعودية غير النفطية.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="story-card">
+                            <div class="story-header">
+                                <div class="story-image">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNlOWVjZWYiLz4KICA8Y2lyY2xlIGN4PSIxNTAiIGN5PSIxMjAiIHI9IjcwIiBmaWxsPSIjMGU1ZTZmIi8+CiAgPHBhdGggZD0iTTExMCAxNTBDMTEwIDE1MCAyMzAgMTMwIDIzMCAxNTBDMjMwIDE3MCAyMzAgMjUwIDIzMCAyNTBIMTEwQzExMCAyNTAgMTEwIDE3MCAxMTAgMTUwWiIgZmlsbD0iI2RhYTUyMCIvPgogIDxjaXJjbGUgY3g9IjEzMCIgY3k9IjE5MCIgcj0iMTAiIGZpbGw9IiM0ZmJkYmEiLz4KICA8Y2lyY2xlIGN4PSIxNzAiIGN5PSIxOTAiIHI9IjEwIiBmaWxsPSIjNGZiZGJhIi8+CiAgPGNpcmNsZSBjeD0iMjEwIiBjeT0iMTkwIiByPSIxMCIgZmlsbD0iIzRmYmRiYSIvPgo8L3N2Zz4K" alt="تطبيق طبي">
+                                </div>
+                                <div class="story-info">
+                                    <h3>تطبيق الكشف المبكر عن أمراض العيون</h3>
+                                    <div class="inventor">
+                                        <i class="fas fa-user-alt"></i>
+                                        <span>المخترع: د. فيصل القحطاني</span>
+                                    </div>
+                                    <div class="investor">
+                                        <i class="fas fa-wallet"></i>
+                                        <span>المستثمر: مجموعة المستقبل الطبية</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="story-content">
+                                <p>طور الدكتور فيصل القحطاني تطبيقًا ذكيًا يستخدم كاميرا الهاتف للكشف المبكر عن أمراض العيون بدقة تصل إلى 95%. من خلال منصة ابتكار، تم تقييم التقنية وربط المخترع مع مجموعة المستقبل الطبية التي استثمرت في تطوير التطبيق وتسويقه. اليوم، يستخدم التطبيق في أكثر من 50 مركز صحي في المملكة، وساهم في الكشف المبكر عن أمراض العيون لأكثر من 15,000 شخص.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <button class="prev-btn"><i class="fas fa-chevron-right"></i></button>
+                        <button class="next-btn"><i class="fas fa-chevron-left"></i></button>
+                    </div>
+                    
+                    <div class="story-indicators">
+                        <span class="indicator active" data-index="0"></span>
+                        <span class="indicator" data-index="1"></span>
+                        <span class="indicator" data-index="2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>ميزات المنصة</h2>
+            </div>
+            
+            <div class="features-container">
+                <div class="feature-card animate">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>تقييم ذكي للاختراعات</h3>
+                    <p>نظام تقييم مدعوم بالذكاء الاصطناعي يحلل الاختراعات ويقيمها من حيث الجدوى التقنية والتجارية والابتكارية.</p>
+                </div>
+                
+                <div class="feature-card animate delayed-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>حماية الملكية الفكرية</h3>
+                    <p>تعاون مباشر مع الهيئة السعودية للملكية الفكرية لضمان حماية حقوق المخترعين وتسهيل إجراءات تسجيل براءات الاختراع.</p>
+                </div>
+                
+                <div class="feature-card animate delayed-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>نظام مطابقة ذكي</h3>
+                    <p>خوارزميات متطورة تقوم بمطابقة الاختراعات مع المستثمرين المناسبين بناءً على مجالات الاهتمام ومعايير الاستثمار.</p>
+                </div>
+                
+                <div class="feature-card animate delayed-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>تحليل السوق والجدوى</h3>
+                    <p>تقارير تحليلية شاملة عن حجم السوق المستهدف وتحليل المنافسين والجدوى الاقتصادية للاختراعات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- News Section -->
+    <section class="news">
+        <div class="container">
+            <div class="section-title">
+                <h2>أخبار وفعاليات</h2>
+            </div>
+            
+            <div class="news-container">
+                <div class="news-category">
+                    <div class="news-header">
+                        <h3><i class="fas fa-lightbulb"></i> أحدث الاختراعات</h3>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-item">
+                            <h4>نظام ذكي لترشيد استهلاك الكهرباء في المنازل</h4>
+                            <div class="news-meta">
+                                <span>المخترع: م. سلطان الحربي</span>
+                                <span>التاريخ: 15 أبريل 2025</span>
+                            </div>
+                            <p>نظام جديد يستخدم تقنيات الذكاء الاصطناعي لمراقبة وترشيد استهلاك الكهرباء في المنازل، ويمكن أن يوفر حتى 30% من فاتورة الكهرباء.</p>
+                            <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                        
+                        <div class="news-item">
+                            <h4>جهاز تحلية المياه بالطاقة الشمسية للمناطق النائية</h4>
+                            <div class="news-meta">
+                                <span>المخترع: د. منى السليم</span>
+                                <span>التاريخ: 3 أبريل 2025</span>
+                            </div>
+                            <p>اختراع جديد لتحلية المياه باستخدام الطاقة الشمسية، مصمم خصيصًا للمناطق النائية بتكلفة منخفضة وكفاءة عالية.</p>
+                            <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                        
+                        <div class="news-item">
+                            <h4>روبوت تعليمي للأطفال يدعم تعلم البرمجة</h4>
+                            <div class="news-meta">
+                                <span>المخترع: م. خالد العمري</span>
+                                <span>التاريخ: 25 مارس 2025</span>
+                            </div>
+                            <p>روبوت تفاعلي يساعد الأطفال على تعلم مهارات البرمجة والتفكير المنطقي من خلال أنشطة ممتعة وتفاعلية.</p>
+                            <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-category">
+                    <div class="news-header">
+                        <h3><i class="fas fa-calendar-alt"></i> فعاليات قادمة</h3>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-item">
+                            <h4>معرض الابتكار السعودي الثالث</h4>
+                            <div class="news-meta">
+                                <span>المكان: الرياض، مركز الملك عبدالعزيز الدولي للمؤتمرات</span>
+                                <span>التاريخ: 10-12 مايو 2025</span>
+                            </div>
+                            <p>معرض سنوي يجمع المخترعين والمستثمرين والشركات الناشئة تحت سقف واحد، لعرض أحدث الابتكارات السعودية.</p>
+                            <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                        
+                        <div class="news-item">
+                            <h4>ورشة عمل: تسويق براءات الاختراع</h4>
+                            <div class="news-meta">
+                                <span>المكان: جدة، مركز الابتكار التقني</span>
+                                <span>التاريخ: 25 أبريل 2025</span>
+                            </div>
+                            <p>ورشة عمل تقدم استراتيجيات وتقنيات تسويق براءات الاختراع وتحويلها إلى منتجات تجارية ناجحة.</p>
+                            <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                        
+                        <div class="news-item">
+                            <h4>هاكاثون الاستدامة والبيئة</h4>
+                            <div class="news-meta">
+                                <span>المكان: الدمام، واحة الأعمال التقنية</span>
+                                <span>التاريخ: 5-7 مايو 2025</span>
+                            </div>
+                            <p>مسابقة ابتكارية تهدف إلى تطوير حلول تقنية للتحديات البيئية والاستدامة في المملكة، بدعم من وزارة البيئة.</p>
+                            <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>ابدأ رحلتك في عالم الابتكار والاستثمار</h2>
+            <p>انضم إلى منصة ابتكار اليوم وكن جزءًا من مستقبل الابتكار في المملكة العربية السعودية.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-investor">استثمر في المستقبل</a>
+                <a href="#" class="btn btn-inventor">حول فكرتك إلى واقع</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDUiIGZpbGw9IiMwZTVlNmYiLz4KICA8cGF0aCBkPSJNMzAgNDVMNTAgMjVMNzAgNDVMNTAgNjVMMzAgNDVaIiBmaWxsPSIjNGZiZGJhIi8+CiAgPHBhdGggZD0iTTQ1IDcwTDY1IDUwTDg1IDcwTDY1IDkwTDQ1IDcwWiIgZmlsbD0iI2RhYTUyMCIvPgogIDxwYXRoIGQ9Ik0xNSA3MEwzNSA1MEw1NSA3MEwzNSA5MEwxNSA3MFoiIGZpbGw9IiNmZmZmZmYiLz4KPC9zdmc+Cg==" alt="ابتكار">
+                        <h2>ابتكار</h2>
+                    </div>
+                    <p>منصة سعودية رائدة تجمع بين المخترعين والمستثمرين، وتسهّل تحويل براءات الاختراع إلى منتجات تجارية ناجحة بالتعاون مع الهيئة السعودية للملكية الفكرية.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> الصفحة الرئيسية</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> المخترعين</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> المستثمرين</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> ذكاء ابتكار</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> عن المنصة</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> الأسئلة الشائعة</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>تواصل معنا</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>الرياض، المملكة العربية السعودية<br>طريق الملك فهد، برج الابتكار</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+966 11 234 5678</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@ibtikar.sa</span>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <h4>اشترك في النشرة الإخبارية</h4>
+                        <form>
+                            <input type="email" placeholder="البريد الإلكتروني">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 ابتكار - جميع الحقوق محفوظة | بدعم من الهيئة السعودية للملكية الفكرية</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // 3D Animation for Hero Section
+        (function() {
+            const canvas = document.getElementById('hero-canvas');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            
+            // Create light
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+            
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+            directionalLight.position.set(5, 5, 5);
+            scene.add(directionalLight);
+            
+            // Create 3D objects
+            const geometry1 = new THREE.IcosahedronGeometry(3, 0);
+            const material1 = new THREE.MeshPhongMaterial({
+                color: 0x0e5e6f,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.7
+            });
+            const shape1 = new THREE.Mesh(geometry1, material1);
+            scene.add(shape1);
+            
+            const geometry2 = new THREE.OctahedronGeometry(2, 0);
+            const material2 = new THREE.MeshPhongMaterial({
+                color: 0x4fbdba,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.7
+            });
+            const shape2 = new THREE.Mesh(geometry2, material2);
+            shape2.position.set(-4, 2, -2);
+            scene.add(shape2);
+            
+            const geometry3 = new THREE.TetrahedronGeometry(1.5, 0);
+            const material3 = new THREE.MeshPhongMaterial({
+                color: 0xdaa520,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.7
+            });
+            const shape3 = new THREE.Mesh(geometry3, material3);
+            shape3.position.set(5, -2, -1);
+            scene.add(shape3);
+            
+            // Create particles
+            const particlesGeometry = new THREE.BufferGeometry();
+            const particlesCount = 1500;
+            
+            const posArray = new Float32Array(particlesCount * 3);
+            
+            for(let i = 0; i < particlesCount * 3; i++) {
+                posArray[i] = (Math.random() - 0.5) * 30;
+            }
+            
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            
+            const particlesMaterial = new THREE.PointsMaterial({
+                size: 0.02,
+                color: 0xffffff
+            });
+            
+            const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+            scene.add(particlesMesh);
+            
+            // Position camera
+            camera.position.z = 15;
+            
+            // Animation
+            function animate() {
+                requestAnimationFrame(animate);
+                
+                shape1.rotation.x += 0.003;
+                shape1.rotation.y += 0.003;
+                
+                shape2.rotation.x -= 0.002;
+                shape2.rotation.y -= 0.002;
+                
+                shape3.rotation.x += 0.004;
+                shape3.rotation.y += 0.002;
+                
+                particlesMesh.rotation.y += 0.0005;
+                
+                renderer.render(scene, camera);
+            }
+            
+            animate();
+            
+            // Resize handler
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        })();
+        
+        // Counter Animation
+        const counters = document.querySelectorAll('.number');
+        
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const duration = 2000; // Animation duration in ms
+            const increment = target / (duration / 30); // Update every 30ms
+            
+            let current = 0;
+            
+            const updateCounter = () => {
+                current += increment;
+                
+                if (current < target) {
+                    counter.textContent = Math.floor(current);
+                    setTimeout(updateCounter, 30);
+                } else {
+                    counter.textContent = target;
+                }
+            };
+            
+            // Start counter animation when in viewport
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateCounter();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(counter);
+        });
+        
+        // Story Slider
+        const storySlide = document.querySelector('.story-slide');
+        const storyCards = document.querySelectorAll('.story-card');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        
+        let currentIndex = 0;
+        const cardWidth = 100; // 100%
+        
+        function goToSlide(index) {
+            if (index < 0) {
+                index = storyCards.length - 1;
+            } else if (index >= storyCards.length) {
+                index = 0;
+            }
+            
+            currentIndex = index;
+            storySlide.style.transform = `translateX(${100 * index}%)`;
+            
+            // Update indicators
+            indicators.forEach((ind, i) => {
+                ind.classList.toggle('active', i === currentIndex);
+            });
+        }
+        
+        // Next and Prev buttons
+        nextBtn.addEventListener('click', () => {
+            goToSlide(currentIndex - 1);
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            goToSlide(currentIndex + 1);
+        });
+        
+        // Indicator clicks
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
+        
+        // Auto slide
+        let autoSlide = setInterval(() => {
+            goToSlide(currentIndex + 1);
+        }, 5000);
+        
+        // Reset timer on manual navigation
+        document.querySelector('.story-slider').addEventListener('click', () => {
+            clearInterval(autoSlide);
+            autoSlide = setInterval(() => {
+                goToSlide(currentIndex + 1);
+            }, 5000);
+        });
+        
+        // Animation on scroll
+        const animatedElements = document.querySelectorAll('.animate');
+        
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                    scrollObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        animatedElements.forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            scrollObserver.observe(element);
+        });
+    </script>
+</body>
+</html>

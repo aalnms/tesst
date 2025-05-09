@@ -1,0 +1,2261 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ذكاء ابتكار | منصة ابتكار</title>
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #9C27B0;
+            --accent-color: #4CAF50;
+            --dark-bg: #121212;
+            --light-bg: #1E1E1E;
+            --text-light: #FFFFFF;
+            --text-muted: #BBBBBB;
+            --gradient-1: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --gradient-2: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            --glow: 0 0 15px rgba(33, 150, 243, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: var(--glow);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background: var(--gradient-1);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(33, 150, 243, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            width: 50%;
+            padding-right: 50px;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        .stats-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            background-color: rgba(33, 150, 243, 0.1);
+            border: 1px solid rgba(33, 150, 243, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            flex: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .hero-visual {
+            width: 50%;
+            position: relative;
+        }
+
+        .ai-brain {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotateY(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotateY(180deg);
+            }
+        }
+
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: var(--light-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            min-height: 350px; /* Adjusted to fit more content */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-content-wrapper { /* New wrapper for scrollable content */
+            flex-grow: 1;
+            overflow-y: auto; /* Enable scroll if content overflows */
+            padding-bottom: 10px; /* Space for scrollbar */
+        }
+
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), var(--glow);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .card-description {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .card-features {
+            list-style-type: none;
+            margin-bottom: 20px; /* Added margin */
+        }
+
+        .card-features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-right: 25px;
+            color: var(--text-muted);
+        }
+
+        .card-features li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: var(--accent-color);
+        }
+
+        .ui-preview {
+            margin-top: auto; /* Pushes to the bottom if card content is short */
+            border: 1px solid rgba(156, 39, 176, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            background-color: rgba(156, 39, 176, 0.1);
+            position: relative;
+        }
+
+        .ui-preview-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .ui-preview-output { /* Renamed from ui-preview-image */
+            width: 100%;
+            min-height: 150px; /* Adjusted min-height */
+            background-color: rgba(33, 150, 243, 0.05); /* Subtler background */
+            border-radius: 5px;
+            padding: 15px; /* Added padding */
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            position: relative;
+            overflow-y: auto; /* Scroll for long content */
+            max-height: 250px; /* Max height before scroll */
+            border: 1px dashed rgba(33, 150, 243, 0.2); /* Dashed border */
+            white-space: pre-wrap; /* Preserve line breaks from API */
+            line-height: 1.6;
+        }
+
+        .ui-preview-output::before { /* Shimmer effect removed as it might be distracting */
+            content: none; 
+        }
+        
+        .btn-small {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+
+        .match-system {
+            background-color: var(--light-bg);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            margin-top: 50px;
+        }
+
+        .match-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .match-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .match-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .match-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .match-stat {
+            background-color: rgba(33, 150, 243, 0.1);
+            border: 1px solid rgba(33, 150, 243, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .match-stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .match-stat-label {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .match-ui-interactive { /* Renamed from match-ui */
+            margin-top: 40px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+        }
+        .match-ui-output {
+            min-height: 150px;
+            padding: 15px;
+            background-color: rgba(33, 150, 243, 0.05);
+            border-radius: 5px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+
+        .interactive-demo {
+            margin-top: 80px;
+        }
+
+        .demo-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .demo-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .demo-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .demo-container {
+            background-color: var(--light-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            color: var(--text-muted);
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .tab.active {
+            color: var(--primary-color);
+        }
+
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-1);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px 0;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .demo-form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-light);
+            font-size: 0.9rem; /* Smaller label */
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px 12px; /* Adjusted padding */
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.3);
+            color: var(--text-light);
+            font-size: 0.95rem; /* Adjusted font size */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+        }
+
+        .form-textarea {
+            min-height: 100px; /* Adjusted height */
+            resize: vertical;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: var(--text-light);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(33, 150, 243, 0.4);
+        }
+        
+        .btn-primary[disabled] {
+            background: var(--text-muted);
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+
+        .demo-result {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.3);
+            min-height: 150px;
+            display: none; /* Initially hidden */
+            white-space: pre-wrap; /* Preserve formatting from API */
+            line-height: 1.6;
+        }
+
+        .demo-result.active { /* This class will be added by JS to show */
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+
+        .result-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .result-icon {
+            margin-left: 10px;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .result-title {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .result-content {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .faq-section {
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background-color: var(--light-bg);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--card-shadow);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-question h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .faq-toggle {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 20px;
+        }
+
+        .roadmap {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
+        }
+
+        .roadmap-item {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .roadmap-item:nth-child(odd) {
+            justify-content: flex-end;
+        }
+
+        .roadmap-content {
+            width: 45%;
+            padding: 30px;
+            background-color: var(--light-bg);
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+        }
+
+        .roadmap-date {
+            position: absolute;
+            top: -15px;
+            padding: 5px 15px;
+            background: var(--gradient-1);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .roadmap-item:nth-child(odd) .roadmap-date {
+            right: 20px;
+        }
+
+        .roadmap-item:nth-child(even) .roadmap-date {
+            left: 20px;
+        }
+
+        .roadmap-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .roadmap-description {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .roadmap-point {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 0 5px rgba(33, 150, 243, 0.3);
+            z-index: 1;
+        }
+
+        .success-gallery {
+            padding: 80px 0;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+            background-color: var(--light-bg);
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 200px;
+            background-color: rgba(33, 150, 243, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+        }
+
+        .gallery-content {
+            padding: 20px;
+        }
+
+        .gallery-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .gallery-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            background-color: var(--dark-bg);
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 30px;
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            margin-bottom: 10px;
+        }
+
+        .footer-link a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* 3D Model Canvas */
+        .brain-canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content, .hero-visual {
+                width: 100%;
+                padding-right: 0;
+            }
+
+            .hero {
+                flex-direction: column;
+                height: auto;
+                padding: 100px 0;
+            }
+
+            .roadmap-content {
+                width: 85%;
+            }
+
+            .roadmap::before {
+                left: 20px;
+                transform: none;
+            }
+
+            .roadmap-item {
+                justify-content: flex-start;
+                padding-left: 50px;
+            }
+
+            .roadmap-point {
+                left: 20px;
+                transform: none;
+            }
+
+            .roadmap-item:nth-child(odd) .roadmap-date {
+                right: auto;
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo {
+                margin-bottom: 20px;
+            }
+
+            .nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .match-stats {
+                flex-direction: column;
+            }
+
+            .match-stat {
+                margin-bottom: 20px;
+            }
+
+            .tabs {
+                flex-wrap: wrap;
+            }
+
+            .tab {
+                flex: 1;
+                text-align: center;
+                min-width: calc(50% - 40px);
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .stats-container {
+                flex-direction: column;
+            }
+
+            .roadmap-content {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+
+        /* Animation for 3D elements */
+        .animate-glow {
+            animation: glow 3s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 0 2px var(--primary-color));
+            }
+            to {
+                filter: drop-shadow(0 0 10px var(--primary-color));
+            }
+        }
+
+        /* Interactive Elements */
+        .input-range {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+            margin: 15px 0;
+        }
+
+        .input-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .input-range::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            background: var(--secondary-color);
+        }
+
+        /* Popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-content {
+            background-color: var(--light-bg);
+            width: 90%;
+            max-width: 600px;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            box-shadow: var(--card-shadow);
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        .popup-close:hover {
+            color: var(--primary-color);
+        }
+
+        .popup-header {
+            margin-bottom: 20px;
+        }
+
+        .popup-title {
+            font-size: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .popup-body {
+            margin-bottom: 20px;
+        }
+
+        .popup-footer {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Loading Animation */
+        .loading-spinner { /* General loading spinner */
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+        }
+        .loading-text {
+             font-style: italic;
+             color: var(--text-muted);
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">ابتكار</div>
+            <nav>
+                <ul>
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">المخترعون</a></li>
+                    <li><a href="#">المستثمرون</a></li>
+                    <li><a href="#">ذكاء ابتكار</a></li>
+                    <li><a href="#">عن المنصة</a></li>
+                    <li><a href="#">تواصل معنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container" style="display: flex; align-items: center;">
+            <div class="hero-content">
+                <h1 class="hero-title">ذكاء ابتكار</h1>
+                <p class="hero-description">
+                    منصة ذكاء ابتكار هي نظام متكامل للذكاء الاصطناعي مصمم خصيصاً لتلبية احتياجات المخترعين والمستثمرين. 
+                    تم تطوير النظام على مدار سنة و4 شهور بواسطة نخبة من الخبراء في مجالات الذكاء الاصطناعي وريادة الأعمال والابتكار.
+                </p>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number">97%</div>
+                        <div class="stat-label">نسبة دقة التحليل</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">+5000</div>
+                        <div class="stat-label">براءة اختراع تم تحليلها</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">89%</div>
+                        <div class="stat-label">نسبة نجاح التوقعات</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="ai-brain" id="brain-model">
+                    <canvas class="brain-canvas" id="brainCanvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="inventor-services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">خدمات الذكاء الاصطناعي للمخترعين</h2>
+                <p class="section-description">
+                    نقدم باقة متكاملة من خدمات الذكاء الاصطناعي المصممة خصيصاً لمساعدة المخترعين في تطوير وتقييم ابتكاراتهم،
+                    وتحسين فرص نجاحها في السوق. جرب الأدوات التفاعلية أدناه.
+                </p>
+            </div>
+
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-balance-scale animate-glow"></i> <!-- Font Awesome icon, ensure library is linked if you want it to show -->
+                    </div>
+                    <h3 class="card-title">تقييم الاختراعات</h3>
+                    <div class="card-content-wrapper">
+                        <p class="card-description">
+                            نظام متطور لتقييم الاختراعات. أدخل بيانات اختراعك للحصول على تقييم أولي.
+                        </p>
+                        <ul class="card-features">
+                            <li>تصنيف الاختراع ضمن القطاعات</li>
+                            <li>تحليل عناصر الابتكار والجدة</li>
+                            <li>مقارنة مع براءات مشابهة</li>
+                            <li>تقدير القيمة السوقية المحتملة</li>
+                        </ul>
+                    </div>
+                    <div class="ui-preview">
+                        <div class="ui-preview-title">تجربة تقييم الاختراعات</div>
+                        <div class="form-group">
+                            <label class="form-label" for="inv-eval-name">اسم الاختراع</label>
+                            <input type="text" id="inv-eval-name" class="form-input" placeholder="مثال: نظام ري ذكي">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="inv-eval-sector">القطاع</label>
+                            <input type="text" id="inv-eval-sector" class="form-input" placeholder="مثال: الزراعة التكنولوجية">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="inv-eval-desc">وصف مختصر</label>
+                            <textarea id="inv-eval-desc" class="form-input form-textarea" placeholder="اشرح فكرة الاختراع باختصار"></textarea>
+                        </div>
+                        <button class="btn btn-primary btn-small" id="analyze-inv-eval-btn">تقييم الاختراع</button>
+                        <div class="ui-preview-output" id="inv-eval-output">
+                            <span>أدخل البيانات واضغط "تقييم الاختراع" لعرض النتائج.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-file-alt animate-glow"></i>
+                    </div>
+                    <h3 class="card-title">تحسين توثيق الاختراعات</h3>
+                     <div class="card-content-wrapper">
+                        <p class="card-description">
+                            أدوات ذكية لتحسين طريقة توثيق وشرح الاختراع. أدخل نص التوثيق الحالي للحصول على اقتراحات.
+                        </p>
+                        <ul class="card-features">
+                            <li>تحليل نقاط القوة والضعف في التوثيق</li>
+                            <li>اقتراحات لغوية وتقنية لتحسين الوصف</li>
+                            <li>إضافة المصطلحات التقنية المناسبة</li>
+                        </ul>
+                    </div>
+                    <div class="ui-preview">
+                        <div class="ui-preview-title">تجربة تحسين التوثيق</div>
+                        <div class="form-group">
+                            <label class="form-label" for="doc-imprv-text">نص توثيق الاختراع</label>
+                            <textarea id="doc-imprv-text" class="form-input form-textarea" placeholder="الصق هنا نص توثيق الاختراع الحالي..."></textarea>
+                        </div>
+                        <button class="btn btn-primary btn-small" id="analyze-doc-imprv-btn">تحليل التوثيق</button>
+                        <div class="ui-preview-output" id="doc-imprv-output">
+                             <span>أدخل نص التوثيق واضغط "تحليل التوثيق" لعرض الاقتراحات.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line animate-glow"></i>
+                    </div>
+                    <h3 class="card-title">تحليل السوق للمخترعين</h3>
+                    <div class="card-content-wrapper">
+                        <p class="card-description">
+                            تحليل شامل للسوق المستهدف وفرص نجاح الاختراع. أدخل معلومات حول اختراعك.
+                        </p>
+                        <ul class="card-features">
+                            <li>تحديد حجم السوق المستهدف</li>
+                            <li>تحليل المنافسين الحاليين والمحتملين</li>
+                            <li>دراسة اتجاهات السوق المستقبلية</li>
+                        </ul>
+                    </div>
+                    <div class="ui-preview">
+                        <div class="ui-preview-title">تجربة تحليل السوق</div>
+                        <div class="form-group">
+                            <label class="form-label" for="market-inv-sector">قطاع الاختراع</label>
+                            <input type="text" id="market-inv-sector" class="form-input" placeholder="مثال: التكنولوجيا المالية">
+                        </div>
+                         <div class="form-group">
+                            <label class="form-label" for="market-inv-audience">الجمهور المستهدف (اختياري)</label>
+                            <input type="text" id="market-inv-audience" class="form-input" placeholder="مثال: الشركات الصغيرة والمتوسطة">
+                        </div>
+                        <button class="btn btn-primary btn-small" id="analyze-market-inv-btn">تحليل السوق</button>
+                        <div class="ui-preview-output" id="market-inv-output">
+                            <span>أدخل البيانات واضغط "تحليل السوق" لعرض النتائج.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="investor-services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">خدمات الذكاء الاصطناعي للمستثمرين</h2>
+                <p class="section-description">
+                    أدوات متقدمة لمساعدة المستثمرين في اكتشاف الفرص الاستثمارية. جرب الأدوات التفاعلية.
+                </p>
+            </div>
+
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-lightbulb animate-glow"></i>
+                    </div>
+                    <h3 class="card-title">نظام التوصيات الذكية</h3>
+                    <div class="card-content-wrapper">
+                        <p class="card-description">
+                            نظام يقترح الاختراعات المناسبة بناءً على اهتماماتك. أدخل تفضيلاتك.
+                        </p>
+                        <ul class="card-features">
+                            <li>تحليل اهتمامات المستثمر</li>
+                            <li>توصيات مخصصة بناءً على معايير متعددة</li>
+                        </ul>
+                    </div>
+                    <div class="ui-preview">
+                        <div class="ui-preview-title">تجربة التوصيات</div>
+                         <div class="form-group">
+                            <label class="form-label" for="reco-interests">اهتماماتك الاستثمارية (قطاعات، تقنيات)</label>
+                            <input type="text" id="reco-interests" class="form-input" placeholder="مثال: الطاقة المتجددة، الذكاء الاصطناعي في الصحة">
+                        </div>
+                         <div class="form-group">
+                            <label class="form-label" for="reco-profile">ملفك الاستثماري السابق (موجز)</label>
+                            <textarea id="reco-profile" class="form-input form-textarea" placeholder="مثال: استثمارات في شركات ناشئة تقنية، أفضل الاستثمارات طويلة الأجل"></textarea>
+                        </div>
+                        <button class="btn btn-primary btn-small" id="analyze-reco-btn">الحصول على توصيات</button>
+                        <div class="ui-preview-output" id="reco-output">
+                            <span>أدخل تفضيلاتك واضغط "الحصول على توصيات".</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt animate-glow"></i>
+                    </div>
+                    <h3 class="card-title">تحليل المخاطر الاستثمارية</h3>
+                    <div class="card-content-wrapper">
+                        <p class="card-description">
+                            تقييم شامل للمخاطر المحتملة لكل استثمار. أدخل تفاصيل الفرصة.
+                        </p>
+                        <ul class="card-features">
+                            <li>تحديد عوامل المخاطرة الرئيسية</li>
+                            <li>التقييم الكمي والنوعي للمخاطر</li>
+                        </ul>
+                    </div>
+                    <div class="ui-preview">
+                        <div class="ui-preview-title">تجربة تحليل المخاطر</div>
+                        <div class="form-group">
+                            <label class="form-label" for="risk-inv-desc">وصف الاختراع/الفرصة الاستثمارية</label>
+                            <textarea id="risk-inv-desc" class="form-input form-textarea" placeholder="صف الاختراع أو الشركة التي تفكر بالاستثمار بها"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="risk-inv-amount">مبلغ الاستثمار المقترح</label>
+                            <input type="text" id="risk-inv-amount" class="form-input" placeholder="مثال: 100,000 دولار">
+                        </div>
+                        <button class="btn btn-primary btn-small" id="analyze-risk-btn">تحليل المخاطر</button>
+                        <div class="ui-preview-output" id="risk-output">
+                            <span>أدخل البيانات واضغط "تحليل المخاطر".</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-pie animate-glow"></i>
+                    </div>
+                    <h3 class="card-title">تحليل السوق للمستثمرين</h3>
+                    <div class="card-content-wrapper">
+                        <p class="card-description">
+                            تحليل متعمق للسوق المستهدف وتوقعات النمو. حدد القطاع محل الاهتمام.
+                        </p>
+                        <ul class="card-features">
+                            <li>حجم السوق المستهدف</li>
+                            <li>تحليل المنافسين</li>
+                            <li>توقعات النمو والطلب</li>
+                        </ul>
+                    </div>
+                    <div class="ui-preview">
+                        <div class="ui-preview-title">تجربة تحليل السوق للمستثمر</div>
+                        <div class="form-group">
+                            <label class="form-label" for="market-investor-sector">القطاع محل الاهتمام</label>
+                            <input type="text" id="market-investor-sector" class="form-input" placeholder="مثال: قطاع التكنولوجيا الحيوية">
+                        </div>
+                        <button class="btn btn-primary btn-small" id="analyze-market-investor-btn">تحليل سوق المستثمر</button>
+                        <div class="ui-preview-output" id="market-investor-output">
+                            <span>أدخل القطاع واضغط "تحليل سوق المستثمر".</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="match-system">
+        <div class="container">
+            <div class="match-system">
+                <div class="match-header">
+                    <h2 class="match-title">نظام المطابقة الذكي</h2>
+                    <p class="match-description">
+                        جرب نظام المطابقة الذكي. أدخل معلومات بسيطة عن مخترع ومستثمر لمعرفة مدى التوافق.
+                    </p>
+                </div>
+
+                <div class="match-stats">
+                    <div class="match-stat">
+                        <div class="match-stat-number">83%</div>
+                        <div class="match-stat-label">نسبة نجاح المطابقة</div>
+                    </div>
+                    <div class="match-stat">
+                        <div class="match-stat-number">+650</div>
+                        <div class="match-stat-label">صفقة ناجحة</div>
+                    </div>
+                    <div class="match-stat">
+                        <div class="match-stat-number">21</div>
+                        <div class="match-stat-label">عامل مطابقة</div>
+                    </div>
+                </div>
+
+                <div class="match-ui-interactive">
+                     <h3 class="ui-preview-title" style="text-align: center; margin-bottom: 20px;">تجربة نظام المطابقة</h3>
+                     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 250px;">
+                            <h4 style="color: var(--primary-color); margin-bottom:10px;">ملف المخترع</h4>
+                            <div class="form-group">
+                                <label class="form-label" for="match-inventor-field">مجال الاختراع/الاحتياجات</label>
+                                <textarea id="match-inventor-field" class="form-input form-textarea" placeholder="مثال: تطبيق جوال لخدمات تعليمية، بحاجة لتمويل أولي وتسويق"></textarea>
+                            </div>
+                        </div>
+                        <div style="flex: 1; min-width: 250px;">
+                             <h4 style="color: var(--secondary-color); margin-bottom:10px;">ملف المستثمر</h4>
+                            <div class="form-group">
+                                <label class="form-label" for="match-investor-interest">اهتمامات المستثمر/قدرة الاستثمار</label>
+                                <textarea id="match-investor-interest" class="form-input form-textarea" placeholder="مثال: مهتم بتطبيقات التعليم، يستثمر حتى 50 ألف دولار في مراحل مبكرة"></textarea>
+                            </div>
+                        </div>
+                     </div>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button class="btn btn-primary" id="analyze-match-btn">تحليل المطابقة</button>
+                    </div>
+                    <div class="match-ui-output" id="match-output">
+                        <span>أدخل بيانات المخترع والمستثمر واضغط "تحليل المطابقة".</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="financial-analysis">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">نظام التحليل المالي والاقتصادي</h2>
+                <p class="section-description">
+                    أدوات لتحليل الجوانب المالية والاقتصادية للاختراعات. جربها بنفسك.
+                </p>
+            </div>
+
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-coins animate-glow"></i>
+                    </div>
+                    <h3 class="card-title">تقدير التكاليف</h3>
+                     <div class="card-content-wrapper">
+                        <p class="card-description">
+                            تقدير دقيق لتكاليف التصنيع والتسويق والتشغيل. أدخل تفاصيل اختراعك.
+                        </p>
+                    </div>
+                    <div class="ui-preview">
+                        <div class="ui-preview-title">تجربة تقدير التكاليف</div>
+                        <div class="form-group">
+                            <label class="form-label" for="cost-inv-type">نوع الاختراع</label>
+                            <input type="text" id="cost-inv-type" class="form-input" placeholder="مثال: جهاز إلكتروني صغير">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="cost-complexity">درجة التعقيد (بسيط، متوسط، معقد)</label>
+                            <input type="text" id="cost-complexity" class="form-input" placeholder="مثال: متوسط">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="cost-scale">نطاق الإنتاج المتوقع</label>
+                            <input type="text" id="cost-scale" class="form-input" placeholder="مثال: دفعة أولية 1000 وحدة">
+                        </div>
+                        <button class="btn btn-primary btn-small" id="analyze-cost-btn">تقدير التكاليف</button>
+                        <div class="ui-preview-output" id="cost-output">
+                           <span>أدخل البيانات لعرض تقدير التكاليف.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-hand-holding-usd animate-glow"></i>
+                    </div>
+                    <h3 class="card-title">نماذج التسعير</h3>
+                     <div class="card-content-wrapper">
+                        <p class="card-description">
+                            اقتراح نماذج تسعير متعددة بناءً على تحليل السوق. أدخل معلومات منتجك.
+                        </p>
+                    </div>
+                    <div class="ui-preview">
+                        <div class="ui-preview-title">تجربة نماذج التسعير</div>
+                         <div class="form-group">
+                            <label class="form-label" for="price-prod-type">نوع المنتج/الفئة</label>
+                            <input type="text" id="price-prod-type" class="form-input" placeholder="مثال: برنامج خدمي SaaS">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="price-target-market">شريحة السوق المستهدفة</label>
+                            <input type="text" id="price-target-market" class="form-input" placeholder="مثال: المحترفون المستقلون">
+                        </div>
+                        <button class="btn btn-primary btn-small" id="analyze-price-btn">اقتراح نماذج تسعير</button>
+                        <div class="ui-preview-output" id="price-output">
+                            <span>أدخل البيانات لعرض نماذج التسعير.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-bar animate-glow"></i>
+                    </div>
+                    <h3 class="card-title">تحليل الربحية</h3>
+                     <div class="card-content-wrapper">
+                        <p class="card-description">
+                            تحليل شامل للربحية المتوقعة ونقطة التعادل. أدخل بياناتك المالية الأولية.
+                        </p>
+                    </div>
+                    <div class="ui-preview">
+                        <div class="ui-preview-title">تجربة تحليل الربحية</div>
+                        <div class="form-group">
+                            <label class="form-label" for="profit-costs">التكاليف المقدرة (إجمالية أو للوحدة)</label>
+                            <input type="text" id="profit-costs" class="form-input" placeholder="مثال: 50 دولار للوحدة">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="profit-price">السعر المقترح للبيع</label>
+                            <input type="text" id="profit-price" class="form-input" placeholder="مثال: 120 دولار للوحدة">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="profit-sales">حجم المبيعات المتوقع (فترة أولية)</label>
+                            <input type="text" id="profit-sales" class="form-input" placeholder="مثال: 500 وحدة شهريًا">
+                        </div>
+                        <button class="btn btn-primary btn-small" id="analyze-profit-btn">تحليل الربحية</button>
+                        <div class="ui-preview-output" id="profit-output">
+                            <span>أدخل البيانات لعرض تحليل الربحية.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="interactive-demo">
+        <div class="container">
+            <div class="interactive-demo">
+                <div class="demo-header">
+                    <h2 class="demo-title">منصة تفاعلية للتجربة المباشرة</h2>
+                    <p class="demo-description">
+                        جرب بنفسك قدرات نظام ذكاء ابتكار من خلال هذه المنصة التفاعلية. أدخل بيانات افتراضية وشاهد النتائج فوراً.
+                    </p>
+                </div>
+
+                <div class="demo-container">
+                    <div class="tabs">
+                        <div class="tab active" data-tab="inventor-tab">محاكاة تقييم الاختراع</div>
+                        <div class="tab" data-tab="investor-tab">محاكاة تحليل الاستثمار</div>
+                        <div class="tab" data-tab="market-tab">محاكاة تحليل السوق</div>
+                    </div>
+
+                    <div class="tab-content active" id="inventor-tab">
+                        <div class="demo-form">
+                            <div class="form-group">
+                                <label class="form-label" for="demo-inv-name">اسم الاختراع</label>
+                                <input type="text" id="demo-inv-name" class="form-input" placeholder="أدخل اسم الاختراع">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="demo-inv-sector">القطاع</label>
+                                <select id="demo-inv-sector" class="form-input">
+                                    <option value="">اختر القطاع</option>
+                                    <option value="tech">التكنولوجيا</option>
+                                    <option value="health">الصحة</option>
+                                    <option value="energy">الطاقة</option>
+                                    <option value="industry">الصناعة</option>
+                                    <option value="agriculture">الزراعة</option>
+                                    <option value="other">أخرى (يرجى التحديد في الوصف)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="demo-inv-desc">وصف الاختراع</label>
+                                <textarea id="demo-inv-desc" class="form-input form-textarea" placeholder="أدخل وصف مختصر للاختراع"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="trl-range">مستوى الجاهزية التكنولوجية (TRL)</label>
+                                <input type="range" min="1" max="9" value="5" class="input-range" id="trl-range">
+                                <div id="trl-value" style="text-align: center; color: var(--text-muted);">5</div>
+                            </div>
+                            <button class="btn btn-primary" id="analyze-invention-demo-btn">تحليل الاختراع (تجريبي)</button>
+                        </div>
+
+                        <div class="demo-result" id="invention-demo-result">
+                            <div class="result-header">
+                                <div class="result-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="result-title">نتائج تحليل الاختراع (تجريبي)</div>
+                            </div>
+                            <div class="result-content">
+                                <p>أدخل بيانات الاختراع واضغط "تحليل الاختراع (تجريبي)" لعرض النتائج.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="investor-tab">
+                        <div class="demo-form">
+                            <div class="form-group">
+                                <label class="form-label" for="demo-investor-sector">قطاع الاستثمار المرغوب</label>
+                                <input type="text" id="demo-investor-sector" class="form-input" placeholder="مثال: التكنولوجيا النظيفة">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="demo-investor-amount">مبلغ الاستثمار المتوقع</label>
+                                <input type="text" id="demo-investor-amount" class="form-input" placeholder="مثال: 250,000 ريال سعودي">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="demo-investor-risk">مستوى تحمل المخاطر</label>
+                                <select id="demo-investor-risk" class="form-input">
+                                    <option value="منخفض">منخفض</option>
+                                    <option value="متوسط">متوسط</option>
+                                    <option value="مرتفع">مرتفع</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary" id="analyze-investment-demo-btn">تحليل الاستثمار (تجريبي)</button>
+                        </div>
+                         <div class="demo-result" id="investment-demo-result">
+                            <div class="result-header">
+                                <div class="result-icon"><i class="fas fa-chart-line"></i></div>
+                                <div class="result-title">نتائج تحليل الاستثمار (تجريبي)</div>
+                            </div>
+                            <div class="result-content">
+                                <p>أدخل بيانات الاستثمار واضغط "تحليل الاستثمار (تجريبي)" لعرض النتائج.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="market-tab">
+                        <div class="demo-form">
+                            <div class="form-group">
+                                <label class="form-label" for="demo-market-industry">السوق/الصناعة</label>
+                                <input type="text" id="demo-market-industry" class="form-input" placeholder="مثال: سوق التجارة الإلكترونية في الشرق الأوسط">
+                            </div>
+                             <div class="form-group">
+                                <label class="form-label" for="demo-market-product">المنتج/الخدمة الرئيسية للتحليل</label>
+                                <input type="text" id="demo-market-product" class="form-input" placeholder="مثال: منصات الدفع الإلكتروني">
+                            </div>
+                            <button class="btn btn-primary" id="analyze-market-demo-btn">تحليل السوق (تجريبي)</button>
+                        </div>
+                        <div class="demo-result" id="market-demo-result">
+                            <div class="result-header">
+                                <div class="result-icon"><i class="fas fa-search-dollar"></i></div>
+                                <div class="result-title">نتائج تحليل السوق (تجريبي)</div>
+                            </div>
+                            <div class="result-content">
+                               <p>أدخل بيانات السوق واضغط "تحليل السوق (تجريبي)" لعرض النتائج.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section success-gallery" id="success-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">معرض نماذج ناجحة</h2>
+                <p class="section-description">
+                    نماذج من اختراعات نجحت في التطوير والدخول للأسواق بمساعدة نظام ذكاء ابتكار.
+                </p>
+            </div>
+
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <span>صورة ثلاثية الأبعاد لاختراع في مجال الطاقة المتجددة</span>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">نظام طاقة شمسية مبتكر</h3>
+                        <p class="gallery-description">
+                            نظام جديد لتخزين الطاقة الشمسية بكفاءة أعلى بنسبة 40% من الأنظمة التقليدية.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <span>صورة ثلاثية الأبعاد لاختراع في مجال التكنولوجيا الطبية</span>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">جهاز تشخيص طبي</h3>
+                        <p class="gallery-description">
+                            جهاز محمول للكشف المبكر عن أمراض القلب باستخدام تقنيات الذكاء الاصطناعي.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <span>صورة ثلاثية الأبعاد لاختراع في مجال الزراعة المستدامة</span>
+                    </div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">نظام ري ذكي</h3>
+                        <p class="gallery-description">
+                            نظام ري يوفر 60% من استهلاك المياه مع زيادة في الإنتاجية بنسبة 25%.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section roadmap" id="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">خارطة التطوير المستقبلي</h2>
+                <p class="section-description">
+                    خطة تطوير نظام ذكاء ابتكار خلال الأعوام القادمة لتعزيز قدراته وإضافة ميزات جديدة.
+                </p>
+            </div>
+
+            <div class="roadmap-timeline">
+                <div class="roadmap-item">
+                    <div class="roadmap-point"></div>
+                    <div class="roadmap-content">
+                        <div class="roadmap-date">الربع الثالث 2025</div>
+                        <h3 class="roadmap-title">تطوير نماذج التنبؤ</h3>
+                        <p class="roadmap-description">
+                            تحسين دقة نماذج التنبؤ بالتوجهات السوقية المستقبلية باستخدام تقنيات معالجة البيانات الضخمة.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item">
+                    <div class="roadmap-point"></div>
+                    <div class="roadmap-content">
+                        <div class="roadmap-date">الربع الأول 2026</div>
+                        <h3 class="roadmap-title">التكامل مع تقنيات الواقع الافتراضي</h3>
+                        <p class="roadmap-description">
+                            دمج تقنيات الواقع الافتراضي لتمكين المستخدمين من اختبار النماذج الأولية للاختراعات بشكل افتراضي.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item">
+                    <div class="roadmap-point"></div>
+                    <div class="roadmap-content">
+                        <div class="roadmap-date">الربع الثالث 2026</div>
+                        <h3 class="roadmap-title">التوسع في قطاعات جديدة</h3>
+                        <p class="roadmap-description">
+                            إضافة دعم لقطاعات جديدة مثل التقنية الحيوية والروبوتات المتقدمة وانترنت الأشياء الصناعي.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item">
+                    <div class="roadmap-point"></div>
+                    <div class="roadmap-content">
+                        <div class="roadmap-date">الربع الأول 2027</div>
+                        <h3 class="roadmap-title">منصة تعاونية متكاملة</h3>
+                        <p class="roadmap-description">
+                            تطوير منصة تعاونية متكاملة تجمع المخترعين والمستثمرين والخبراء في بيئة عمل واحدة.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">الأسئلة الشائعة حول الذكاء الاصطناعي</h2>
+                <p class="section-description">
+                    إجابات على الأسئلة الأكثر شيوعاً حول نظام ذكاء ابتكار وكيفية استخدامه.
+                </p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>كيف يمكنني الاستفادة من نظام ذكاء ابتكار كمخترع؟</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            يمكنك كمخترع الاستفادة من نظام ذكاء ابتكار من خلال تقييم فكرة اختراعك، وتحسين توثيقها، وإجراء تحليل للسوق المستهدف،
+                            والحصول على توصيات لتحسين قابلية الاختراع للتسويق. كما يساعدك النظام في التواصل مع المستثمرين المناسبين لمشروعك عبر أدوات التحليل التفاعلية.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>ما هي دقة التوقعات التي يقدمها النظام؟</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            يعتمد نظام ذكاء ابتكار على نماذج لغوية متقدمة من Google (Gemini) لتقديم تحليلات واقتراحات. بينما نسعى لتقديم أدق المعلومات الممكنة، يجب اعتبار النتائج بمثابة إرشادات وأدوات مساعدة وليست توقعات مضمونة. دقة التحليل تعتمد على جودة البيانات المدخلة وتعقيد الطلب.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>هل بياناتي آمنة عند استخدام الأدوات التفاعلية؟</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            البيانات التي تدخلها في الأدوات التفاعلية يتم إرسالها إلى Google Gemini API لمعالجتها. نحن لا نقوم بتخزين هذه البيانات على خوادمنا بشكل دائم بعد انتهاء الجلسة. يرجى مراجعة سياسة خصوصية Google فيما يتعلق باستخدام واجهات برمجة التطبيقات الخاصة بهم. لا تشارك معلومات حساسة للغاية في النماذج التجريبية.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>كيف يتم تدريب نماذج الذكاء الاصطناعي المستخدمة؟</h3>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            نحن نستخدم نموذج Gemini 1.5 Flash من Google، وهو نموذج مدرب مسبقًا على كميات هائلة من البيانات النصية والبرمجية. يتم توجيه سلوك النموذج من خلال "System Prompts" محددة لكل أداة لتقديم إجابات ذات صلة بالسياق المطلوب (مثل تقييم الاختراعات، تحليل السوق، إلخ).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">ابتكار</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+                        منصة ابتكار هي مركز متكامل للمخترعين والمستثمرين، تهدف إلى تسهيل عملية تطوير الاختراعات
+                        وربط المخترعين بالمستثمرين المناسبين.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#">الرئيسية</a></li>
+                        <li class="footer-link"><a href="#">عن المنصة</a></li>
+                        <li class="footer-link"><a href="#">خدماتنا</a></li>
+                        <li class="footer-link"><a href="#">المدونة</a></li>
+                        <li class="footer-link"><a href="#">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">خدمات المنصة</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#">ذكاء ابتكار</a></li>
+                        <li class="footer-link"><a href="#">تسجيل الاختراعات</a></li>
+                        <li class="footer-link"><a href="#">الاستشارات القانونية</a></li>
+                        <li class="footer-link"><a href="#">التمويل والاستثمار</a></li>
+                        <li class="footer-link"><a href="#">التدريب والتطوير</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">تواصل معنا</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#">info@ebtekar.com</a></li>
+                        <li class="footer-link"><a href="#">+966 12 345 6789</a></li>
+                        <li class="footer-link"><a href="#">الرياض، المملكة العربية السعودية</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 ابتكار - جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup -->
+    <div class="popup" id="demo-popup">
+        <div class="popup-content">
+            <div class="popup-close" id="popup-close-icon">×</div>
+            <div class="popup-header">
+                <h3 class="popup-title">عرض تفصيلي</h3>
+            </div>
+            <div class="popup-body">
+                <p>محتوى العرض التفصيلي سيظهر هنا.</p>
+            </div>
+            <div class="popup-footer">
+                <button class="btn btn-primary" id="popup-close-btn">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // IMPORTANT: Storing API keys directly in client-side code is insecure for production.
+        // This should be handled via a backend proxy in a real application.
+        const GEMINI_API_KEY = "AIzaSyCG7Bwr3SFikwvFLhX2HZsAjqgEQIFx7DE"; // Replace with your actual API key
+        const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + GEMINI_API_KEY;
+
+        async function callGeminiAPI(systemPrompt, userContent, outputElement, buttonElement) {
+            if (!userContent || userContent.trim() === "") {
+                outputElement.innerHTML = '<p style="color: orange;">الرجاء إدخال البيانات المطلوبة.</p>';
+                return;
+            }
+
+            const originalButtonText = buttonElement.innerHTML;
+            buttonElement.innerHTML = 'جاري التحليل... <div class="loading-spinner"></div>';
+            buttonElement.disabled = true;
+            outputElement.innerHTML = '<p class="loading-text">جاري معالجة طلبك بواسطة الذكاء الاصطناعي...</p>';
+
+            const requestBody = {
+                "contents": [
+                    {
+                        "parts": [
+                            { "text": systemPrompt },
+                            { "text": userContent }
+                        ]
+                    }
+                ],
+                "generationConfig": {
+                    "temperature": 0.7,
+                    "topK": 1,
+                    "topP": 1,
+                    "maxOutputTokens": 2048,
+                    "stopSequences": []
+                },
+                "safetySettings": [
+                    { "category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE" },
+                    { "category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_MEDIUM_AND_ABOVE" },
+                    { "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_MEDIUM_AND_ABOVE" },
+                    { "category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE" }
+                ]
+            };
+
+            try {
+                const response = await fetch(GEMINI_API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestBody),
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    console.error('Gemini API Error:', errorData);
+                    throw new Error(`API Error: ${response.status} ${response.statusText}. ${errorData.error?.message || ''}`);
+                }
+
+                const data = await response.json();
+                
+                if (data.candidates && data.candidates.length > 0 && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts.length > 0) {
+                    // Sanitize output - basic example, consider a more robust library for production
+                    let textContent = data.candidates[0].content.parts[0].text;
+                    textContent = textContent.replace(/</g, "<").replace(/>/g, ">"); // Basic HTML sanitization
+                    outputElement.innerHTML = textContent;
+                } else if (data.promptFeedback && data.promptFeedback.blockReason) {
+                     outputElement.innerHTML = `<p style="color: red;">تم حظر الطلب بسبب: ${data.promptFeedback.blockReason}. يرجى تعديل المدخلات والمحاولة مرة أخرى.</p>`;
+                     if (data.promptFeedback.safetyRatings) {
+                         outputElement.innerHTML += `<pre>${JSON.stringify(data.promptFeedback.safetyRatings, null, 2)}</pre>`;
+                     }
+                }
+                else {
+                    console.warn('Unexpected API response structure:', data);
+                    outputElement.innerHTML = '<p style="color: orange;">تم استلام رد غير متوقع من الواجهة البرمجية. يرجى المحاولة لاحقاً.</p>';
+                }
+
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                outputElement.innerHTML = `<p style="color: red;">حدث خطأ أثناء الاتصال بالواجهة البرمجية: ${error.message}. يرجى المحاولة مرة أخرى أو التأكد من صلاحية مفتاح API.</p>`;
+            } finally {
+                buttonElement.innerHTML = originalButtonText;
+                buttonElement.disabled = false;
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Brain Animation
+            const canvas = document.getElementById('brainCanvas');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                canvas.width = canvas.parentElement.offsetWidth || 500;
+                canvas.height = canvas.parentElement.offsetHeight || 500;
+
+                let particles = [];
+                const numParticles = Math.min(200, Math.floor(canvas.width / 3)); // Adjust particle count
+                const connectionDistance = Math.min(100, canvas.width / 5);
+                const maxConnections = 5;
+                const center_x = canvas.width / 2;
+                const center_y = canvas.height / 2;
+                const max_radius = Math.min(center_x, center_y) * 0.7;
+
+
+                for (let i = 0; i < numParticles; i++) {
+                    const angle = Math.random() * Math.PI * 2;
+                    const radius = (max_radius * 0.6) + Math.random() * (max_radius * 0.4);
+                    const x = center_x + Math.cos(angle) * radius * (0.8 + Math.sin(angle * 3) * 0.3);
+                    const y = center_y + Math.sin(angle) * radius * (0.8 + Math.sin(angle * 2) * 0.2);
+                    
+                    particles.push({
+                        x, y,
+                        size: 1 + Math.random() * 2,
+                        speedX: (Math.random() - 0.5) * 0.5,
+                        speedY: (Math.random() - 0.5) * 0.5,
+                        color: `rgba(33, 150, 243, ${0.3 + Math.random() * 0.7})`,
+                        connections: 0,
+                        pulse: Math.random() * Math.PI * 2
+                    });
+                }
+
+                function animateBrain() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    for (let i = 0; i < particles.length; i++) {
+                        const p = particles[i];
+                        p.pulse += 0.02;
+                        const pulseFactor = (Math.sin(p.pulse) + 1) * 0.5;
+                        p.x += p.speedX;
+                        p.y += p.speedY;
+                        const distFromCenter = Math.sqrt(Math.pow(p.x - center_x, 2) + Math.pow(p.y - center_y, 2));
+                        if (distFromCenter > max_radius * 1.1) { // Push back if too far
+                            const angleToCenter = Math.atan2(center_y - p.y, center_x - p.x);
+                            p.speedX += Math.cos(angleToCenter) * 0.1;
+                            p.speedY += Math.sin(angleToCenter) * 0.1;
+                        }
+                        if (p.x < 0 || p.x > canvas.width) p.speedX *= -0.8; // Bounce with damping
+                        if (p.y < 0 || p.y > canvas.height) p.speedY *= -0.8;
+
+                        p.speedX *= 0.99; p.speedY *= 0.99;
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.size * (0.7 + pulseFactor * 0.5), 0, Math.PI * 2);
+                        ctx.fillStyle = p.color;
+                        ctx.fill();
+                        p.connections = 0;
+                    }
+                    ctx.lineWidth = 0.5;
+                    for (let i = 0; i < particles.length; i++) {
+                        const p1 = particles[i];
+                        for (let j = i + 1; j < particles.length; j++) {
+                            const p2 = particles[j];
+                            if (p1.connections >= maxConnections || p2.connections >= maxConnections) continue;
+                            const dx = p1.x - p2.x; const dy = p1.y - p2.y;
+                            const distance = Math.sqrt(dx * dx + dy * dy);
+                            if (distance < connectionDistance) {
+                                const opacity = (1 - distance / connectionDistance) * 0.8;
+                                ctx.strokeStyle = `rgba(33, 150, 243, ${opacity})`;
+                                ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
+                                p1.connections++; p2.connections++;
+                            }
+                        }
+                    }
+                    requestAnimationFrame(animateBrain);
+                }
+                animateBrain();
+            }
+
+
+            // TRL Range Slider
+            const trlRange = document.getElementById('trl-range');
+            const trlValue = document.getElementById('trl-value');
+            if (trlRange && trlValue) {
+                trlRange.addEventListener('input', function() {
+                    trlValue.textContent = this.value;
+                });
+            }
+
+            // Tabs functionality
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    const activeTabContent = document.getElementById(tabId);
+                    if (activeTabContent) activeTabContent.classList.add('active');
+                });
+            });
+
+            // FAQ functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                if (question) {
+                    question.addEventListener('click', function() {
+                        item.classList.toggle('active');
+                    });
+                }
+            });
+
+            // Popup functionality
+            const popupCloseIcon = document.getElementById('popup-close-icon');
+            const popupCloseBtn = document.getElementById('popup-close-btn');
+            const popup = document.getElementById('demo-popup');
+
+            function closePopup() {
+                if (popup) popup.style.display = 'none';
+            }
+            if (popupCloseIcon) popupCloseIcon.addEventListener('click', closePopup);
+            if (popupCloseBtn) popupCloseBtn.addEventListener('click', closePopup);
+
+
+            // --- GEMINI API INTEGRATIONS ---
+
+            // 1. Invention Evaluation (Card)
+            const invEvalBtn = document.getElementById('analyze-inv-eval-btn');
+            if (invEvalBtn) {
+                invEvalBtn.addEventListener('click', () => {
+                    const name = document.getElementById('inv-eval-name').value;
+                    const sector = document.getElementById('inv-eval-sector').value;
+                    const desc = document.getElementById('inv-eval-desc').value;
+                    const outputEl = document.getElementById('inv-eval-output');
+                    const systemPrompt = "أنت خبير في تقييم الاختراعات. قم بتقييم الاختراع التالي بناءً على الاسم والقطاع والوصف. قدم تقييمًا يتضمن نقاط القوة والضعف، تصنيف الاختراع، مقارنة مبدئية مع اختراعات مشابهة، وتقدير أولي للقيمة السوقية المحتملة. كن مفصلاً وواقعياً.";
+                    const userContent = `بيانات الاختراع:\nالاسم: ${name}\nالقطاع: ${sector}\nالوصف: ${desc}`;
+                    callGeminiAPI(systemPrompt, userContent, outputEl, invEvalBtn);
+                });
+            }
+
+            // 2. Documentation Improvement (Card)
+            const docImprvBtn = document.getElementById('analyze-doc-imprv-btn');
+            if (docImprvBtn) {
+                docImprvBtn.addEventListener('click', () => {
+                    const docText = document.getElementById('doc-imprv-text').value;
+                    const outputEl = document.getElementById('doc-imprv-output');
+                    const systemPrompt = "أنت خبير في تحسين توثيق الاختراعات. قم بتحليل نص توثيق الاختراع التالي واقترح تحسينات لغوية وتقنية لزيادة وضوحه وجاذبيته. ركز على نقاط القوة والضعف في التوثيق الحالي، واقتراحات لتحسين الوصف، وإضافة مصطلحات تقنية مناسبة إذا لزم الأمر. قدم الاقتراحات في شكل نقاط واضحة.";
+                    const userContent = `نص التوثيق:\n${docText}`;
+                    callGeminiAPI(systemPrompt, userContent, outputEl, docImprvBtn);
+                });
+            }
+            
+            // 3. Market Analysis for Inventors (Card)
+            const marketInvBtn = document.getElementById('analyze-market-inv-btn');
+            if (marketInvBtn) {
+                marketInvBtn.addEventListener('click', () => {
+                    const sector = document.getElementById('market-inv-sector').value;
+                    const audience = document.getElementById('market-inv-audience').value;
+                    const outputEl = document.getElementById('market-inv-output');
+                    const systemPrompt = "أنت خبير في تحليل الأسواق للمخترعين. قم بتحليل السوق المستهدف لاختراع في القطاع المحدد (مع التركيز على الجمهور المستهدف إذا تم تحديده). قدم تحليلاً يتضمن حجم السوق المستهدف المحتمل، المنافسين الرئيسيين، اتجاهات السوق، وتقدير للتكلفة والعائد المحتمل بشكل عام. كن شاملاً وقدم أرقامًا تقديرية إذا أمكن.";
+                    const userContent = `بيانات التحليل:\nقطاع الاختراع: ${sector}\nالجمهور المستهدف (اختياري): ${audience || 'عام'}`;
+                    callGeminiAPI(systemPrompt, userContent, outputEl, marketInvBtn);
+                });
+            }
+
+            // 4. Smart Recommendations for Investors (Card)
+            const recoBtn = document.getElementById('analyze-reco-btn');
+            if (recoBtn) {
+                recoBtn.addEventListener('click', () => {
+                    const interests = document.getElementById('reco-interests').value;
+                    const profile = document.getElementById('reco-profile').value;
+                    const outputEl = document.getElementById('reco-output');
+                    const systemPrompt = "أنت نظام توصيات ذكي للمستثمرين. بناءً على اهتمامات المستثمر وملفه الاستثماري، اقترح أنواعًا من الاختراعات أو قطاعات واعدة قد تكون مناسبة للاستثمار. صف لماذا هذه التوصيات قد تكون جذابة وقدم أمثلة إذا أمكن.";
+                    const userContent = `اهتمامات المستثمر: ${interests}\nالملف الاستثماري السابق (موجز): ${profile}`;
+                    callGeminiAPI(systemPrompt, userContent, outputEl, recoBtn);
+                });
+            }
+            
+            // 5. Risk Analysis for Investors (Card)
+            const riskBtn = document.getElementById('analyze-risk-btn');
+            if (riskBtn) {
+                riskBtn.addEventListener('click', () => {
+                    const invDesc = document.getElementById('risk-inv-desc').value;
+                    const invAmount = document.getElementById('risk-inv-amount').value;
+                    const outputEl = document.getElementById('risk-output');
+                    const systemPrompt = "أنت خبير في تحليل المخاطر الاستثمارية في الاختراعات. قم بتقييم المخاطر المحتملة للاستثمار في اختراع بالوصف ومبلغ الاستثمار المحددين. حدد عوامل المخاطرة الرئيسية (تقنية، سوقية، مالية، تشغيلية)، وقدم تقييمًا نوعيًا للمخاطر، واقترح استراتيجيات عامة للتخفيف منها.";
+                    const userContent = `وصف الاختراع/الفرصة: ${invDesc}\nمبلغ الاستثمار: ${invAmount}`;
+                    callGeminiAPI(systemPrompt, userContent, outputEl, riskBtn);
+                });
+            }
+
+            // 6. Market Analysis for Investors (Card)
+            const marketInvestorBtn = document.getElementById('analyze-market-investor-btn');
+            if (marketInvestorBtn) {
+                marketInvestorBtn.addEventListener('click', () => {
+                    const sector = document.getElementById('market-investor-sector').value;
+                    const outputEl = document.getElementById('market-investor-output');
+                    const systemPrompt = "أنت خبير في تحليل الأسواق للمستثمرين. قم بتقديم تحليل سوق متعمق للقطاع المحدد. ركز على توقعات النمو، المنافسين الرئيسيين، إمكانات التوسع، والفرص الاستثمارية البارزة في هذا القطاع. استخدم بيانات وأمثلة لدعم تحليلك.";
+                    const userContent = `قطاع الاهتمام: ${sector}`;
+                    callGeminiAPI(systemPrompt, userContent, outputEl, marketInvestorBtn);
+                });
+            }
+
+            // 7. Match System
+            const matchBtn = document.getElementById('analyze-match-btn');
+            if (matchBtn) {
+                matchBtn.addEventListener('click', () => {
+                    const inventorProfile = document.getElementById('match-inventor-field').value;
+                    const investorProfile = document.getElementById('match-investor-interest').value;
+                    const outputEl = document.getElementById('match-output');
+                    const systemPrompt = "أنت نظام مطابقة ذكي بين المخترعين والمستثمرين. بناءً على ملف المخترع وملف المستثمر، قم بتحليل مدى التوافق بينهما (مثلاً: منخفض، متوسط، عالي). اشرح أسباب المطابقة المحتملة أو عدمها، وركز على نقاط الالتقاء والاختلاف الرئيسية.";
+                    const userContent = `ملف المخترع:\n${inventorProfile}\n\nملف المستثمر:\n${investorProfile}`;
+                    callGeminiAPI(systemPrompt, userContent, outputEl, matchBtn);
+                });
+            }
+
+            // 8. Cost Estimation (Financial Analysis Card)
+            const costBtn = document.getElementById('analyze-cost-btn');
+            if (costBtn) {
+                costBtn.addEventListener('click', () => {
+                    const invType = document.getElementById('cost-inv-type').value;
+                    const complexity = document.getElementById('cost-complexity').value;
+                    const scale = document.getElementById('cost-scale').value;
+                    const outputEl = document.getElementById('cost-output');
+                    const systemPrompt = "أنت خبير في تقدير تكاليف تصنيع الاختراعات. قم بتقدير عام لتكاليف التصنيع (مع ذكر العوامل المؤثرة مثل المواد، العمالة، التطوير، التسويق الأولي) لاختراع من النوع والتعقيد ونطاق الإنتاج المحدد. قدم نطاقًا تقديريًا للتكاليف إذا أمكن.";
+                    const userContent = `بيانات التقدير:\nنوع الاختراع: ${invType}\nالتعقيد: ${complexity}\nنطاق الإنتاج: ${scale}`;
+                    callGeminiAPI(systemPrompt, userContent, outputEl, costBtn);
+                });
+            }
+
+            // 9. Pricing Models (Financial Analysis Card)
+            const priceBtn = document.getElementById('analyze-price-btn');
+            if (priceBtn) {
+                priceBtn.addEventListener('click', () => {
+                    const prodType = document.getElementById('price-prod-type').value;
+                    const targetMarket = document.getElementById('price-target-market').value;
+                    const outputEl = document.getElementById('price-output');
+                    const systemPrompt = "أنت خبير في استراتيجيات التسعير. اقترح 2-3 نماذج تسعير متعددة ومناسبة للمنتج الذي يستهدف شريحة السوق المحددة. اشرح مزايا وعيوب كل نموذج مقترح في هذا السياق، وقدم مثالاً توضيحيًا لكل نموذج.";
+                    const userContent = `نوع المنتج/الفئة: ${prodType}\nشريحة السوق المستهدفة: ${targetMarket}`;
+                    callGeminiAPI(systemPrompt, userContent, outputEl, priceBtn);
+                });
+            }
+
+            // 10. Profitability Analysis (Financial Analysis Card)
+            const profitBtn = document.getElementById('analyze-profit-btn');
+            if (profitBtn) {
+                profitBtn.addEventListener('click', () => {
+                    const costs = document.getElementById('profit-costs').value;
+                    const price = document.getElementById('profit-price').value;
+                    const salesVolume = document.getElementById('profit-sales').value;
+                    const outputEl = document.getElementById('profit-output');
+                    const systemPrompt = "أنت خبير في تحليل الربحية. بناءً على التكاليف المقدرة، السعر المقترح، وحجم المبيعات المتوقع، قدم تحليلاً أولياً للربحية المتوقعة. اذكر العوامل الرئيسية التي ستؤثر على نقطة التعادل، هامش الربح، والعائد على الاستثمار المحتمل. قم بحسابات بسيطة إذا كانت البيانات تسمح.";
+                    const userContent = `التكاليف المقدرة: ${costs}\nالسعر المقترح: ${price}\nحجم المبيعات المتوقع (فترة أولية): ${salesVolume}`;
+                    callGeminiAPI(systemPrompt, userContent, outputEl, profitBtn);
+                });
+            }
+
+            // --- INTERACTIVE DEMO TABS ---
+            // Demo - Invention Evaluation
+            const analyzeInventionDemoBtn = document.getElementById('analyze-invention-demo-btn');
+            if (analyzeInventionDemoBtn) {
+                analyzeInventionDemoBtn.addEventListener('click', function() {
+                    const inventionName = document.getElementById('demo-inv-name').value;
+                    const sector = document.getElementById('demo-inv-sector').value;
+                    const description = document.getElementById('demo-inv-desc').value;
+                    const trl = document.getElementById('trl-range').value;
+                    const resultDiv = document.getElementById('invention-demo-result');
+                    const resultCtx = resultDiv.querySelector('.result-content');
+
+                    resultDiv.classList.add('active'); // Show result container
+                    
+                    const systemPrompt = "أنت خبير في تقييم الاختراعات (وضع تجريبي). قم بتقييم الاختراع التالي بناءً على الاسم، القطاع، الوصف، ومستوى الجاهزية التكنولوجية (TRL). قدم تقييمًا موجزًا يتضمن درجة ابتكار تقديرية (من 100)، قابلية التطبيق التجاري (منخفضة، متوسطة، عالية)، وتوصيات عامة.";
+                    const userContent = `اسم الاختراع: ${inventionName}\nالقطاع: ${sector}\nالوصف: ${description}\nTRL: ${trl}`;
+                    
+                    callGeminiAPI(systemPrompt, userContent, resultCtx, analyzeInventionDemoBtn);
+                });
+            }
+
+            // Demo - Investment Analysis
+            const analyzeInvestmentDemoBtn = document.getElementById('analyze-investment-demo-btn');
+            if (analyzeInvestmentDemoBtn) {
+                analyzeInvestmentDemoBtn.addEventListener('click', function() {
+                    const sector = document.getElementById('demo-investor-sector').value;
+                    const amount = document.getElementById('demo-investor-amount').value;
+                    const riskTolerance = document.getElementById('demo-investor-risk').value;
+                    const resultDiv = document.getElementById('investment-demo-result');
+                    const resultCtx = resultDiv.querySelector('.result-content');
+
+                    resultDiv.classList.add('active');
+
+                    const systemPrompt = "أنت مستشار استثماري يعمل بالذكاء الاصطناعي (وضع تجريبي). بناءً على قطاع الاستثمار، مبلغ الاستثمار، ومستوى تحمل المخاطر، قدم تحليلاً موجزاً لفرصة استثمارية محتملة في هذا القطاع. اذكر الفرص والتحديات الرئيسية بشكل عام.";
+                    const userContent = `قطاع الاستثمار: ${sector}\nمبلغ الاستثمار: ${amount}\nتحمل المخاطر: ${riskTolerance}`;
+                    
+                    callGeminiAPI(systemPrompt, userContent, resultCtx, analyzeInvestmentDemoBtn);
+                });
+            }
+
+            // Demo - Market Analysis
+            const analyzeMarketDemoBtn = document.getElementById('analyze-market-demo-btn');
+            if (analyzeMarketDemoBtn) {
+                analyzeMarketDemoBtn.addEventListener('click', function() {
+                    const marketIndustry = document.getElementById('demo-market-industry').value;
+                    const productService = document.getElementById('demo-market-product').value;
+                    const resultDiv = document.getElementById('market-demo-result');
+                    const resultCtx = resultDiv.querySelector('.result-content');
+
+                    resultDiv.classList.add('active');
+
+                    const systemPrompt = "أنت محلل سوق يعمل بالذكاء الاصطناعي (وضع تجريبي). قم بتحليل السوق/الصناعة المحددة مع التركيز على المنتج/الخدمة. قدم نظرة عامة على حجم السوق المحتمل (تقديري)، الاتجاهات الرئيسية، والمنافسة العامة.";
+                    const userContent = `السوق/الصناعة: ${marketIndustry}\nالمنتج/الخدمة الرئيسية: ${productService}`;
+                    
+                    callGeminiAPI(systemPrompt, userContent, resultCtx, analyzeMarketDemoBtn);
+                });
+            }
+
+        });
+    </script>
+</body>
+</html>

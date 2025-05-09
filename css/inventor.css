@@ -1,0 +1,312 @@
+/* ألوان تعكس الإبداع والابتكار مع لمسة سعودية */
+:root {
+  --primary: #0a4d3c;
+  --accent: #f7c873;
+  --bg: #f4f8f7;
+  --white: #fff;
+  --shadow: 0 8px 32px 0 rgba(10,77,60,0.15);
+  --radius: 22px;
+  --gradient: linear-gradient(135deg, #0a4d3c 0%, #1e9c7c 100%);
+}
+
+body {
+  font-family: 'Tajawal', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--primary);
+  margin: 0;
+  direction: rtl;
+  padding-top: 80px; /* لإزاحة الصفحة أسفل شريط التنقل الثابت */
+}
+
+section {
+  margin: 48px auto;
+  padding: 32px 16px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 1100px;
+  position: relative;
+}
+
+h1, h2 {
+  color: var(--primary);
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.welcome-section {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: var(--gradient);
+  color: var(--white);
+  box-shadow: 0 12px 40px 0 rgba(10,77,60,0.18);
+}
+
+.welcome-3d {
+  width: 220px;
+  height: 220px;
+  background: #e6f3ef;
+  border-radius: 50%;
+  box-shadow: 0 4px 24px 0 rgba(30,156,124,0.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-content {
+  flex: 1;
+}
+
+.welcome-buttons button {
+  margin: 8px 12px 0 0;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 18px;
+  background: var(--accent);
+  color: var(--primary);
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(247,200,115,0.12);
+  transition: background 0.2s;
+}
+.welcome-buttons button:hover {
+  background: #ffe3a3;
+}
+
+.features-section, .steps-section, .dashboard-section, .tips-section,
+.support-section, .success-stories-section, .faq-section, .register-section, .ar-section {
+  margin-top: 32px;
+}
+
+.features-3d, .steps-3d, .dashboard-3d, .stories-3d {
+  width: 100%;
+  height: 180px;
+  background: #e6f3ef;
+  border-radius: var(--radius);
+  margin-bottom: 18px;
+  box-shadow: 0 2px 12px 0 rgba(30,156,124,0.09);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.features-list, .tips-list, .support-features {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+}
+.features-list li, .tips-list li, .support-features > div {
+  background: #e6f3ef;
+  border-radius: 14px;
+  padding: 14px 22px;
+  box-shadow: 0 1px 6px 0 rgba(30,156,124,0.07);
+  font-size: 1em;
+}
+
+.steps-list {
+  list-style: decimal inside;
+  padding: 0 0 0 18px;
+  margin: 0;
+}
+
+.dashboard-info p {
+  margin: 8px 0;
+}
+
+.testimonials blockquote {
+  background: #e6f3ef;
+  border-radius: 12px;
+  padding: 12px 18px;
+  margin: 8px 0;
+  font-style: italic;
+  color: #1e9c7c;
+}
+
+.faq-list {
+  margin-bottom: 16px;
+}
+.faq-list .faq-item {
+  background: #e6f3ef;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.faq-list .faq-item:hover {
+  background: #d1ede3;
+}
+.faq-chatbot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.faq-chatbot input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #c2e3d7;
+}
+.faq-chatbot button {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: var(--primary);
+  font-weight: bold;
+  cursor: pointer;
+}
+.faq-links a {
+  margin-left: 18px;
+  color: #1e9c7c;
+  text-decoration: underline;
+}
+
+#inventor-register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+}
+#inventor-register-form input, #inventor-register-form button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #c2e3d7;
+  font-size: 1em;
+}
+#inventor-register-form button[type="submit"] {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  font-weight: bold;
+  margin-top: 8px;
+}
+#nafath-register-btn {
+  background: #1e9c7c;
+  color: var(--white);
+  border: none;
+  margin-top: 0;
+}
+
+.ar-section {
+  text-align: center;
+  background: var(--gradient);
+  color: var(--white);
+}
+#ar-explore-btn {
+  margin: 18px 0;
+  padding: 14px 32px;
+  border-radius: 18px;
+  border: none;
+  background: var(--accent);
+  color: var(--primary);
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+#ar-viewer {
+  width: 100%;
+  height: 220px;
+  background: #e6f3ef;
+  border-radius: var(--radius);
+  margin: 0 auto;
+  box-shadow: 0 2px 12px 0 rgba(30,156,124,0.09);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* لمسة سعودية: زخارف هندسية بسيطة */
+section::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -24px; right: 24px;
+  width: 48px; height: 48px;
+  background: url('https://cdn.jsdelivr.net/gh/saudidev/saudi-patterns/green-geometry.svg') no-repeat center/contain;
+  opacity: 0.13;
+  z-index: 0;
+}
+section::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -24px; left: 24px;
+  width: 36px; height: 36px;
+  background: url('https://cdn.jsdelivr.net/gh/saudidev/saudi-patterns/gold-geometry.svg') no-repeat center/contain;
+  opacity: 0.11;
+  z-index: 0;
+}
+
+/* شريط التنقل */
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 64px;
+  background: var(--gradient);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  box-shadow: 0 4px 24px 0 rgba(10,77,60,0.13);
+  padding: 0 36px;
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-shadow: 0 2px 8px rgba(30,156,124,0.09);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 8px 18px;
+  border-radius: 16px;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  background: var(--accent);
+  color: var(--primary);
+  font-weight: bold;
+  box-shadow: 0 2px 8px 0 rgba(247,200,115,0.09);
+}
+
+#lang-switch {
+  border-radius: 8px;
+  border: none;
+  padding: 6px 12px;
+  font-size: 1em;
+  background: #e6f3ef;
+  color: var(--primary);
+  margin-right: 8px;
+}

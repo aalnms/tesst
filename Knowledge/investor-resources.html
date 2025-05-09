@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موارد المستثمرين | ابتكار</title>
+    <style>
+        :root {
+            --primary-color: #0c6b58;
+            --secondary-color: #17a589;
+            --accent-color: #f39c12;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-links a.active {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDEzNSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEwIiBmaWxsPSIjMGU2MTU0IiBvcGFjaXR5PSIwLjIiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=') center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 30px auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Breadcrumbs */
+        .breadcrumbs {
+            padding: 15px 0;
+            background-color: var(--light-color);
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .breadcrumbs ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .breadcrumbs li {
+            display: flex;
+            align-items: center;
+        }
+        
+        .breadcrumbs li:not(:last-child)::after {
+            content: '/';
+            margin: 0 10px;
+            color: #aaa;
+        }
+        
+        .breadcrumbs a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumbs .current {
+            color: #777;
+        }
+        
+        /* Investor Resources Section */
+        .investor-resources {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            display: inline-block;
+            padding-bottom: 10px;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .section-title p {
+            color: #777;
+            margin-top: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .resource-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-header::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 120px;
+            height: 120px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .card-header h3 {
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 10px;
+        }
+        
+        .card-header p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            opacity: 0.2;
+        }
+        
+        .card-content {
+            padding: 25px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .card-content ul {
+            list-style-type: none;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .card-content ul li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-right: 25px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .card-content ul li::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+        
+        .card-footer {
+            padding: 0 20px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        /* Statistics Section */
+        .statistics {
+            padding: 60px 0;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .statistics-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .statistics-title h2 {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .statistics-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Success Stories */
+        .success-stories {
+            padding: 60px 0;
+            background-color: #f1f5f9;
+        }
+        
+        .story-slider {
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .story-container {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+        
+        .story-slide {
+            min-width: 100%;
+            padding: 20px;
+        }
+        
+        .story-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .story-content {
+            padding: 30px;
+            position: relative;
+        }
+        
+        .story-content::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 5rem;
+            color: #f0f0f0;
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .story-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .story-meta {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        
+        .story-author {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-left: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .story-author::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 25px;
+            height: 25px;
+            background-color: #aaa;
+            border-radius: 50%;
+        }
+        
+        .story-author::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: #aaa;
+            border-radius: 50%;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: #777;
+            margin: 0;
+        }
+        
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-dot.active {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+        }
+        
+        /* Investor Registration */
+        .investor-registration {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .registration-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        
+        .registration-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .registration-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-right: 20px;
+        }
+        
+        .registration-content h3::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 10px;
+            height: 80%;
+            width: 5px;
+            background-color: var(--accent-color);
+            border-radius: 5px;
+        }
+        
+        .registration-content p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .benefit-list {
+            margin: 25px 0;
+        }
+        
+        .benefit-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+        
+        .benefit-icon {
+            background-color: rgba(23, 165, 137, 0.1);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+        
+        .benefit-text h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .benefit-text p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        .registration-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-title {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .form-title h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(23, 165, 137, 0.1);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .form-note {
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 5px;
+        }
+        
+        .form-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .form-check input {
+            margin-top: 5px;
+        }
+        
+        .form-check label {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-right: 15px;
+        }
+        
+        .footer-column h3::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 20px;
+            background-color: var(--accent-color);
+            border-radius: 5px;
+        }
+        
+        .footer-column ul {
+            list-style-type: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--primary-color);
+                padding: 20px;
+                gap: 10px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.show {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .section-title h2, 
+            .statistics-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .registration-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="/Users/yzydalshmry/Desktop/web/logo.png" alt="شعار ابتكار" style="width:32px;height:32px;background:transparent;">
+                    <h1>ابتكار</h1>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="viewINV/view.html">الاختراعات</a></li>               
+                    <li><a href="Opportunities/Opportunities.html">المستثمرين</a></li>
+                    <li><a href="Knowledge/knowledge.html">مركز المعرفة</a></li>
+                    <li><a href="Inv/Inventors.html">المخترعين</a></li>
+                    <li><a href="#">من نحن</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                </div>
+                <div class="mobile-menu" id="mobileMenu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">مركز المعرفة</a></li>
+                <li><span class="current">موارد المستثمرين</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>موارد المستثمرين</h1>
+            <p>اكتشف فرص الاستثمار الواعدة في قطاع الابتكار والاختراعات بالمملكة العربية السعودية، وتعرف على البيئة الاستثمارية المثالية التي توفرها منصة "ابتكار" للمستثمرين ورجال الأعمال.</p>
+            <div class="hero-buttons">
+                <a href="#investor-registration" class="btn">تسجيل كمستثمر</a>
+                <a href="#success-stories" class="btn btn-secondary">قصص النجاح</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investor Resources Section -->
+    <section class="investor-resources">
+        <div class="container">
+            <div class="section-title">
+                <h2>الفرص والموارد المتاحة</h2>
+                <p>مجموعة متكاملة من الموارد والأدوات التي تساعد المستثمرين على اتخاذ قرارات استثمارية مدروسة في مجال الابتكارات والاختراعات.</p>
+            </div>
+            <div class="resources-grid">
+                <!-- Investment Opportunities Card -->
+                <div class="resource-card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h3>فرص الاستثمار</h3>
+                        <p>استكشف أحدث الابتكارات والمشاريع الواعدة</p>
+                    </div>
+                    <div class="card-content">
+                        <p>تصفح قائمة بأحدث الاختراعات وبراءات الاختراع المسجلة في المملكة والتي تبحث عن تمويل أو شراكات استثمارية.</p>
+                        <ul>
+                            <li>فرص استثمارية مصنفة حسب القطاع (تقنية، طاقة، صحة، الخ)</li>
+                            <li>تقييم أولي للجدوى الاقتصادية والعائد المتوقع</li>
+                            <li>إمكانية التواصل المباشر مع المخترعين</li>
+                            <li>معلومات عن حالة براءة الاختراع ومستوى الجاهزية التقنية</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn">استعراض الفرص</a>
+                    </div>
+                </div>
+                
+                <!-- Investment Climate Card -->
+                <div class="resource-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                        </div>
+                        <h3>بيئة الاستثمار</h3>
+                        <p>التشريعات والحوافز الاستثمارية في المملكة</p>
+                    </div>
+                    <div class="card-content">
+                        <p>تعرف على الإطار التنظيمي والقانوني للاستثمار في مجال الابتكار والملكية الفكرية بالمملكة العربية السعودية.</p>
+                        <ul>
+                            <li>قوانين وتشريعات حماية الملكية الفكرية</li>
+                            <li>الحوافز الضريبية والتمويلية للمستثمرين</li>
+                            <li>برامج دعم المستثمرين ضمن رؤية 2030</li>
+                            <li>إجراءات وخطوات الاستثمار في الشركات الناشئة</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn">اقرأ المزيد</a>
+                    </div>
+                </div>
+                
+                <!-- Due Diligence Card -->
+                <div class="resource-card fade-in" style="animation-delay: 0.4s;">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3>دراسات الجدوى</h3>
+                        <p>أدوات تقييم المشاريع والاختراعات</p>
+                    </div>
+                    <div class="card-content">
+                        <p>اطلع على نماذج ومنهجيات تقييم الابتكارات والمشاريع الناشئة، وكيفية إجراء دراسات الجدوى وتقييم المخاطر.</p>
+                        <ul>
+                            <li>نماذج تقييم الاختراعات وتسعير الملكية الفكرية</li>
+                            <li>أدوات تحليل السوق وتقدير حجم الفرصة</li>
+                            <li>منهجيات تقييم المخاطر الاستثمارية</li>
+                            <li>نماذج العناية الواجبة للمشاريع التقنية</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn">تحميل النماذج</a>
+                    </div>
+                </div>
+                
+                <!-- Investment Guide Card -->
+                <div class="resource-card fade-in" style="animation-delay: 0.6s;">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                        </div>
+                        <h3>دليل المستثمر الشامل</h3>
+                        <p>مرجع متكامل للاستثمار في الابتكارات</p>
+                    </div>
+                    <div class="card-content">
+                        <p>دليل شامل للمستثمرين يغطي جميع جوانب الاستثمار في الابتكارات والملكية الفكرية في المملكة العربية السعودية.</p>
+                        <ul>
+                            <li>استراتيجيات الاستثمار في الشركات التقنية الناشئة</li>
+                            <li>أفضل الممارسات في تمويل المشاريع المبتكرة</li>
+                            <li>نصائح لبناء محفظة استثمارية متوازنة</li>
+                            <li>دراسات حالة لاستثمارات ناجحة في مجال الابتكار</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn">تحميل الدليل</a>
+                    </div>
+                </div>
+                
+                <!-- Networking Card -->
+                <div class="resource-card fade-in" style="animation-delay: 0.8s;">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>شبكة المستثمرين</h3>
+                        <p>تواصل مع مستثمرين آخرين وشركاء محتملين</p>
+                    </div>
+                    <div class="card-content">
+                        <p>انضم إلى شبكة المستثمرين للتواصل مع مستثمرين آخرين وخبراء الصناعة، واستكشاف فرص الاستثمار المشترك.</p>
+                        <ul>
+                            <li>فعاليات التواصل وعرض الاختراعات (Pitch Days)</li>
+                            <li>مجموعات الاستثمار المشترك (Syndicate Investment)</li>
+                            <li>لقاءات دورية مع رواد الأعمال والمخترعين</li>
+                            <li>ورش عمل متخصصة للمستثمرين</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn">انضم للشبكة</a>
+                    </div>
+                </div>
+                
+                <!-- Advisory Services Card -->
+                <div class="resource-card fade-in" style="animation-delay: 1s;">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <h3>الخدمات الاستشارية</h3>
+                        <p>استشارات متخصصة في الاستثمار التقني</p>
+                    </div>
+                    <div class="card-content">
+                        <p>احصل على استشارات متخصصة في تقييم الابتكارات والاستثمار في المشاريع التكنولوجية من خلال شبكة الخبراء المعتمدين.</p>
+                        <ul>
+                            <li>استشارات قانونية في الملكية الفكرية</li>
+                            <li>تقييم تقني للاختراعات والابتكارات</li>
+                            <li>دراسات السوق وتحليل المنافسين</li>
+                            <li>استشارات في الصياغة القانونية لاتفاقيات الاستثمار</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn">طلب استشارة</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <div class="statistics-title">
+                <h2>إحصائيات الاستثمار في الابتكار</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card fade-in">
+                    <div class="stat-number" id="stat1">+1,200</div>
+                    <div class="stat-label">براءة اختراع مسجلة</div>
+                </div>
+                <div class="stat-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="stat-number" id="stat2">180+</div>
+                    <div class="stat-label">مستثمر نشط</div>
+                </div>
+                <div class="stat-card fade-in" style="animation-delay: 0.4s;">
+                    <div class="stat-number" id="stat3">250+</div>
+                    <div class="stat-label">صفقة استثمارية ناجحة</div>
+                </div>
+                <div class="stat-card fade-in" style="animation-delay: 0.6s;">
+                    <div class="stat-number" id="stat4">500+</div>
+                    <div class="stat-label">مليون ريال حجم الاستثمارات</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Success Stories -->
+    <section class="success-stories" id="success-stories">
+        <div class="container">
+            <div class="section-title">
+                <h2>قصص نجاح</h2>
+                <p>تجارب حقيقية لمستثمرين حققوا نجاحات ملموسة من خلال الاستثمار في ابتكارات سعودية واعدة.</p>
+            </div>
+            <div class="story-slider">
+                <div class="story-container" id="storyContainer">
+                    <!-- Story 1 -->
+                    <div class="story-slide">
+                        <div class="story-card">
+                            <div class="story-content">
+                                <p>"كمستثمر في مجال التقنية، كنت أبحث عن فرص واعدة في السوق السعودي. من خلال منصة ابتكار، تمكنت من الاستثمار في شركة ناشئة تعمل في مجال تقنيات الطاقة المتجددة. اليوم، بعد عامين فقط من الاستثمار، تضاعفت قيمة استثماري ثلاث مرات، والشركة تستعد للتوسع إقليمياً."</p>
+                                <div class="story-meta">
+                                    <div class="story-author"></div>
+                                    <div class="author-info">
+                                        <h4>محمد الأحمدي</h4>
+                                        <p>مستثمر في صندوق الاستثمارات الجريئة</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Story 2 -->
+                    <div class="story-slide">
+                        <div class="story-card">
+                            <div class="story-content">
+                                <p>"ساعدتني منصة ابتكار على الوصول لاختراع محلي في مجال تقنيات المياه. قمت بالاستثمار في هذه التقنية وتطويرها لتصبح منتجاً تجارياً متكاملاً. اليوم، نقوم بتصدير هذه التقنية لأكثر من 10 دول، ونساهم في تعزيز مكانة المملكة كمركز للابتكار في مجال تقنيات المياه."</p>
+                                <div class="story-meta">
+                                    <div class="story-author"></div>
+                                    <div class="author-info">
+                                        <h4>نورة السليمان</h4>
+                                        <p>الرئيس التنفيذي لشركة تقنيات المستقبل</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Story 3 -->
+                    <div class="story-slide">
+                        <div class="story-card">
+                            <div class="story-content">
+                                <p>"كمجموعة استثمارية عائلية، كنا نبحث عن طرق لتنويع استثماراتنا. قررنا تخصيص جزء من محفظتنا للاستثمار في الابتكارات والشركات الناشئة. من خلال منصة ابتكار، تمكنا من بناء محفظة متنوعة من الاستثمارات في مجالات التقنية والصحة والتعليم، حققت لنا عوائد تفوق توقعاتنا."</p>
+                                <div class="story-meta">
+                                    <div class="story-author"></div>
+                                    <div class="author-info">
+                                        <h4>عبدالعزيز العمري</h4>
+                                        <p>رئيس مجلس إدارة شركة العمري للاستثمارات</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <div class="slider-dot active" data-slide="0"></div>
+                    <div class="slider-dot" data-slide="1"></div>
+                    <div class="slider-dot" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Investor Registration -->
+    <section class="investor-registration" id="investor-registration">
+        <div class="container">
+            <div class="section-title">
+                <h2>تسجيل كمستثمر</h2>
+                <p>انضم إلى شبكة المستثمرين في منصة "ابتكار" واستفد من الفرص الاستثمارية المتميزة والموارد الحصرية.</p>
+            </div>
+            <div class="registration-container">
+                <div class="registration-content fade-in">
+                    <h3>مزايا التسجيل كمستثمر</h3>
+                    <p>يتيح لك التسجيل كمستثمر في منصة "ابتكار" الوصول إلى العديد من المزايا والخدمات الحصرية التي تساعدك على اتخاذ قرارات استثمارية مدروسة واغتنام أفضل الفرص في مجال الابتكار.</p>
+                    
+                    <div class="benefit-list">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">
+                                <h4>الوصول المبكر للفرص</h4>
+                                <p>إمكانية الاطلاع على الفرص الاستثمارية الجديدة قبل إتاحتها للعموم.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">
+                                <h4>شبكة المستثمرين الحصرية</h4>
+                                <p>الانضمام إلى مجتمع من المستثمرين المتميزين وفرص للاستثمار المشترك.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">
+                                <h4>تقارير السوق الحصرية</h4>
+                                <p>الوصول إلى دراسات وتقارير متخصصة عن اتجاهات السوق والفرص الواعدة.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                                    <line x1="8" y1="2" x2="8" y2="18"></line>
+                                    <line x1="16" y1="6" x2="16" y2="22"></line>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">
+                                <h4>دعم قانوني متخصص</h4>
+                                <p>استشارات قانونية أولية في مجال الملكية الفكرية وصياغة عقود الاستثمار.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>سجل الآن واستفد من منظومة متكاملة من الخدمات المصممة خصيصاً للمستثمرين في قطاع الابتكار!</p>
+                </div>
+                
+                <div class="registration-form fade-in" style="animation-delay: 0.3s;">
+                    <div class="form-title">
+                        <h3>نموذج التسجيل</h3>
+                        <p>املأ النموذج التالي للتسجيل كمستثمر في منصة ابتكار</p>
+                    </div>
+                    <form id="investorForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">الاسم الأول</label>
+                                <input type="text" id="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">الاسم الأخير</label>
+                                <input type="text" id="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="investorType">نوع المستثمر</label>
+                            <select id="investorType" required>
+                                <option value="" disabled selected>اختر نوع المستثمر</option>
+                                <option value="individual">مستثمر فردي</option>
+                                <option value="company">شركة استثمارية</option>
+                                <option value="vc">صندوق رأس مال جريء</option>
+                                <option value="angel">مستثمر ملاك</option>
+                                <option value="other">أخرى</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="investmentRange">نطاق الاستثمار المفضل (بالريال السعودي)</label>
+                            <select id="investmentRange" required>
+                                <option value="" disabled selected>حدد نطاق الاستثمار</option>
+                                <option value="range1">أقل من 500,000</option>
+                                <option value="range2">500,000 - 1,000,000</option>
+                                <option value="range3">1,000,000 - 5,000,000</option>
+                                <option value="range4">أكثر من 5,000,000</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interests">مجالات الاهتمام</label>
+                            <select id="interests" multiple>
+                                <option value="tech">تقنية المعلومات والاتصالات</option>
+                                <option value="health">الرعاية الصحية والطبية</option>
+                                <option value="energy">الطاقة والبيئة</option>
+                                <option value="edu">التعليم</option>
+                                <option value="fintech">التقنية المالية</option>
+                                <option value="industrial">الصناعة والتصنيع</option>
+                                <option value="agriculture">الزراعة والغذاء</option>
+                                <option value="entertainment">الترفيه والإعلام</option>
+                            </select>
+                            <div class="form-note">* يمكنك اختيار أكثر من مجال (اضغط Ctrl أثناء الاختيار)</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="experience">الخبرة الاستثمارية السابقة (اختياري)</label>
+                            <textarea id="experience" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">أوافق على شروط وأحكام المنصة وسياسة الخصوصية</label>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input type="checkbox" id="newsletter">
+                            <label for="newsletter">أرغب في الاشتراك في النشرة البريدية لتلقي آخر الفرص الاستثمارية والأخبار</label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">تسجيل كمستثمر</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>كن جزءاً من مستقبل الابتكار في المملكة</h2>
+                <p>استثمر في الابتكارات السعودية الواعدة وساهم في تحقيق أهداف رؤية 2030 ودعم التحول نحو اقتصاد المعرفة.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn">استكشف الفرص الاستثمارية</a>
+                    <a href="#" class="btn btn-secondary">احجز استشارة مجانية</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>عن المنصة</h3>
+                    <p>منصة "ابتكار" هي الجسر بين المخترعين والمستثمرين في المملكة العربية السعودية، تسعى لتعزيز مكانة المملكة في مجال الابتكار والملكية الفكرية.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="تويتر">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="فيسبوك">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="لينكد إن">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="يوتيوب">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#">مركز المعرفة</a></li>
+                        <li><a href="#">موارد المستثمرين</a></li>
+                        <li><a href="#">موارد المخترعين</a></li>
+                        <li><a href="#">الفعاليات</a></li>
+                        <li><a href="#">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>موارد المستثمرين</h3>
+                    <ul>
+                        <li><a href="#">فرص الاستثمار</a></li>
+                        <li><a href="#">دليل المستثمر</a></li>
+                        <li><a href="#">نماذج تقييم الاستثمار</a></li>
+                        <li><a href="#">قصص النجاح</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>تواصل معنا</h3>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; display: inline-block; vertical-align: middle;">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span>8001234567</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; display: inline-block; vertical-align: middle;">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>investors@ibtikar.sa</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; display: inline-block; vertical-align: middle;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>الرياض، المملكة العربية السعودية</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 منصة ابتكار - جميع الحقوق محفوظة | بالشراكة مع الهيئة السعودية للملكية الفكرية</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+        
+        // Success stories slider
+        const storyContainer = document.getElementById('storyContainer');
+        const sliderDots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+        
+        // Set up slider dots
+        sliderDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const slideIndex = parseInt(dot.getAttribute('data-slide'));
+                showSlide(slideIndex);
+            });
+        });
+        
+        function showSlide(index) {
+            currentSlide = index;
+            storyContainer.style.transform = `translateX(${currentSlide * -100}%)`;
+            
+            // Update active dot
+            sliderDots.forEach((dot, i) => {
+                if (i === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        
+        // Auto rotate slides every 5 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % 3;
+            showSlide(currentSlide);
+        }, 7000);
+        
+        // Form submission
+        const investorForm = document.getElementById('investorForm');
+        
+        investorForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Normally you would send the form data to your server here
+            alert('تم استلام طلب التسجيل بنجاح! سيتم التواصل معك قريباً.');
+            investorForm.reset();
+        });
+        
+        // Animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        function checkFade() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 50) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Set initial state for fade elements
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        // Check elements on load and scroll
+        window.addEventListener('load', checkFade);
+        window.addEventListener('scroll', checkFade);
+    </script>
+</body>
+</html>

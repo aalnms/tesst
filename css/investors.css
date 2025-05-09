@@ -1,0 +1,301 @@
+body {
+  font-family: 'Tajawal', 'Cairo', Arial, sans-serif;
+  background: linear-gradient(135deg, #0a1833 0%, #1d2a4d 100%);
+  color: #fff;
+  margin: 0;
+  direction: rtl;
+}
+
+.brand {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+section {
+  margin: 60px auto;
+  padding: 40px 24px;
+  border-radius: 24px;
+  background: rgba(10, 24, 51, 0.85);
+  box-shadow: 0 8px 32px 0 rgba(16, 16, 32, 0.25), 0 1.5px 0 #ffd700 inset;
+  max-width: 1200px;
+}
+
+h1, h2, h3, h4 {
+  color: #ffd700;
+  margin-bottom: 16px;
+}
+
+.primary-btn, .secondary-btn, .nafath-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1.1em;
+  margin: 8px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  font-weight: bold;
+}
+
+.primary-btn {
+  background: linear-gradient(90deg, #ffd700 60%, #e6c200 100%);
+  color: #0a1833;
+  box-shadow: 0 2px 8px #ffd70044;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+}
+
+.nafath-btn {
+  background: #1d2a4d;
+  color: #ffd700;
+  border: 1.5px dashed #ffd700;
+}
+
+.investor-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  background: linear-gradient(120deg, #0a1833 80%, #ffd70022 100%);
+  box-shadow: 0 8px 32px 0 #0a183355;
+}
+
+.hero-3d-model, .features-3d-model, .gallery-3d, .dashboard-3d, .steps-3d, .packages-3d, .stories-3d, .virtual-tour {
+  min-width: 320px;
+  min-height: 260px;
+  background: #1d2a4d;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #ffd70033, 0 1.5px 0 #ffd70044 inset;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 320px;
+}
+
+.hero-stats {
+  margin-top: 24px;
+  background: #0a1833cc;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 12px #ffd70022;
+}
+
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 24px;
+  list-style: none;
+  padding: 0;
+}
+
+.features-list li {
+  background: #1d2a4d;
+  border-radius: 10px;
+  padding: 18px 28px;
+  color: #ffd700;
+  font-weight: 500;
+  box-shadow: 0 2px 8px #ffd70022;
+  flex: 1 1 220px;
+}
+
+.gallery-filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.gallery-filters select {
+  background: #0a1833;
+  color: #ffd700;
+  border: 1.5px solid #ffd700;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 1em;
+}
+
+.gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.gallery-list .invention-card {
+  background: #1d2a4d;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #ffd70022;
+  padding: 20px;
+  min-width: 220px;
+  color: #fff;
+  transition: transform 0.2s;
+}
+
+.gallery-list .invention-card:hover {
+  transform: translateY(-8px) scale(1.04) rotateY(2deg);
+  box-shadow: 0 8px 32px #ffd70055;
+}
+
+.dashboard-tools {
+  display: flex;
+  gap: 32px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.dashboard-tools > div {
+  background: #1d2a4d;
+  color: #ffd700;
+  border-radius: 10px;
+  padding: 18px 28px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px #ffd70022;
+  flex: 1 1 220px;
+}
+
+.steps-list {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+}
+
+.steps-list li {
+  background: #1d2a4d;
+  border-radius: 10px;
+  padding: 18px 28px;
+  color: #ffd700;
+  font-weight: 500;
+  box-shadow: 0 2px 8px #ffd70022;
+  flex: 1 1 180px;
+}
+
+.services-details {
+  display: flex;
+  gap: 32px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.services-details > div {
+  background: #1d2a4d;
+  color: #ffd700;
+  border-radius: 10px;
+  padding: 18px 28px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px #ffd70022;
+  flex: 1 1 220px;
+}
+
+.packages-list {
+  display: flex;
+  gap: 32px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.package {
+  background: #1d2a4d;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #ffd70022;
+  padding: 28px 32px;
+  min-width: 220px;
+  color: #fff;
+  border: 2px solid #ffd70044;
+  transition: transform 0.2s;
+}
+
+.package.basic { border-color: #ffd70077; }
+.package.premium { border-color: #ffd700bb; }
+.package.platinum { border-color: #ffd700; }
+
+.package:hover {
+  transform: scale(1.05) rotateY(-2deg);
+  box-shadow: 0 8px 32px #ffd70055;
+}
+
+.stories-list {
+  display: flex;
+  gap: 32px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.story {
+  background: #1d2a4d;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #ffd70022;
+  padding: 20px;
+  min-width: 220px;
+  color: #fff;
+}
+
+.story video {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 12px;
+  background: #000;
+}
+
+.registration-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.registration-form input,
+.registration-form select {
+  background: #0a1833;
+  color: #ffd700;
+  border: 1.5px solid #ffd700;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 1em;
+  margin-bottom: 8px;
+  min-width: 220px;
+}
+
+.registration-steps {
+  margin-top: 16px;
+  color: #ffd700;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.virtual-tour {
+  min-height: 320px;
+  background: #1d2a4d;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #ffd70033, 0 1.5px 0 #ffd70044 inset;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .investor-hero, .features-list, .dashboard-tools, .services-details, .packages-list, .stories-list, .gallery-list, .steps-list {
+    flex-direction: column;
+    gap: 18px;
+  }
+  section {
+    padding: 24px 8px;
+  }
+}

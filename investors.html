@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المستثمرين - منصة ابتكار</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f0f1a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(145deg, #1b1b2f, #111);
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #00ffae;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            background: #00ffae;
+            color: #000;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        section {
+            padding: 4rem 2rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-box, .step-box, .service-box, .dashboard, .gallery {
+            margin-top: 2rem;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .feature-box div,
+        .step-box div,
+        .service-box div,
+        .dashboard div,
+        .gallery div {
+            background: #1c1c2e;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 255, 174, 0.2);
+        }
+
+        h2 {
+            color: #00ffae;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        canvas {
+            width: 100%;
+            height: 400px;
+            background: #000;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>فرص استثمارية سعودية تبدأ من هنا</h1>
+        <p>منصة ابتكار تفتح الأبواب للمستثمرين لاكتشاف براءات اختراع سعودية جاهزة للتحول إلى مشاريع تجارية ناجحة.</p>
+        <div class="btn-group">
+            <button class="btn">استكشف الاختراعات</button>
+            <button class="btn">تسجيل الدخول للمستثمرين</button>
+        </div>
+        <div class="stats">
+            <div>+25% متوسط عائد الاستثمار</div>
+            <div>+350 براءة اختراع متاحة</div>
+            <div>+120 شراكة صناعية ناجحة</div>
+        </div>
+    </header>
+
+    <section>
+        <h2>مميزات الاستثمار في "ابتكار"</h2>
+        <div class="feature-box">
+            <div>توفير تكاليف البحث والتطوير عبر نماذج جاهزة</div>
+            <div>تقييم دقيق مدعوم بالذكاء الاصطناعي</div>
+            <div>حوافز من الجهات المختصة للاستثمار في المحتوى المحلي</div>
+            <div>حماية قانونية بالتعاون مع الهيئة السعودية للملكية الفكرية</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>معرض الاختراعات الأبرز</h2>
+        <div class="gallery">
+            <div>عرض تفاعلي ثلاثي الأبعاد + مؤشرات أداء</div>
+            <div>فلترة حسب القطاع، التكلفة، العائد المتوقع</div>
+            <div>توصيات مدعومة بالذكاء الاصطناعي</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>لوحة تحكم المستثمر</h2>
+        <div class="dashboard">
+            <div>تحليل ومقارنة الفرص الاستثمارية</div>
+            <div>نظام محادثة مباشر مع المخترعين</div>
+            <div>متابعة محفظة الاستثمارات والتقارير</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>خطوات الاستثمار في الاختراعات</h2>
+        <div class="step-box">
+            <div>١. البحث والاختيار من المنصة</div>
+            <div>٢. التواصل مع صاحب الاختراع</div>
+            <div>٣. توقيع العقود إلكترونياً</div>
+            <div>٤. تطوير المنتج ومتابعة الأداء</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>خدمات التقييم والتحليل</h2>
+        <div class="service-box">
+            <div>تحليل السوق وتحديد الفرص</div>
+            <div>تقييم المخاطر والعوائد المتوقعة</div>
+            <div>دراسات جدوى اقتصادية بالذكاء الاصطناعي</div>
+            <div>تقارير المنافسين والاتجاهات</div>
+        </div>
+    </section>
+
+    <script>
+        // عرض احصائيات بشكل متحرك
+        const stats = document.querySelectorAll('.stats div');
+        stats.forEach((el, index) => {
+            el.style.transform = 'scale(0.8)';
+            el.style.opacity = 0;
+            setTimeout(() => {
+                el.style.transition = 'all 0.6s ease';
+                el.style.transform = 'scale(1)';
+                el.style.opacity = 1;
+            }, 500 + (index * 300));
+        });
+    </script>
+</body>
+
+</html>
