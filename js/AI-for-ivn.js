@@ -165,16 +165,16 @@
                         const normalizedY = (p.y - center_y) / (max_radius * 0.9); // Make it more elliptical
                         if (normalizedX * normalizedX + normalizedY * normalizedY > 1) {
                             const angleToCenter = Math.atan2(center_y - p.y, center_x - p.x);
-                            p.speedX = Math.cos(angleToCenter) * 0.2 * -1; // Push back more gently
-                            p.speedY = Math.sin(angleToCenter) * 0.2 * -1;
+                            p.speedX += Math.cos(angleToCenter) * 0.1;
+                            p.speedY += Math.sin(angleToCenter) * 0.1;
                             p.x = center_x + Math.cos(angleToCenter) * max_radius * 1.1 * (Math.random() * 0.1 + 0.9); // Reposition closer
                             p.y = center_y + Math.sin(angleToCenter) * max_radius * 0.85 * (Math.random() * 0.1 + 0.9);
                         }
 
-                        if (p.x < p.size || p.x > canvas.width - p.size) p.speedX *= -0.7; 
-                        if (p.y < p.size || p.y > canvas.height - p.size) p.speedY *= -0.7;
+                        if (p.x < p.size || p.x > canvas.width - p.size) p.speedX *= -0.8; 
+                        if (p.y < p.size || p.y > canvas.height - p.size) p.speedY *= -0.8;
 
-                        p.speedX *= 0.985; p.speedY *= 0.985; // Slower decay
+                        p.speedX *= 0.99; p.speedY *= 0.99; // Slower decay
                         ctx.beginPath();
                         ctx.arc(p.x, p.y, p.size * (0.6 + pulseFactor * 0.6), 0, Math.PI * 2); // More pulse effect
                         ctx.fillStyle = p.color;

@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ابتكار - منصة ربط المخترعين والمستثمرين السعوديين</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon (optional but recommended) -->
+    <link rel="icon" href="logo.png" type="image/png"> 
 </head>
 <body>
     <header>
@@ -18,32 +18,31 @@
                 <a href="investors.html">المستثمرين</a>
                 <a href="AI-for-ivn.html">ذكاء ابتكار</a>
                 <a href="Knowledge/knowledge.html">
-                    <!-- إضافة اللوجو بجانب النص -->
-                    <img src="logo.png" alt="مركز المعرفة" style="height:28px;vertical-align:middle;margin-left:6px;">
-                    مركز المعرفة
+                    <img src="logo.png" alt="أيقونة مركز المعرفة">مركز المعرفة
                 </a>
                 <a href="#">عن المنصة</a>
                 <a href="Contact.html">تواصل معنا</a>
             </nav>
         </div>
     </header>
-        <!-- Hero Section with Brain Canvas -->
-        <section class="hero">
-    <div class="container hero-flex">
-        <div class="hero-visual">
-            <div class="ai-brain" id="brain-model">
-                <canvas class="brain-canvas" id="brainCanvas"></canvas>
+        
+    <!-- Hero Section with Brain Canvas -->
+    <section class="hero">
+        <div class="container hero-flex">
+            <div class="hero-visual">
+                <div class="ai-brain" id="brain-model">
+                    <canvas class="brain-canvas" id="brainCanvas"></canvas>
+                </div>
+            </div>
+            <div class="hero-content hero-description">
+                <h1>إبتكار</h1>
+                <p class="hero-lead">
+                    إختراع بدون فرصة.. <br>
+                    يضيع… وإحنا نفتح له الباب 
+                </p>
             </div>
         </div>
-        <div class="hero-content hero-description">
-            <h1>إبتكار</h1>
-            <p class="hero-lead">
-                إختراع بدون فرصة.. <br>
-                يضيع… وإحنا نفتح له الباب 
-            </p>
-        </div>
-    </div>
-</section>
+    </section>
         
     <!-- Stats Section -->
     <section class="stats">
@@ -117,69 +116,97 @@
             </div>
         </div>
     </section>
+
+    <!-- Platform Pillars Section (New) -->
+    <section class="platform-pillars">
+        <div class="container">
+            <div class="section-title">
+                <h2>ركائز منصتنا</h2>
+                <p>نقدم بيئة متكاملة لدعم الابتكار من الفكرة إلى السوق.</p>
+            </div>
+            <div class="pillars-container">
+                <div class="pillar-card animate">
+                    <i class="fas fa-shield-alt pillar-icon"></i>
+                    <h3>بيئة آمنة وموثوقة</h3>
+                    <p>نضمن سرية بياناتك وحماية ملكيتك الفكرية بالتعاون مع الجهات المختصة.</p>
+                </div>
+                <div class="pillar-card animate delayed-1">
+                    <i class="fas fa-users-cog pillar-icon"></i>
+                    <h3>إرشاد ودعم متخصص</h3>
+                    <p>نوفر لك الوصول إلى شبكة من الخبراء والموجهين لمساعدتك في كل خطوة.</p>
+                </div>
+                <div class="pillar-card animate delayed-2">
+                    <i class="fas fa-hand-holding-usd pillar-icon"></i>
+                    <h3>فرص تمويل متنوعة</h3>
+                    <p>نربطك بمستثمرين جادين وبرامج دعم حكومية لتأمين التمويل اللازم لمشروعك.</p>
+                </div>
+                <div class="pillar-card animate delayed-3">
+                    <i class="fas fa-project-diagram pillar-icon"></i>
+                    <h3>شبكة تواصل واسعة</h3>
+                    <p>انضم إلى مجتمع حيوي من المبتكرين والمستثمرين لتبادل الخبرات وبناء الشراكات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- Knowledge Center Section -->
-    <section class="knowledge-center" id="knowledge-center" style="background:#f8f9fa;padding:60px 0;">
-    <div class="container">
-        <div class="section-title">
-            <h2 style="display:flex;align-items:center;justify-content:center;gap:12px;">
-                <img src="https://unsplash.com/photos/person-in-black-shirt-wearing-white-mask-hoCFZJSYccA" alt="مركز المعرفة" style="height:38px;vertical-align:middle;">
-                مركز المعرفة
-            </h2>
-            <p style="max-width:700px;margin:20px auto 0;color:#444;font-size:1.15rem;">
-                بوابتك الشاملة لكل ما يتعلق ببراءات الاختراع والابتكار في المملكة العربية السعودية. استكشف الأدلة، الموارد، الأسئلة الشائعة، وكل ما تحتاجه للنجاح في رحلتك الابتكارية والاستثمارية.
-            </p>
+    <section class="knowledge-center" id="knowledge-center">
+        <div class="container">
+            <div class="section-title">
+                <h2>
+                    <i class="fas fa-book-open title-icon"></i>
+                    مركز المعرفة
+                </h2>
+                <p>
+                    بوابتك الشاملة لكل ما يتعلق ببراءات الاختراع والابتكار في المملكة العربية السعودية. استكشف الأدلة، الموارد، الأسئلة الشائعة، وكل ما تحتاجه للنجاح في رحلتك الابتكارية والاستثمارية.
+                </p>
+            </div>
+            <div class="knowledge-grid">
+                <a href="docs.html" class="knowledge-card animate">
+                    <div class="card-icon">
+                        <img src="img/patent-guide.svg" alt="أيقونة أدلة براءات الاختراع">
+                    </div>
+                    <div class="card-content">
+                        <h3>أدلة تسجيل براءات الاختراع</h3>
+                        <p>تعرف على خطوات ومتطلبات تسجيل براءة الاختراع في السعودية بالتفصيل.</p>
+                    </div>
+                </a>
+                <a href="knowledge.html#inventor-resources" class="knowledge-card animate delayed-1">
+                    <div class="card-icon">
+                        <img src="img/inventor-resource.svg" alt="أيقونة موارد للمخترعين">
+                    </div>
+                    <div class="card-content">
+                        <h3>موارد للمخترعين</h3>
+                        <p>برامج الدعم، الحاضنات، الدورات، وكل ما يحتاجه المبتكر.</p>
+                    </div>
+                </a>
+                <a href="investor-resources.html" class="knowledge-card animate delayed-2">
+                    <div class="card-icon">
+                        <img src="img/investor-resource.svg" alt="أيقونة موارد للمستثمرين">
+                    </div>
+                    <div class="card-content">
+                        <h3>موارد للمستثمرين</h3>
+                        <p>فرص الاستثمار، الأدلة، قصص النجاح، ودراسات الجدوى.</p>
+                    </div>
+                </a>
+                <a href="knowledge.html#faq-section" class="knowledge-card animate delayed-3">
+                    <div class="card-icon">
+                        <img src="img/faq.svg" alt="أيقونة الأسئلة الشائعة">
+                    </div>
+                    <div class="card-content">
+                        <h3>الأسئلة الشائعة</h3>
+                        <p>إجابات لأكثر الأسئلة شيوعاً حول الابتكار والاستثمار والمنصة.</p>
+                    </div>
+                </a>
+            </div>
         </div>
-        <div class="knowledge-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;margin-top:40px;">
-            <!-- أدلة تسجيل براءات الاختراع -->
-            <a href="docs.html" class="knowledge-card" style="text-decoration:none;background:#fff;border-radius:14px;box-shadow:0 4px 18px #0001;overflow:hidden;transition:box-shadow 0.2s;">
-                <div class="card-icon" style="text-align:center;padding:25px 0 10px;">
-                    <img src="img/patent-guide.svg" alt="أدلة براءات الاختراع" style="height:56px;">
-                </div>
-                <div class="card-content" style="padding:18px 20px 22px;">
-                    <h3 style="color:#0c6b58;font-size:1.2rem;margin-bottom:10px;">أدلة تسجيل براءات الاختراع</h3>
-                    <p style="color:#666;font-size:1rem;">تعرف على خطوات ومتطلبات تسجيل براءة الاختراع في السعودية بالتفصيل.</p>
-                </div>
-            </a>
-            <!-- موارد للمخترعين -->
-            <a href="knowledge.html#inventor-resources" class="knowledge-card" style="text-decoration:none;background:#fff;border-radius:14px;box-shadow:0 4px 18px #0001;overflow:hidden;transition:box-shadow 0.2s;">
-                <div class="card-icon" style="text-align:center;padding:25px 0 10px;">
-                    <img src="img/inventor-resource.svg" alt="موارد للمخترعين" style="height:56px;">
-                </div>
-                <div class="card-content" style="padding:18px 20px 22px;">
-                    <h3 style="color:#0c6b58;font-size:1.2rem;margin-bottom:10px;">موارد للمخترعين</h3>
-                    <p style="color:#666;font-size:1rem;">برامج الدعم، الحاضنات، الدورات، وكل ما يحتاجه المبتكر.</p>
-                </div>
-            </a>
-            <!-- موارد للمستثمرين -->
-            <a href="investor-resources.html" class="knowledge-card" style="text-decoration:none;background:#fff;border-radius:14px;box-shadow:0 4px 18px #0001;overflow:hidden;transition:box-shadow 0.2s;">
-                <div class="card-icon" style="text-align:center;padding:25px 0 10px;">
-                    <img src="img/investor-resource.svg" alt="موارد للمستثمرين" style="height:56px;">
-                </div>
-                <div class="card-content" style="padding:18px 20px 22px;">
-                    <h3 style="color:#0c6b58;font-size:1.2rem;margin-bottom:10px;">موارد للمستثمرين</h3>
-                    <p style="color:#666;font-size:1rem;">فرص الاستثمار، الأدلة، قصص النجاح، ودراسات الجدوى.</p>
-                </div>
-            </a>
-            <!-- الأسئلة الشائعة -->
-            <a href="knowledge.html#faq-section" class="knowledge-card" style="text-decoration:none;background:#fff;border-radius:14px;box-shadow:0 4px 18px #0001;overflow:hidden;transition:box-shadow 0.2s;">
-                <div class="card-icon" style="text-align:center;padding:25px 0 10px;">
-                    <img src="img/faq.svg" alt="الأسئلة الشائعة" style="height:56px;">
-                </div>
-                <div class="card-content" style="padding:18px 20px 22px;">
-                    <h3 style="color:#0c6b58;font-size:1.2rem;margin-bottom:10px;">الأسئلة الشائعة</h3>
-                    <p style="color:#666;font-size:1rem;">إجابات لأكثر الأسئلة شيوعاً حول الابتكار والاستثمار والمنصة.</p>
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
     
     <!-- Success Stories -->
     <section class="success-stories">
         <div class="container">
             <div class="section-title">
-                <h2>قصص نجاح</h2>
+                <h2>قصص نجاح ملهمة</h2>
             </div>
             
             <div class="stories-container">
@@ -253,14 +280,14 @@
                     </div>
                     
                     <div class="slider-controls">
-                        <button class="prev-btn"><i class="fas fa-chevron-right"></i></button>
-                        <button class="next-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="prev-btn" aria-label="السابق"><i class="fas fa-chevron-right"></i></button>
+                        <button class="next-btn" aria-label="التالي"><i class="fas fa-chevron-left"></i></button>
                     </div>
                     
                     <div class="story-indicators">
-                        <span class="indicator active" data-index="0"></span>
-                        <span class="indicator" data-index="1"></span>
-                        <span class="indicator" data-index="2"></span>
+                        <span class="indicator active" data-index="0" aria-label="الشريحة 1"></span>
+                        <span class="indicator" data-index="1" aria-label="الشريحة 2"></span>
+                        <span class="indicator" data-index="2" aria-label="الشريحة 3"></span>
                     </div>
                 </div>
             </div>
@@ -271,7 +298,7 @@
     <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>ميزات المنصة</h2>
+                <h2>ميزات منصتنا الفريدة</h2>
             </div>
             
             <div class="features-container">
@@ -293,7 +320,7 @@
                 
                 <div class="feature-card animate delayed-2">
                     <div class="feature-icon">
-                        <i class="fas fa-handshake"></i>
+                        <i class="fas fa-users"></i> <!-- Changed icon for better representation -->
                     </div>
                     <h3>نظام مطابقة ذكي</h3>
                     <p>خوارزميات متطورة تقوم بمطابقة الاختراعات مع المستثمرين المناسبين بناءً على مجالات الاهتمام ومعايير الاستثمار.</p>
@@ -305,6 +332,33 @@
                     </div>
                     <h3>تحليل السوق والجدوى</h3>
                     <p>تقارير تحليلية شاملة عن حجم السوق المستهدف وتحليل المنافسين والجدوى الاقتصادية للاختراعات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section (New) -->
+    <section class="partners">
+        <div class="container">
+            <div class="section-title">
+                <h2>شركاؤنا في النجاح</h2>
+                <p>نفخر بالتعاون مع نخبة من المؤسسات الرائدة لدعم منظومة الابتكار.</p>
+            </div>
+            <div class="partners-container">
+                <div class="partner-logo animate">
+                    <img src="img/partner-logo-placeholder-1.svg" alt="شعار الشريك 1">
+                </div>
+                <div class="partner-logo animate delayed-1">
+                    <img src="img/partner-logo-placeholder-2.svg" alt="شعار الشريك 2">
+                </div>
+                <div class="partner-logo animate delayed-2">
+                    <img src="img/partner-logo-placeholder-3.svg" alt="شعار الشريك 3">
+                </div>
+                <div class="partner-logo animate delayed-3">
+                    <img src="img/partner-logo-placeholder-4.svg" alt="شعار الشريك 4">
+                </div>
+                <div class="partner-logo animate delayed-4">
+                    <img src="img/partner-logo-placeholder-5.svg" alt="شعار الشريك 5">
                 </div>
             </div>
         </div>
@@ -323,35 +377,35 @@
                         <h3><i class="fas fa-lightbulb"></i> أحدث الاختراعات</h3>
                     </div>
                     <div class="news-content">
-                        <div class="news-item">
+                        <article class="news-item">
                             <h4>نظام ذكي لترشيد استهلاك الكهرباء في المنازل</h4>
                             <div class="news-meta">
                                 <span>المخترع: م. سلطان الحربي</span>
-                                <span>التاريخ: 15 أبريل 2025</span>
+                                <time datetime="2025-04-15">15 أبريل 2025</time>
                             </div>
                             <p>نظام جديد يستخدم تقنيات الذكاء الاصطناعي لمراقبة وترشيد استهلاك الكهرباء في المنازل، ويمكن أن يوفر حتى 30% من فاتورة الكهرباء.</p>
                             <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
-                        </div>
+                        </article>
                         
-                        <div class="news-item">
+                        <article class="news-item">
                             <h4>جهاز تحلية المياه بالطاقة الشمسية للمناطق النائية</h4>
                             <div class="news-meta">
                                 <span>المخترع: د. منى السليم</span>
-                                <span>التاريخ: 3 أبريل 2025</span>
+                                <time datetime="2025-04-03">3 أبريل 2025</time>
                             </div>
                             <p>اختراع جديد لتحلية المياه باستخدام الطاقة الشمسية، مصمم خصيصًا للمناطق النائية بتكلفة منخفضة وكفاءة عالية.</p>
                             <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
-                        </div>
+                        </article>
                         
-                        <div class="news-item">
+                        <article class="news-item">
                             <h4>روبوت تعليمي للأطفال يدعم تعلم البرمجة</h4>
                             <div class="news-meta">
                                 <span>المخترع: م. خالد العمري</span>
-                                <span>التاريخ: 25 مارس 2025</span>
+                                <time datetime="2025-03-25">25 مارس 2025</time>
                             </div>
                             <p>روبوت تفاعلي يساعد الأطفال على تعلم مهارات البرمجة والتفكير المنطقي من خلال أنشطة ممتعة وتفاعلية.</p>
                             <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
-                        </div>
+                        </article>
                     </div>
                 </div>
                 
@@ -360,35 +414,35 @@
                         <h3><i class="fas fa-calendar-alt"></i> فعاليات قادمة</h3>
                     </div>
                     <div class="news-content">
-                        <div class="news-item">
+                        <article class="news-item">
                             <h4>معرض الابتكار السعودي الثالث</h4>
                             <div class="news-meta">
                                 <span>المكان: الرياض، مركز الملك عبدالعزيز الدولي للمؤتمرات</span>
-                                <span>التاريخ: 10-12 مايو 2025</span>
+                                <time datetime="2025-05-10">10-12 مايو 2025</time>
                             </div>
                             <p>معرض سنوي يجمع المخترعين والمستثمرين والشركات الناشئة تحت سقف واحد، لعرض أحدث الابتكارات السعودية.</p>
                             <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
-                        </div>
+                        </article>
                         
-                        <div class="news-item">
+                        <article class="news-item">
                             <h4>ورشة عمل: تسويق براءات الاختراع</h4>
                             <div class="news-meta">
                                 <span>المكان: جدة، مركز الابتكار التقني</span>
-                                <span>التاريخ: 25 أبريل 2025</span>
+                                <time datetime="2025-04-25">25 أبريل 2025</time>
                             </div>
                             <p>ورشة عمل تقدم استراتيجيات وتقنيات تسويق براءات الاختراع وتحويلها إلى منتجات تجارية ناجحة.</p>
                             <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
-                        </div>
+                        </article>
                         
-                        <div class="news-item">
+                        <article class="news-item">
                             <h4>هاكاثون الاستدامة والبيئة</h4>
                             <div class="news-meta">
                                 <span>المكان: الدمام، واحة الأعمال التقنية</span>
-                                <span>التاريخ: 5-7 مايو 2025</span>
+                                <time datetime="2025-05-05">5-7 مايو 2025</time>
                             </div>
                             <p>مسابقة ابتكارية تهدف إلى تطوير حلول تقنية للتحديات البيئية والاستدامة في المملكة، بدعم من وزارة البيئة.</p>
                             <a href="#">قراءة المزيد <i class="fas fa-arrow-left"></i></a>
-                        </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -402,7 +456,7 @@
             <p>انضم إلى منصة ابتكار اليوم وكن جزءًا من مستقبل الابتكار في المملكة العربية السعودية.</p>
             <div class="cta-buttons">
                 <a href="#" class="btn btn-investor">استثمر في المستقبل</a>
-                <a href="#" class="btn btn-inventor">حول فكرتك إلى واقع</a>
+                <a href="#" class="btn btn-inventor">حوّل فكرتك إلى واقع</a>
             </div>
         </div>
     </section>
@@ -413,15 +467,15 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="footer-logo">
-                        <img src="logo.png" alt="ابتكار" style="width:40px;height:40px;">
+                        <img src="logo.png" alt="شعار ابتكار">
                         <h2>ابتكار</h2>
                     </div>
                     <p>منصة سعودية رائدة تجمع بين المخترعين والمستثمرين، وتسهّل تحويل براءات الاختراع إلى منتجات تجارية ناجحة بالتعاون مع الهيئة السعودية للملكية الفكرية.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="لينكدإن"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="انستغرام"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
@@ -447,112 +501,111 @@
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone-alt"></i>
-                            <span>+966 11 234 5678</span>
+                            <a href="tel:+966112345678" style="color: var(--text-muted); text-decoration:none;">+966 11 234 5678</a>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>info@ibtikar.sa</span>
+                            <a href="mailto:info@ibtikar.sa" style="color: var(--text-muted); text-decoration:none;">info@ibtikar.sa</a>
                         </div>
                     </div>
-                    
-                    <div class="newsletter">
-                        <h4>اشترك في النشرة الإخبارية</h4>
-                        <form>
-                            <input type="email" placeholder="البريد الإلكتروني">
-                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                        </form>
-                    </div>
+                </div>
+
+                <div class="footer-newsletter"> <!-- Newsletter moved to its own column for better layout -->
+                     <h3>اشترك في النشرة الإخبارية</h3>
+                     <form>
+                         <input type="email" placeholder="البريد الإلكتروني" aria-label="البريد الإلكتروني للاشتراك">
+                         <button type="submit" aria-label="إرسال"><i class="fas fa-paper-plane"></i></button>
+                     </form>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>© 2025 ابتكار - جميع الحقوق محفوظة | بدعم من الهيئة السعودية للملكية الفكرية</p>
+                <p>© <script>document.write(new Date().getFullYear());</script> ابتكار - جميع الحقوق محفوظة | بدعم من الهيئة السعودية للملكية الفكرية</p>
             </div>
         </div>
     </footer>
     
     <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script>
+    // Brain Animation (DO NOT MODIFY THIS SCRIPT AS PER USER REQUEST)
+    document.addEventListener('DOMContentLoaded', function() {
+        const canvas = document.getElementById('brainCanvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.parentElement.offsetWidth || 500;
+            canvas.height = canvas.parentElement.offsetHeight || 500;
 
-     <script src="js/script.js"></script>
-<script>
-// Brain Animation (نسخ من AI-for-ivn.js)
-document.addEventListener('DOMContentLoaded', function() {
-    const canvas = document.getElementById('brainCanvas');
-    if (canvas) {
-        const ctx = canvas.getContext('2d');
-        canvas.width = canvas.parentElement.offsetWidth || 500;
-        canvas.height = canvas.parentElement.offsetHeight || 500;
+            let particles = [];
+            const numParticles = Math.min(200, Math.floor(canvas.width / 3));
+            const connectionDistance = Math.min(100, canvas.width / 5);
+            const maxConnections = 5;
+            const center_x = canvas.width / 2;
+            const center_y = canvas.height / 2;
+            const max_radius = Math.min(center_x, center_y) * 0.7;
 
-        let particles = [];
-        const numParticles = Math.min(200, Math.floor(canvas.width / 3));
-        const connectionDistance = Math.min(100, canvas.width / 5);
-        const maxConnections = 5;
-        const center_x = canvas.width / 2;
-        const center_y = canvas.height / 2;
-        const max_radius = Math.min(center_x, center_y) * 0.7;
+            for (let i = 0; i < numParticles; i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const radius = (max_radius * 0.6) + Math.random() * (max_radius * 0.4);
+                const x = center_x + Math.cos(angle) * radius * (0.8 + Math.sin(angle * 3) * 0.3);
+                const y = center_y + Math.sin(angle) * radius * (0.8 + Math.sin(angle * 2) * 0.2);
 
-        for (let i = 0; i < numParticles; i++) {
-            const angle = Math.random() * Math.PI * 2;
-            const radius = (max_radius * 0.6) + Math.random() * (max_radius * 0.4);
-            const x = center_x + Math.cos(angle) * radius * (0.8 + Math.sin(angle * 3) * 0.3);
-            const y = center_y + Math.sin(angle) * radius * (0.8 + Math.sin(angle * 2) * 0.2);
-
-            particles.push({
-                x, y,
-                size: 1 + Math.random() * 2,
-                speedX: (Math.random() - 0.5) * 0.5,
-                speedY: (Math.random() - 0.5) * 0.5,
-                color: `rgba(33, 150, 243, ${0.3 + Math.random() * 0.7})`,
-                connections: 0,
-                pulse: Math.random() * Math.PI * 2
-            });
-        }
-
-        function animateBrain() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particles.length; i++) {
-                const p = particles[i];
-                p.pulse += 0.02;
-                const pulseFactor = (Math.sin(p.pulse) + 1) * 0.5;
-                p.x += p.speedX;
-                p.y += p.speedY;
-                const distFromCenter = Math.sqrt(Math.pow(p.x - center_x, 2) + Math.pow(p.y - center_y, 2));
-                if (distFromCenter > max_radius * 1.1) {
-                    const angleToCenter = Math.atan2(center_y - p.y, center_x - p.x);
-                    p.speedX += Math.cos(angleToCenter) * 0.1;
-                    p.speedY += Math.sin(angleToCenter) * 0.1;
-                }
-                if (p.x < 0 || p.x > canvas.width) p.speedX *= -0.8;
-                if (p.y < 0 || p.y > canvas.height) p.speedY *= -0.8;
-
-                p.speedX *= 0.99; p.speedY *= 0.99;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size * (0.7 + pulseFactor * 0.5), 0, Math.PI * 2);
-                ctx.fillStyle = p.color;
-                ctx.fill();
-                p.connections = 0;
+                particles.push({
+                    x, y,
+                    size: 1 + Math.random() * 2,
+                    speedX: (Math.random() - 0.5) * 0.5,
+                    speedY: (Math.random() - 0.5) * 0.5,
+                    color: `rgba(33, 150, 243, ${0.3 + Math.random() * 0.7})`,
+                    connections: 0,
+                    pulse: Math.random() * Math.PI * 2
+                });
             }
-            ctx.lineWidth = 0.5;
-            for (let i = 0; i < particles.length; i++) {
-                const p1 = particles[i];
-                for (let j = i + 1; j < particles.length; j++) {
-                    const p2 = particles[j];
-                    if (p1.connections >= maxConnections || p2.connections >= maxConnections) continue;
-                    const dx = p1.x - p2.x; const dy = p1.y - p2.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < connectionDistance) {
-                        const opacity = (1 - distance / connectionDistance) * 0.8;
-                        ctx.strokeStyle = `rgba(33, 150, 243, ${opacity})`;
-                        ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
-                        p1.connections++; p2.connections++;
+
+            function animateBrain() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    p.pulse += 0.02;
+                    const pulseFactor = (Math.sin(p.pulse) + 1) * 0.5;
+                    p.x += p.speedX;
+                    p.y += p.speedY;
+                    const distFromCenter = Math.sqrt(Math.pow(p.x - center_x, 2) + Math.pow(p.y - center_y, 2));
+                    if (distFromCenter > max_radius * 1.1) {
+                        const angleToCenter = Math.atan2(center_y - p.y, center_x - p.x);
+                        p.speedX += Math.cos(angleToCenter) * 0.1;
+                        p.speedY += Math.sin(angleToCenter) * 0.1;
+                    }
+                    if (p.x < 0 || p.x > canvas.width) p.speedX *= -0.8;
+                    if (p.y < 0 || p.y > canvas.height) p.speedY *= -0.8;
+
+                    p.speedX *= 0.99; p.speedY *= 0.99;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size * (0.7 + pulseFactor * 0.5), 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.fill();
+                    p.connections = 0;
+                }
+                ctx.lineWidth = 0.5;
+                for (let i = 0; i < particles.length; i++) {
+                    const p1 = particles[i];
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p2 = particles[j];
+                        if (p1.connections >= maxConnections || p2.connections >= maxConnections) continue;
+                        const dx = p1.x - p2.x; const dy = p1.y - p2.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < connectionDistance) {
+                            const opacity = (1 - distance / connectionDistance) * 0.8;
+                            ctx.strokeStyle = `rgba(33, 150, 243, ${opacity})`;
+                            ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
+                            p1.connections++; p2.connections++;
+                        }
                     }
                 }
+                requestAnimationFrame(animateBrain);
             }
-            requestAnimationFrame(animateBrain);
+            animateBrain();
         }
-        animateBrain();
-    }
-});
-</script>
+    });
+    </script>
 </body>
 </html>
