@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap');
 
 :root {
@@ -42,23 +41,45 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px #e3e3e3;
+    padding: 10px 24px;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 10;
+    transition: background 0.3s;
 }
 
 .logo {
-    font-size: 2rem;
-    font-weight: 700;
     display: flex;
     align-items: center;
+    gap: 10px;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    transition: color 0.3s;
 }
 
 .logo img {
     height: 40px;
     margin-left: 10px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px #eee;
+    transition: box-shadow 0.3s;
 }
 
 .nav-links {
     display: flex;
-    list-style: none;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(255,255,255,0.95);
+    border-radius: 30px;
+    box-shadow: 0 2px 12px #eee;
+    padding: 6px 18px;
+    transition: box-shadow 0.3s, background 0.3s;
 }
 
 .nav-links li {
@@ -66,47 +87,72 @@ header {
 }
 
 .nav-links a {
-    color: white;
+    color: var(--primary-color);
     text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 8px 16px;
+    border-radius: 22px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    position: relative;
+    letter-spacing: 0.5px;
 }
 
+.nav-links a.active,
 .nav-links a:hover {
-    color: var(--light-color);
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 2px 8px #82c0cc30;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 4px;
+    right: 16px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 60%;
 }
 
 .main-btn {
-    background-color: var(--accent-color);
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
     color: white;
-    padding: 10px 20px;
     border: none;
-    border-radius: 50px;
-    font-size: 1rem;
     font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px #eee;
     text-decoration: none;
     display: inline-block;
 }
 
 .main-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    background-color: #6bb5c3;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 10px 20px rgba(22, 105, 122, 0.13);
 }
 
 .secondary-btn {
     background-color: transparent;
     color: var(--primary-color);
-    padding: 9px 19px;
-    border: 2px solid var(--primary-color);
-    border-radius: 50px;
+    padding: 8px 18px;
+    border: 1.5px solid var(--primary-color);
+    border-radius: 30px;
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
     margin-right: 10px;
     text-decoration: none;
     display: inline-block;
@@ -115,6 +161,7 @@ header {
 .secondary-btn:hover {
     background-color: var(--primary-color);
     color: white;
+    box-shadow: 0 4px 16px #16697a30;
 }
 
 section {
@@ -939,6 +986,17 @@ footer {
     }
 }
 
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 0.7rem;
+        padding: 6px 8px;
+    }
+    .main-btn, .secondary-btn {
+        padding: 7px 12px;
+        font-size: 0.98rem;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -977,6 +1035,40 @@ footer {
     .step-line {
         display: none;
     }
+
+    .navbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: 0 8px 32px #0002;
+        border-radius: 18px;
+        padding: 18px 0;
+        min-width: 170px;
+        z-index: 1001;
+        gap: 0;
+    }
+    .nav-links.show {
+        display: flex;
+    }
+    .nav-links a {
+        padding: 12px 24px;
+        border-radius: 0;
+        width: 100%;
+        text-align: right;
+        margin: 0;
+    }
+    .main-btn, .secondary-btn {
+        font-size: 0.95rem;
+        padding: 7px 10px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -997,5 +1089,18 @@ footer {
     .hero-buttons .secondary-btn {
         margin-right: 0;
         margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+    .logo img {
+        height: 32px;
+    }
+    .main-btn, .secondary-btn {
+        padding: 6px 8px;
+        font-size: 0.93rem;
     }
 }
