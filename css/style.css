@@ -996,3 +996,80 @@ footer {
         font-size: 0.98rem;
     }
 }
+
+/* Knowledge Center Section Customization */
+.knowledge-center {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+.knowledge-center .section-title h2 {
+    font-size: 2rem;
+    color: #0c6b58;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.knowledge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.knowledge-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px #0001;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    min-height: 260px;
+}
+.knowledge-card:hover {
+    box-shadow: 0 8px 32px #0002;
+    transform: translateY(-6px) scale(1.03);
+}
+.knowledge-card .card-icon {
+    text-align: center;
+    padding: 25px 0 10px;
+    background: linear-gradient(90deg, #eafaf1 60%, #f9f9f9 100%);
+}
+.knowledge-card .card-icon img {
+    height: 56px;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+}
+.knowledge-card .card-content {
+    padding: 18px 20px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.knowledge-card h3 {
+    color: #0c6b58;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.knowledge-card p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* Responsive for knowledge grid */
+@media (max-width: 600px) {
+    .knowledge-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .knowledge-card .card-icon img {
+        height: 44px;
+    }
+    .knowledge-card h3 {
+        font-size: 1.05rem;
+    }
+}
